@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		514FBE1B2013AFCD007F865E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE1A2013AFCD007F865E /* AppDelegate.swift */; };
+		514FBE1D2013AFCD007F865E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE1C2013AFCD007F865E /* FirstViewController.swift */; };
+		514FBE1F2013AFCD007F865E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE1E2013AFCD007F865E /* SecondViewController.swift */; };
+		514FBE222013AFCD007F865E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514FBE202013AFCD007F865E /* Main.storyboard */; };
+		514FBE242013AFCD007F865E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514FBE232013AFCD007F865E /* Assets.xcassets */; };
+		514FBE272013AFCD007F865E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514FBE252013AFCD007F865E /* LaunchScreen.storyboard */; };
+		514FBE322013AFCD007F865E /* UCSCForumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE312013AFCD007F865E /* UCSCForumTests.swift */; };
+		514FBE3D2013AFCD007F865E /* UCSCForumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE3C2013AFCD007F865E /* UCSCForumUITests.swift */; };
+		514FBE4B2013B5E4007F865E /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE4A2013B5E4007F865E /* ProfileCell.swift */; };
+		514FBE4D2013BB4F007F865E /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE4C2013BB4F007F865E /* ThirdViewController.swift */; };
+		514FBE502016B152007F865E /* WechatIMG2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 514FBE4E2016B151007F865E /* WechatIMG2.jpeg */; };
+		514FBE512016B152007F865E /* WechatIMG1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 514FBE4F2016B151007F865E /* WechatIMG1.jpeg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		514FBE2E2013AFCD007F865E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 514FBE0F2013AFCD007F865E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 514FBE162013AFCD007F865E;
+			remoteInfo = UCSCForum;
+		};
+		514FBE392013AFCD007F865E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 514FBE0F2013AFCD007F865E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 514FBE162013AFCD007F865E;
+			remoteInfo = UCSCForum;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		514FBE172013AFCD007F865E /* UCSCForum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCSCForum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		514FBE1A2013AFCD007F865E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		514FBE1C2013AFCD007F865E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		514FBE1E2013AFCD007F865E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		514FBE212013AFCD007F865E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		514FBE232013AFCD007F865E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		514FBE262013AFCD007F865E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		514FBE282013AFCD007F865E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		514FBE2D2013AFCD007F865E /* UCSCForumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UCSCForumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		514FBE312013AFCD007F865E /* UCSCForumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCSCForumTests.swift; sourceTree = "<group>"; };
+		514FBE332013AFCD007F865E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		514FBE382013AFCD007F865E /* UCSCForumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UCSCForumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		514FBE3C2013AFCD007F865E /* UCSCForumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCSCForumUITests.swift; sourceTree = "<group>"; };
+		514FBE3E2013AFCD007F865E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		514FBE4A2013B5E4007F865E /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		514FBE4C2013BB4F007F865E /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		514FBE4E2016B151007F865E /* WechatIMG2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = WechatIMG2.jpeg; path = ../../WechatIMG2.jpeg; sourceTree = "<group>"; };
+		514FBE4F2016B151007F865E /* WechatIMG1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = WechatIMG1.jpeg; path = ../../WechatIMG1.jpeg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		514FBE142013AFCD007F865E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		514FBE2A2013AFCD007F865E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		514FBE352013AFCD007F865E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		514FBE0E2013AFCD007F865E = {
+			isa = PBXGroup;
+			children = (
+				514FBE4F2016B151007F865E /* WechatIMG1.jpeg */,
+				514FBE4E2016B151007F865E /* WechatIMG2.jpeg */,
+				514FBE192013AFCD007F865E /* UCSCForum */,
+				514FBE302013AFCD007F865E /* UCSCForumTests */,
+				514FBE3B2013AFCD007F865E /* UCSCForumUITests */,
+				514FBE182013AFCD007F865E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		514FBE182013AFCD007F865E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				514FBE172013AFCD007F865E /* UCSCForum.app */,
+				514FBE2D2013AFCD007F865E /* UCSCForumTests.xctest */,
+				514FBE382013AFCD007F865E /* UCSCForumUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		514FBE192013AFCD007F865E /* UCSCForum */ = {
+			isa = PBXGroup;
+			children = (
+				514FBE1A2013AFCD007F865E /* AppDelegate.swift */,
+				514FBE1C2013AFCD007F865E /* FirstViewController.swift */,
+				514FBE1E2013AFCD007F865E /* SecondViewController.swift */,
+				514FBE202013AFCD007F865E /* Main.storyboard */,
+				514FBE4C2013BB4F007F865E /* ThirdViewController.swift */,
+				514FBE4A2013B5E4007F865E /* ProfileCell.swift */,
+				514FBE232013AFCD007F865E /* Assets.xcassets */,
+				514FBE252013AFCD007F865E /* LaunchScreen.storyboard */,
+				514FBE282013AFCD007F865E /* Info.plist */,
+			);
+			path = UCSCForum;
+			sourceTree = "<group>";
+		};
+		514FBE302013AFCD007F865E /* UCSCForumTests */ = {
+			isa = PBXGroup;
+			children = (
+				514FBE312013AFCD007F865E /* UCSCForumTests.swift */,
+				514FBE332013AFCD007F865E /* Info.plist */,
+			);
+			path = UCSCForumTests;
+			sourceTree = "<group>";
+		};
+		514FBE3B2013AFCD007F865E /* UCSCForumUITests */ = {
+			isa = PBXGroup;
+			children = (
+				514FBE3C2013AFCD007F865E /* UCSCForumUITests.swift */,
+				514FBE3E2013AFCD007F865E /* Info.plist */,
+			);
+			path = UCSCForumUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		514FBE162013AFCD007F865E /* UCSCForum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 514FBE412013AFCD007F865E /* Build configuration list for PBXNativeTarget "UCSCForum" */;
+			buildPhases = (
+				514FBE132013AFCD007F865E /* Sources */,
+				514FBE142013AFCD007F865E /* Frameworks */,
+				514FBE152013AFCD007F865E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UCSCForum;
+			productName = UCSCForum;
+			productReference = 514FBE172013AFCD007F865E /* UCSCForum.app */;
+			productType = "com.apple.product-type.application";
+		};
+		514FBE2C2013AFCD007F865E /* UCSCForumTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 514FBE442013AFCD007F865E /* Build configuration list for PBXNativeTarget "UCSCForumTests" */;
+			buildPhases = (
+				514FBE292013AFCD007F865E /* Sources */,
+				514FBE2A2013AFCD007F865E /* Frameworks */,
+				514FBE2B2013AFCD007F865E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				514FBE2F2013AFCD007F865E /* PBXTargetDependency */,
+			);
+			name = UCSCForumTests;
+			productName = UCSCForumTests;
+			productReference = 514FBE2D2013AFCD007F865E /* UCSCForumTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		514FBE372013AFCD007F865E /* UCSCForumUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 514FBE472013AFCD007F865E /* Build configuration list for PBXNativeTarget "UCSCForumUITests" */;
+			buildPhases = (
+				514FBE342013AFCD007F865E /* Sources */,
+				514FBE352013AFCD007F865E /* Frameworks */,
+				514FBE362013AFCD007F865E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				514FBE3A2013AFCD007F865E /* PBXTargetDependency */,
+			);
+			name = UCSCForumUITests;
+			productName = UCSCForumUITests;
+			productReference = 514FBE382013AFCD007F865E /* UCSCForumUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		514FBE0F2013AFCD007F865E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = MacDouble;
+				TargetAttributes = {
+					514FBE162013AFCD007F865E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					514FBE2C2013AFCD007F865E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 514FBE162013AFCD007F865E;
+					};
+					514FBE372013AFCD007F865E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 514FBE162013AFCD007F865E;
+					};
+				};
+			};
+			buildConfigurationList = 514FBE122013AFCD007F865E /* Build configuration list for PBXProject "UCSCForum" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 514FBE0E2013AFCD007F865E;
+			productRefGroup = 514FBE182013AFCD007F865E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				514FBE162013AFCD007F865E /* UCSCForum */,
+				514FBE2C2013AFCD007F865E /* UCSCForumTests */,
+				514FBE372013AFCD007F865E /* UCSCForumUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		514FBE152013AFCD007F865E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				514FBE272013AFCD007F865E /* LaunchScreen.storyboard in Resources */,
+				514FBE242013AFCD007F865E /* Assets.xcassets in Resources */,
+				514FBE512016B152007F865E /* WechatIMG1.jpeg in Resources */,
+				514FBE502016B152007F865E /* WechatIMG2.jpeg in Resources */,
+				514FBE222013AFCD007F865E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		514FBE2B2013AFCD007F865E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		514FBE362013AFCD007F865E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		514FBE132013AFCD007F865E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				514FBE1F2013AFCD007F865E /* SecondViewController.swift in Sources */,
+				514FBE4B2013B5E4007F865E /* ProfileCell.swift in Sources */,
+				514FBE4D2013BB4F007F865E /* ThirdViewController.swift in Sources */,
+				514FBE1B2013AFCD007F865E /* AppDelegate.swift in Sources */,
+				514FBE1D2013AFCD007F865E /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		514FBE292013AFCD007F865E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				514FBE322013AFCD007F865E /* UCSCForumTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		514FBE342013AFCD007F865E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				514FBE3D2013AFCD007F865E /* UCSCForumUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		514FBE2F2013AFCD007F865E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 514FBE162013AFCD007F865E /* UCSCForum */;
+			targetProxy = 514FBE2E2013AFCD007F865E /* PBXContainerItemProxy */;
+		};
+		514FBE3A2013AFCD007F865E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 514FBE162013AFCD007F865E /* UCSCForum */;
+			targetProxy = 514FBE392013AFCD007F865E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		514FBE202013AFCD007F865E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				514FBE212013AFCD007F865E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		514FBE252013AFCD007F865E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				514FBE262013AFCD007F865E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		514FBE3F2013AFCD007F865E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		514FBE402013AFCD007F865E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		514FBE422013AFCD007F865E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9TD58ZTBUU;
+				INFOPLIST_FILE = UCSCForum/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RoyHuang.UCSCForum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		514FBE432013AFCD007F865E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9TD58ZTBUU;
+				INFOPLIST_FILE = UCSCForum/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RoyHuang.UCSCForum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		514FBE452013AFCD007F865E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UCSCForumTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RoyHuang.UCSCForumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UCSCForum.app/UCSCForum";
+			};
+			name = Debug;
+		};
+		514FBE462013AFCD007F865E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UCSCForumTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RoyHuang.UCSCForumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UCSCForum.app/UCSCForum";
+			};
+			name = Release;
+		};
+		514FBE482013AFCD007F865E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UCSCForumUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RoyHuang.UCSCForumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UCSCForum;
+			};
+			name = Debug;
+		};
+		514FBE492013AFCD007F865E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UCSCForumUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RoyHuang.UCSCForumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UCSCForum;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		514FBE122013AFCD007F865E /* Build configuration list for PBXProject "UCSCForum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				514FBE3F2013AFCD007F865E /* Debug */,
+				514FBE402013AFCD007F865E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		514FBE412013AFCD007F865E /* Build configuration list for PBXNativeTarget "UCSCForum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				514FBE422013AFCD007F865E /* Debug */,
+				514FBE432013AFCD007F865E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		514FBE442013AFCD007F865E /* Build configuration list for PBXNativeTarget "UCSCForumTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				514FBE452013AFCD007F865E /* Debug */,
+				514FBE462013AFCD007F865E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		514FBE472013AFCD007F865E /* Build configuration list for PBXNativeTarget "UCSCForumUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				514FBE482013AFCD007F865E /* Debug */,
+				514FBE492013AFCD007F865E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 514FBE0F2013AFCD007F865E /* Project object */;
+}

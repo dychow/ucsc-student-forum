@@ -1,28 +1,51 @@
 //
-//  ThirdViewController.swift
+//  TableViewController.swift
 //  UCSCForum
 //
-//  Created by MacDouble on 1/20/18.
+//  Created by MacDouble on 1/23/18.
 //  Copyright © 2018 MacDouble. All rights reserved.
 //
 
 import UIKit
-import MapKit
 
-class ThirdViewController:UIViewController {
+class TableViewController: UITableViewController {
 
+
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupDefault()
+        
+        profileImage.layer.masksToBounds = true
+        profileImage.layer.borderWidth = 1.5
+        
+        profileImage.layer.borderColor = UIColor.white.cgColor
+        
+        profileImage.layer.cornerRadius = profileImage.bounds.width/2
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    
 
+    @IBAction func loginButton(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "loginSegue", sender: self)
+        
+    }
+    func setupDefault(){
+        nameLabel.isHidden = true;
+        loginButton.isHidden = false;
+    }
+    
+    func setupLogin(){
+        nameLabel.isHidden = false;
+        loginButton.isHidden = true;
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -30,7 +53,19 @@ class ThirdViewController:UIViewController {
 
     // MARK: - Table view data source
 
+    //override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+       // return 0
+   // }
 
+   // override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        //return 0
+   // }
+    
+  //  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+   //     return 1
+  //  }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

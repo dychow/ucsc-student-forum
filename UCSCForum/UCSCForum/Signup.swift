@@ -1,15 +1,14 @@
 //
-//  ThirdViewController.swift
+//  Signup.swift
 //  UCSCForum
 //
-//  Created by MacDouble on 1/20/18.
+//  Created by MacDouble on 1/23/18.
 //  Copyright © 2018 MacDouble. All rights reserved.
 //
 
 import UIKit
-import MapKit
 
-class ThirdViewController:UIViewController {
+class Signup: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +19,11 @@ class ThirdViewController:UIViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    
 
+    @IBAction func loginButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -30,6 +31,15 @@ class ThirdViewController:UIViewController {
 
     // MARK: - Table view data source
 
+   // override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        //return 0
+  //  //}
+
+   // override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+      //  return 0
+   // }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

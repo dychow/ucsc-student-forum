@@ -9,16 +9,17 @@
 /* Begin PBXBuildFile section */
 		514FBE1B2013AFCD007F865E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE1A2013AFCD007F865E /* AppDelegate.swift */; };
 		514FBE1D2013AFCD007F865E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE1C2013AFCD007F865E /* FirstViewController.swift */; };
-		514FBE1F2013AFCD007F865E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE1E2013AFCD007F865E /* SecondViewController.swift */; };
 		514FBE222013AFCD007F865E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514FBE202013AFCD007F865E /* Main.storyboard */; };
 		514FBE242013AFCD007F865E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514FBE232013AFCD007F865E /* Assets.xcassets */; };
 		514FBE272013AFCD007F865E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514FBE252013AFCD007F865E /* LaunchScreen.storyboard */; };
 		514FBE322013AFCD007F865E /* UCSCForumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE312013AFCD007F865E /* UCSCForumTests.swift */; };
 		514FBE3D2013AFCD007F865E /* UCSCForumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE3C2013AFCD007F865E /* UCSCForumUITests.swift */; };
-		514FBE4B2013B5E4007F865E /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE4A2013B5E4007F865E /* ProfileCell.swift */; };
-		514FBE4D2013BB4F007F865E /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE4C2013BB4F007F865E /* ThirdViewController.swift */; };
-		514FBE502016B152007F865E /* WechatIMG2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 514FBE4E2016B151007F865E /* WechatIMG2.jpeg */; };
-		514FBE512016B152007F865E /* WechatIMG1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 514FBE4F2016B151007F865E /* WechatIMG1.jpeg */; };
+		519136892017CBD300756B00 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519136882017CBD300756B00 /* TableViewController.swift */; };
+		5191368D2017E9CD00756B00 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5191368C2017E9CD00756B00 /* ThirdViewController.swift */; };
+		51DDC0942017EE44005FD754 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDC0932017EE44005FD754 /* Signup.swift */; };
+		51DDC096201959A2005FD754 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDC095201959A2005FD754 /* ItemTableViewCell.swift */; };
+		51DDC09A201A9E7B005FD754 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51DDC098201A9E7B005FD754 /* Montserrat-Regular.ttf */; };
+		51DDC09B201A9E7B005FD754 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51DDC099201A9E7B005FD754 /* Montserrat-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +43,6 @@
 		514FBE172013AFCD007F865E /* UCSCForum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCSCForum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		514FBE1A2013AFCD007F865E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		514FBE1C2013AFCD007F865E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		514FBE1E2013AFCD007F865E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		514FBE212013AFCD007F865E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		514FBE232013AFCD007F865E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		514FBE262013AFCD007F865E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,10 +53,12 @@
 		514FBE382013AFCD007F865E /* UCSCForumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UCSCForumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		514FBE3C2013AFCD007F865E /* UCSCForumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCSCForumUITests.swift; sourceTree = "<group>"; };
 		514FBE3E2013AFCD007F865E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		514FBE4A2013B5E4007F865E /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
-		514FBE4C2013BB4F007F865E /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		514FBE4E2016B151007F865E /* WechatIMG2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = WechatIMG2.jpeg; path = ../../WechatIMG2.jpeg; sourceTree = "<group>"; };
-		514FBE4F2016B151007F865E /* WechatIMG1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = WechatIMG1.jpeg; path = ../../WechatIMG1.jpeg; sourceTree = "<group>"; };
+		519136882017CBD300756B00 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		5191368C2017E9CD00756B00 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		51DDC0932017EE44005FD754 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
+		51DDC095201959A2005FD754 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		51DDC098201A9E7B005FD754 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "UCSCForum/Montserrat-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		51DDC099201A9E7B005FD754 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "UCSCForum/Montserrat-Bold.ttf"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +89,7 @@
 		514FBE0E2013AFCD007F865E = {
 			isa = PBXGroup;
 			children = (
-				514FBE4F2016B151007F865E /* WechatIMG1.jpeg */,
-				514FBE4E2016B151007F865E /* WechatIMG2.jpeg */,
+				51DDC097201A9E69005FD754 /* Fonts */,
 				514FBE192013AFCD007F865E /* UCSCForum */,
 				514FBE302013AFCD007F865E /* UCSCForumTests */,
 				514FBE3B2013AFCD007F865E /* UCSCForumUITests */,
@@ -109,15 +110,16 @@
 		514FBE192013AFCD007F865E /* UCSCForum */ = {
 			isa = PBXGroup;
 			children = (
+				5191368C2017E9CD00756B00 /* ThirdViewController.swift */,
 				514FBE1A2013AFCD007F865E /* AppDelegate.swift */,
 				514FBE1C2013AFCD007F865E /* FirstViewController.swift */,
-				514FBE1E2013AFCD007F865E /* SecondViewController.swift */,
 				514FBE202013AFCD007F865E /* Main.storyboard */,
-				514FBE4C2013BB4F007F865E /* ThirdViewController.swift */,
-				514FBE4A2013B5E4007F865E /* ProfileCell.swift */,
+				51DDC0932017EE44005FD754 /* Signup.swift */,
+				519136882017CBD300756B00 /* TableViewController.swift */,
 				514FBE232013AFCD007F865E /* Assets.xcassets */,
 				514FBE252013AFCD007F865E /* LaunchScreen.storyboard */,
 				514FBE282013AFCD007F865E /* Info.plist */,
+				51DDC09C201AA46D005FD754 /* TableViewCells */,
 			);
 			path = UCSCForum;
 			sourceTree = "<group>";
@@ -138,6 +140,23 @@
 				514FBE3E2013AFCD007F865E /* Info.plist */,
 			);
 			path = UCSCForumUITests;
+			sourceTree = "<group>";
+		};
+		51DDC097201A9E69005FD754 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				51DDC099201A9E7B005FD754 /* Montserrat-Bold.ttf */,
+				51DDC098201A9E7B005FD754 /* Montserrat-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		51DDC09C201AA46D005FD754 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				51DDC095201959A2005FD754 /* ItemTableViewCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,10 +266,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51DDC09B201A9E7B005FD754 /* Montserrat-Bold.ttf in Resources */,
+				51DDC09A201A9E7B005FD754 /* Montserrat-Regular.ttf in Resources */,
 				514FBE272013AFCD007F865E /* LaunchScreen.storyboard in Resources */,
 				514FBE242013AFCD007F865E /* Assets.xcassets in Resources */,
-				514FBE512016B152007F865E /* WechatIMG1.jpeg in Resources */,
-				514FBE502016B152007F865E /* WechatIMG2.jpeg in Resources */,
 				514FBE222013AFCD007F865E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,11 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				514FBE1F2013AFCD007F865E /* SecondViewController.swift in Sources */,
-				514FBE4B2013B5E4007F865E /* ProfileCell.swift in Sources */,
-				514FBE4D2013BB4F007F865E /* ThirdViewController.swift in Sources */,
 				514FBE1B2013AFCD007F865E /* AppDelegate.swift in Sources */,
+				51DDC0942017EE44005FD754 /* Signup.swift in Sources */,
 				514FBE1D2013AFCD007F865E /* FirstViewController.swift in Sources */,
+				5191368D2017E9CD00756B00 /* ThirdViewController.swift in Sources */,
+				51DDC096201959A2005FD754 /* ItemTableViewCell.swift in Sources */,
+				519136892017CBD300756B00 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050D48B3E14DF8FFAAE89466 /* Pods_UCSCForum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C732A4B17D1092C886FB39FB /* Pods_UCSCForum.framework */; };
+		228C3192CB6FB0FE87403E6B /* Pods_UCSCForumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC068DB16A8B4D9BD6034170 /* Pods_UCSCForumTests.framework */; };
 		514FBE1B2013AFCD007F865E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE1A2013AFCD007F865E /* AppDelegate.swift */; };
 		514FBE1D2013AFCD007F865E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE1C2013AFCD007F865E /* FirstViewController.swift */; };
 		514FBE222013AFCD007F865E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514FBE202013AFCD007F865E /* Main.storyboard */; };
@@ -20,6 +22,10 @@
 		51DDC096201959A2005FD754 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDC095201959A2005FD754 /* ItemTableViewCell.swift */; };
 		51DDC09A201A9E7B005FD754 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51DDC098201A9E7B005FD754 /* Montserrat-Regular.ttf */; };
 		51DDC09B201A9E7B005FD754 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51DDC099201A9E7B005FD754 /* Montserrat-Bold.ttf */; };
+		659DB625201BD6BF009BAD96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 659DB624201BD6BF009BAD96 /* GoogleService-Info.plist */; };
+		659DB626201BD6BF009BAD96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 659DB624201BD6BF009BAD96 /* GoogleService-Info.plist */; };
+		659DB627201BD6BF009BAD96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 659DB624201BD6BF009BAD96 /* GoogleService-Info.plist */; };
+		B3C6148CF9D5B688335CD99E /* Pods_UCSCForumUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DB02726A0125E7A728C752 /* Pods_UCSCForumUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		036C52AB8B3666F4D9B797E9 /* Pods-UCSCForumUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSCForumUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UCSCForumUITests/Pods-UCSCForumUITests.release.xcconfig"; sourceTree = "<group>"; };
+		09B62651F87DE88945E5BD39 /* Pods-UCSCForumTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSCForumTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UCSCForumTests/Pods-UCSCForumTests.release.xcconfig"; sourceTree = "<group>"; };
 		514FBE172013AFCD007F865E /* UCSCForum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCSCForum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		514FBE1A2013AFCD007F865E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		514FBE1C2013AFCD007F865E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +67,14 @@
 		51DDC095201959A2005FD754 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		51DDC098201A9E7B005FD754 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "UCSCForum/Montserrat-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 		51DDC099201A9E7B005FD754 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "UCSCForum/Montserrat-Bold.ttf"; sourceTree = SOURCE_ROOT; };
+		56DB02726A0125E7A728C752 /* Pods_UCSCForumUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCSCForumUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B7C00DC56D711D4E4FCC88C /* Pods-UCSCForumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSCForumTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UCSCForumTests/Pods-UCSCForumTests.debug.xcconfig"; sourceTree = "<group>"; };
+		659DB624201BD6BF009BAD96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84E90025E508FE194A845A17 /* Pods-UCSCForum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSCForum.release.xcconfig"; path = "Pods/Target Support Files/Pods-UCSCForum/Pods-UCSCForum.release.xcconfig"; sourceTree = "<group>"; };
+		A80B52D22C07BDB3FADD8C92 /* Pods-UCSCForum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSCForum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UCSCForum/Pods-UCSCForum.debug.xcconfig"; sourceTree = "<group>"; };
+		BC068DB16A8B4D9BD6034170 /* Pods_UCSCForumTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCSCForumTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C732A4B17D1092C886FB39FB /* Pods_UCSCForum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCSCForum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC203C09CFD873FC938F3243 /* Pods-UCSCForumUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSCForumUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UCSCForumUITests/Pods-UCSCForumUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				050D48B3E14DF8FFAAE89466 /* Pods_UCSCForum.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				228C3192CB6FB0FE87403E6B /* Pods_UCSCForumTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3C6148CF9D5B688335CD99E /* Pods_UCSCForumUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +113,8 @@
 				514FBE302013AFCD007F865E /* UCSCForumTests */,
 				514FBE3B2013AFCD007F865E /* UCSCForumUITests */,
 				514FBE182013AFCD007F865E /* Products */,
+				D43812DDB46C4B077F172419 /* Pods */,
+				676CF407A4925B4AC3C05021 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +131,7 @@
 		514FBE192013AFCD007F865E /* UCSCForum */ = {
 			isa = PBXGroup;
 			children = (
+				659DB624201BD6BF009BAD96 /* GoogleService-Info.plist */,
 				5191368C2017E9CD00756B00 /* ThirdViewController.swift */,
 				514FBE1A2013AFCD007F865E /* AppDelegate.swift */,
 				514FBE1C2013AFCD007F865E /* FirstViewController.swift */,
@@ -159,6 +181,29 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
+		676CF407A4925B4AC3C05021 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C732A4B17D1092C886FB39FB /* Pods_UCSCForum.framework */,
+				BC068DB16A8B4D9BD6034170 /* Pods_UCSCForumTests.framework */,
+				56DB02726A0125E7A728C752 /* Pods_UCSCForumUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D43812DDB46C4B077F172419 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A80B52D22C07BDB3FADD8C92 /* Pods-UCSCForum.debug.xcconfig */,
+				84E90025E508FE194A845A17 /* Pods-UCSCForum.release.xcconfig */,
+				5B7C00DC56D711D4E4FCC88C /* Pods-UCSCForumTests.debug.xcconfig */,
+				09B62651F87DE88945E5BD39 /* Pods-UCSCForumTests.release.xcconfig */,
+				CC203C09CFD873FC938F3243 /* Pods-UCSCForumUITests.debug.xcconfig */,
+				036C52AB8B3666F4D9B797E9 /* Pods-UCSCForumUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,9 +211,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 514FBE412013AFCD007F865E /* Build configuration list for PBXNativeTarget "UCSCForum" */;
 			buildPhases = (
+				39AC604E9F107637125C9B77 /* [CP] Check Pods Manifest.lock */,
 				514FBE132013AFCD007F865E /* Sources */,
 				514FBE142013AFCD007F865E /* Frameworks */,
 				514FBE152013AFCD007F865E /* Resources */,
+				32973155411759A193ED084C /* [CP] Embed Pods Frameworks */,
+				BFC4949402814DDEBC98BC9A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,9 +231,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 514FBE442013AFCD007F865E /* Build configuration list for PBXNativeTarget "UCSCForumTests" */;
 			buildPhases = (
+				27BD7978DFD9537FEC4FC0AC /* [CP] Check Pods Manifest.lock */,
 				514FBE292013AFCD007F865E /* Sources */,
 				514FBE2A2013AFCD007F865E /* Frameworks */,
 				514FBE2B2013AFCD007F865E /* Resources */,
+				6413EB3DC53B9649ECACD3C6 /* [CP] Embed Pods Frameworks */,
+				A76D9C8B7750B5FAB99A4DBD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,9 +252,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 514FBE472013AFCD007F865E /* Build configuration list for PBXNativeTarget "UCSCForumUITests" */;
 			buildPhases = (
+				A7A0FDB8EAF6F925F13E3D70 /* [CP] Check Pods Manifest.lock */,
 				514FBE342013AFCD007F865E /* Sources */,
 				514FBE352013AFCD007F865E /* Frameworks */,
 				514FBE362013AFCD007F865E /* Resources */,
+				FBA36858C6F3E9D3BB72309F /* [CP] Embed Pods Frameworks */,
+				71D266F5C59D66233053458A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,6 +325,7 @@
 				514FBE272013AFCD007F865E /* LaunchScreen.storyboard in Resources */,
 				514FBE242013AFCD007F865E /* Assets.xcassets in Resources */,
 				514FBE222013AFCD007F865E /* Main.storyboard in Resources */,
+				659DB625201BD6BF009BAD96 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659DB626201BD6BF009BAD96 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,10 +341,163 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659DB627201BD6BF009BAD96 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27BD7978DFD9537FEC4FC0AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UCSCForumTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32973155411759A193ED084C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UCSCForum/Pods-UCSCForum-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UCSCForum/Pods-UCSCForum-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39AC604E9F107637125C9B77 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UCSCForum-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6413EB3DC53B9649ECACD3C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UCSCForumTests/Pods-UCSCForumTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71D266F5C59D66233053458A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UCSCForumUITests/Pods-UCSCForumUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A76D9C8B7750B5FAB99A4DBD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UCSCForumTests/Pods-UCSCForumTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7A0FDB8EAF6F925F13E3D70 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UCSCForumUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFC4949402814DDEBC98BC9A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UCSCForum/Pods-UCSCForum-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBA36858C6F3E9D3BB72309F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UCSCForumUITests/Pods-UCSCForumUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		514FBE132013AFCD007F865E /* Sources */ = {
@@ -464,6 +673,7 @@
 		};
 		514FBE422013AFCD007F865E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A80B52D22C07BDB3FADD8C92 /* Pods-UCSCForum.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -480,6 +690,7 @@
 		};
 		514FBE432013AFCD007F865E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84E90025E508FE194A845A17 /* Pods-UCSCForum.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -496,6 +707,7 @@
 		};
 		514FBE452013AFCD007F865E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7C00DC56D711D4E4FCC88C /* Pods-UCSCForumTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +724,7 @@
 		};
 		514FBE462013AFCD007F865E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09B62651F87DE88945E5BD39 /* Pods-UCSCForumTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +741,7 @@
 		};
 		514FBE482013AFCD007F865E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC203C09CFD873FC938F3243 /* Pods-UCSCForumUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -543,6 +757,7 @@
 		};
 		514FBE492013AFCD007F865E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 036C52AB8B3666F4D9B797E9 /* Pods-UCSCForumUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

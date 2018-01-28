@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -46,7 +47,35 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return itemCell
     }
     
+    @IBAction func sendToDatabase(_ sender: Any) {
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        
+        //var intValue = ref.child("test/testvalue").observeSingleEvent
+        ref.child("test").child("testvalue").observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            
+            if !snapshot.exists() {return}
+            
+            let value = snapshot.value as? NSNumber
+            ref.child("test").child("testvalue").setValue((value?.intValue)!+1)
 
+        })
+        
+//        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+//            // Get user value
+//            let value = snapshot.value as? NSDictionary
+//
+//        }) { (error) in
+//            print(error.localizedDescription)
+//        }
+//        ref.child("test").child("testvalue").setValue(value+1)
+
+        
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

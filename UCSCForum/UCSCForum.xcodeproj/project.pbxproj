@@ -18,6 +18,7 @@
 		514FBE3D2013AFCD007F865E /* UCSCForumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE3C2013AFCD007F865E /* UCSCForumUITests.swift */; };
 		519136892017CBD300756B00 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519136882017CBD300756B00 /* TableViewController.swift */; };
 		5191368D2017E9CD00756B00 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5191368C2017E9CD00756B00 /* ThirdViewController.swift */; };
+		51B2D873201FD37500A90917 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B2D872201FD37500A90917 /* SignUpTableViewController.swift */; };
 		51DDC0942017EE44005FD754 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDC0932017EE44005FD754 /* Signup.swift */; };
 		51DDC096201959A2005FD754 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDC095201959A2005FD754 /* ItemTableViewCell.swift */; };
 		51DDC09A201A9E7B005FD754 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51DDC098201A9E7B005FD754 /* Montserrat-Regular.ttf */; };
@@ -63,6 +64,7 @@
 		514FBE3E2013AFCD007F865E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		519136882017CBD300756B00 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		5191368C2017E9CD00756B00 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		51B2D872201FD37500A90917 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 		51DDC0932017EE44005FD754 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		51DDC095201959A2005FD754 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		51DDC098201A9E7B005FD754 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "UCSCForum/Montserrat-Regular.ttf"; sourceTree = SOURCE_ROOT; };
@@ -131,13 +133,10 @@
 		514FBE192013AFCD007F865E /* UCSCForum */ = {
 			isa = PBXGroup;
 			children = (
+				51B2D871201FD33600A90917 /* UIViewControllers */,
 				659DB624201BD6BF009BAD96 /* GoogleService-Info.plist */,
-				5191368C2017E9CD00756B00 /* ThirdViewController.swift */,
 				514FBE1A2013AFCD007F865E /* AppDelegate.swift */,
-				514FBE1C2013AFCD007F865E /* FirstViewController.swift */,
 				514FBE202013AFCD007F865E /* Main.storyboard */,
-				51DDC0932017EE44005FD754 /* Signup.swift */,
-				519136882017CBD300756B00 /* TableViewController.swift */,
 				514FBE232013AFCD007F865E /* Assets.xcassets */,
 				514FBE252013AFCD007F865E /* LaunchScreen.storyboard */,
 				514FBE282013AFCD007F865E /* Info.plist */,
@@ -162,6 +161,18 @@
 				514FBE3E2013AFCD007F865E /* Info.plist */,
 			);
 			path = UCSCForumUITests;
+			sourceTree = "<group>";
+		};
+		51B2D871201FD33600A90917 /* UIViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				519136882017CBD300756B00 /* TableViewController.swift */,
+				514FBE1C2013AFCD007F865E /* FirstViewController.swift */,
+				5191368C2017E9CD00756B00 /* ThirdViewController.swift */,
+				51DDC0932017EE44005FD754 /* Signup.swift */,
+				51B2D872201FD37500A90917 /* SignUpTableViewController.swift */,
+			);
+			path = UIViewControllers;
 			sourceTree = "<group>";
 		};
 		51DDC097201A9E69005FD754 /* Fonts */ = {
@@ -514,6 +525,7 @@
 				51DDC0942017EE44005FD754 /* Signup.swift in Sources */,
 				514FBE1D2013AFCD007F865E /* FirstViewController.swift in Sources */,
 				5191368D2017E9CD00756B00 /* ThirdViewController.swift in Sources */,
+				51B2D873201FD37500A90917 /* SignUpTableViewController.swift in Sources */,
 				51DDC096201959A2005FD754 /* ItemTableViewCell.swift in Sources */,
 				519136892017CBD300756B00 /* TableViewController.swift in Sources */,
 			);

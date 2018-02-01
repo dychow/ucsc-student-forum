@@ -51,16 +51,24 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         var ref: DatabaseReference!
         ref = Database.database().reference().child("test").child("testvalue")
         
-        ref.observeSingleEvent(of: .value, with: {
-            (snapshot) in
-            
-            if !snapshot.exists() {return}
-            
-            let value = snapshot.value as? NSNumber
-            ref.setValue((value?.intValue)!+1)
+        ref.setValue(453)
 
-        })
+         // ref.observeSingleEvent(of: .value, with: {
+         //   (snapshot) in
+            
+         //   if !snapshot.exists() {return}
+            
+          //  let value = snapshot.value as? NSString
+            
+           // let string = value as! String
+            
+         //   ref.setValue(Int(string)!+1)
+
+       // })
+
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

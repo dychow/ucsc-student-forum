@@ -7,23 +7,34 @@
 //
 
 import UIKit
+import Firebase
 
 class TableViewController: UITableViewController {
 
 
+    @IBOutlet var tableview: UITableView!
+    @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        checkLogin()
+        tableview.reloadData()
+       
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupDefault()
-        
-        profileImage.layer.masksToBounds = true
+        checkLogin()
+    profileImage.layer.masksToBounds = true
         profileImage.layer.borderWidth = 1.5
         
         profileImage.layer.borderColor = UIColor.white.cgColor
         
         profileImage.layer.cornerRadius = profileImage.bounds.width/2
+        
+       
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -32,18 +43,33 @@ class TableViewController: UITableViewController {
     }
 
     @IBAction func loginButton(_ sender: Any) {
-        
         self.performSegue(withIdentifier: "loginSegue", sender: self)
         
     }
     func setupDefault(){
         nameLabel.isHidden = true;
         loginButton.isHidden = false;
+       // logoutButton.titleLabel?.text = ""
+    
     }
     
     func setupLogin(){
         nameLabel.isHidden = false;
         loginButton.isHidden = true;
+        //logoutButton.titleLabel?.text = "log out"
+    }
+    @IBAction func logoutButton(_ sender: Any) {
+        try! Auth.auth().signOut()
+        viewWillAppear(false)
+        tableview.reloadData()
+    }
+    func checkLogin(){
+        if Auth.auth().currentUser != nil{
+            print("user logged in")
+            setupLogin()
+        }else{
+            setupDefault()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,10 +79,13 @@ class TableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    //override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-       // return 0
-   // }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        if Auth.auth().currentUser != nil{
+            return 3
+        }else{
+            return 2
+        }
+   }
 
    // override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows

@@ -1,15 +1,20 @@
 //
-//  Signup.swift
+//  SignUpTableViewController.swift
 //  UCSCForum
 //
-//  Created by MacDouble on 1/23/18.
+//  Created by MacDouble on 1/29/18.
 //  Copyright © 2018 MacDouble. All rights reserved.
 //
 
 import UIKit
+import Firebase
 
-class Signup: UITableViewController {
+class SignUpTableViewController: UITableViewController {
 
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var confirmTf: UITextField!
+    @IBOutlet weak var passwordTf: UITextField!
+    @IBOutlet weak var usernameTf: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,9 +24,44 @@ class Signup: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-    @IBAction func loginButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func doneButton(_ sender: Any) {
+        
+        if let confirm = confirmTf.text{
+            if confirm != passwordTf.text{
+                errorLabel.text = "Confirm password doesn't match"
+                return
+            }
+            if confirm.count < 8 {
+                errorLabel.text = "Password invalid: 8 characters of combined number and letter is required"
+                return
+            }
+            
+        }else{
+            errorLabel.text = "Please confirm your password"
+            return
+        }
+        
+        
+        
+        
+        var ref: DatabaseReference!
+        
+        if let username = usernameTf.text, let password = passwordTf.text {
+            Auth.auth().createUser(withEmail: username, password: password, completion: {(user, error) in
+                if let firebaseError = error{
+                    self.errorLabel.text = (firebaseError.localizedDescription)
+                }
+            })
+                
+            
+   
+        }
+        
+  
+        //ref = Database.database().reference().child("users").child("\(usernameTf.text)")
+        
+      //  ref.setValue("\(passwordTf.text)")
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,15 +71,7 @@ class Signup: UITableViewController {
 
     // MARK: - Table view data source
 
-   // override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        //return 0
-  //  //}
 
-   // override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-      //  return 0
-   // }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

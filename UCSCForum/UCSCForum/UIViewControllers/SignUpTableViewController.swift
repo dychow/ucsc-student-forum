@@ -25,7 +25,13 @@ class SignUpTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     @IBAction func doneButton(_ sender: Any) {
-        
+        if let validEmail = usernameTf.text{
+            if !validEmail.hasSuffix("@ucsc.edu") {
+                errorLabel.text = "Not a valid ucsc.edu email"
+                return
+            }
+        }
+
         if let confirm = confirmTf.text{
             if confirm != passwordTf.text{
                 errorLabel.text = "Confirm password doesn't match"

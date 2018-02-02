@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		050D48B3E14DF8FFAAE89466 /* Pods_UCSCForum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C732A4B17D1092C886FB39FB /* Pods_UCSCForum.framework */; };
 		228C3192CB6FB0FE87403E6B /* Pods_UCSCForumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC068DB16A8B4D9BD6034170 /* Pods_UCSCForumTests.framework */; };
+		5111750D2024280D009E0EEF /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111750C2024280D009E0EEF /* SignUpTableViewController.swift */; };
+		5111750F202431A9009E0EEF /* styleTextFied.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111750E202431A9009E0EEF /* styleTextFied.swift */; };
+		51117511202447A3009E0EEF /* loginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51117510202447A3009E0EEF /* loginTableViewController.swift */; };
+		511175132024E5F2009E0EEF /* VerifyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511175122024E5F2009E0EEF /* VerifyTableViewController.swift */; };
 		514FBE1B2013AFCD007F865E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE1A2013AFCD007F865E /* AppDelegate.swift */; };
 		514FBE1D2013AFCD007F865E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE1C2013AFCD007F865E /* FirstViewController.swift */; };
 		514FBE222013AFCD007F865E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514FBE202013AFCD007F865E /* Main.storyboard */; };
@@ -18,7 +22,6 @@
 		514FBE3D2013AFCD007F865E /* UCSCForumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE3C2013AFCD007F865E /* UCSCForumUITests.swift */; };
 		519136892017CBD300756B00 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519136882017CBD300756B00 /* TableViewController.swift */; };
 		5191368D2017E9CD00756B00 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5191368C2017E9CD00756B00 /* ThirdViewController.swift */; };
-		51B2D873201FD37500A90917 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B2D872201FD37500A90917 /* SignUpTableViewController.swift */; };
 		51DDC0942017EE44005FD754 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDC0932017EE44005FD754 /* Signup.swift */; };
 		51DDC096201959A2005FD754 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDC095201959A2005FD754 /* ItemTableViewCell.swift */; };
 		51DDC09A201A9E7B005FD754 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51DDC098201A9E7B005FD754 /* Montserrat-Regular.ttf */; };
@@ -49,6 +52,10 @@
 /* Begin PBXFileReference section */
 		036C52AB8B3666F4D9B797E9 /* Pods-UCSCForumUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSCForumUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UCSCForumUITests/Pods-UCSCForumUITests.release.xcconfig"; sourceTree = "<group>"; };
 		09B62651F87DE88945E5BD39 /* Pods-UCSCForumTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSCForumTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UCSCForumTests/Pods-UCSCForumTests.release.xcconfig"; sourceTree = "<group>"; };
+		5111750C2024280D009E0EEF /* SignUpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
+		5111750E202431A9009E0EEF /* styleTextFied.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = styleTextFied.swift; sourceTree = "<group>"; };
+		51117510202447A3009E0EEF /* loginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginTableViewController.swift; sourceTree = "<group>"; };
+		511175122024E5F2009E0EEF /* VerifyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyTableViewController.swift; sourceTree = "<group>"; };
 		514FBE172013AFCD007F865E /* UCSCForum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCSCForum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		514FBE1A2013AFCD007F865E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		514FBE1C2013AFCD007F865E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +71,6 @@
 		514FBE3E2013AFCD007F865E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		519136882017CBD300756B00 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		5191368C2017E9CD00756B00 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		51B2D872201FD37500A90917 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 		51DDC0932017EE44005FD754 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		51DDC095201959A2005FD754 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		51DDC098201A9E7B005FD754 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "UCSCForum/Montserrat-Regular.ttf"; sourceTree = SOURCE_ROOT; };
@@ -170,7 +176,10 @@
 				514FBE1C2013AFCD007F865E /* FirstViewController.swift */,
 				5191368C2017E9CD00756B00 /* ThirdViewController.swift */,
 				51DDC0932017EE44005FD754 /* Signup.swift */,
-				51B2D872201FD37500A90917 /* SignUpTableViewController.swift */,
+				5111750C2024280D009E0EEF /* SignUpTableViewController.swift */,
+				5111750E202431A9009E0EEF /* styleTextFied.swift */,
+				51117510202447A3009E0EEF /* loginTableViewController.swift */,
+				511175122024E5F2009E0EEF /* VerifyTableViewController.swift */,
 			);
 			path = UIViewControllers;
 			sourceTree = "<group>";
@@ -522,10 +531,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				514FBE1B2013AFCD007F865E /* AppDelegate.swift in Sources */,
+				51117511202447A3009E0EEF /* loginTableViewController.swift in Sources */,
 				51DDC0942017EE44005FD754 /* Signup.swift in Sources */,
 				514FBE1D2013AFCD007F865E /* FirstViewController.swift in Sources */,
+				511175132024E5F2009E0EEF /* VerifyTableViewController.swift in Sources */,
 				5191368D2017E9CD00756B00 /* ThirdViewController.swift in Sources */,
-				51B2D873201FD37500A90917 /* SignUpTableViewController.swift in Sources */,
+				5111750F202431A9009E0EEF /* styleTextFied.swift in Sources */,
+				5111750D2024280D009E0EEF /* SignUpTableViewController.swift in Sources */,
 				51DDC096201959A2005FD754 /* ItemTableViewCell.swift in Sources */,
 				519136892017CBD300756B00 /* TableViewController.swift in Sources */,
 			);

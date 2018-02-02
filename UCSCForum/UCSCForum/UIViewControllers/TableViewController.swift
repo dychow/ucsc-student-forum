@@ -11,23 +11,33 @@ import Firebase
 
 class TableViewController: UITableViewController {
 
-
+    var flag = 0;
     @IBOutlet var tableview: UITableView!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     
+    override func viewDidAppear(_ animated: Bool) {
+        if flag == 0{self.performSegue(withIdentifier: "loginSegue", sender: self)}
+    }
     override func viewWillAppear(_ animated: Bool) {
+        print("before")
+        self.performSegue(withIdentifier: "loginSegue", sender: self)
+        print("afer")
         checkLogin()
         tableview.reloadData()
        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         checkLogin()
-    profileImage.layer.masksToBounds = true
+        profileImage.layer.masksToBounds = true
         profileImage.layer.borderWidth = 1.5
+        
+        
+        
         
         profileImage.layer.borderColor = UIColor.white.cgColor
         
@@ -66,8 +76,10 @@ class TableViewController: UITableViewController {
     func checkLogin(){
         if Auth.auth().currentUser != nil{
             print("user logged in")
+            flag = 1
             setupLogin()
         }else{
+            flag = 0
             setupDefault()
         }
     }
@@ -80,11 +92,9 @@ class TableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if Auth.auth().currentUser != nil{
+        
             return 3
-        }else{
-            return 2
-        }
+        
    }
 
    // override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

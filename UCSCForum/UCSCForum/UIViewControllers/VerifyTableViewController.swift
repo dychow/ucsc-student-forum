@@ -1,44 +1,32 @@
 //
-//  Signup.swift
+//  VerifyTableViewController.swift
 //  UCSCForum
 //
-//  Created by MacDouble on 1/23/18.
+//  Created by MacDouble on 2/2/18.
 //  Copyright © 2018 MacDouble. All rights reserved.
 //
 
 import UIKit
-import Firebase
 
-class Signup: UITableViewController {
+class VerifyTableViewController: UITableViewController {
 
+    @IBOutlet weak var verifyTf: UITextField!
+    @IBOutlet weak var completeButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        setupBorder(view: verifyTf)
+        setupBorder(view: completeButton)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    @IBOutlet weak var usernameTf: UITextField!
-    @IBOutlet weak var passwordTf: UITextField!
-    
-    @IBAction func loginButton(_ sender: Any) {
-        
-        if let username = usernameTf.text, let password = passwordTf.text{
-            Auth.auth().signIn(withEmail: username, password: password, completion: {(user, error) in
-                if let firebaseError = error{
-                print(firebaseError.localizedDescription)
-                    return
-            }
-         self.dismiss(animated: true, completion: nil)
-                
-            })
-        }
 
+    @IBAction func verifyButton(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "donesignupSegue", sender: self)
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,15 +34,21 @@ class Signup: UITableViewController {
 
     // MARK: - Table view data source
 
-   // override func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        //return 0
-  //  //}
+        return 1
+    }
 
-   // override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-      //  return 0
-   // }
+        return 1
+    }
+    func setupBorder(view: UIView){
+        view.layer.cornerRadius = 9
+        view.layer.borderColor = UIColor.init(red: 200/255, green: 200/255, blue: 200/255, alpha: 0.4).cgColor
+        view.layer.borderWidth = 1
+        
+    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

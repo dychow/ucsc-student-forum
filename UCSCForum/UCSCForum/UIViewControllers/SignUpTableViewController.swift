@@ -32,7 +32,6 @@ class SignUpTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-<<<<<<< HEAD
     
     @IBAction func proceedButton(_ sender: Any) {
         if let username = usernameTf.text{
@@ -52,19 +51,6 @@ class SignUpTableViewController: UITableViewController {
         if let password = passwordTf.text{
             if password.count <= 8{
                 "Password requires a minimum of 8 characters' length"
-=======
-    @IBAction func doneButton(_ sender: Any) {
-        if let validEmail = usernameTf.text{
-            if !validEmail.hasSuffix("@ucsc.edu") {
-                errorLabel.text = "Not a valid ucsc.edu email"
-                return
-            }
-        }
-
-        if let confirm = confirmTf.text{
-            if confirm != passwordTf.text{
-                errorLabel.text = "Confirm password doesn't match"
->>>>>>> 86e8e1ed30ed7c81b636a529fe955280f13dca8f
                 return
             }
         }else{

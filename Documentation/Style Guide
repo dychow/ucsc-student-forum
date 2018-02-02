@@ -1,0 +1,17 @@
+Style Guide
+
+Swift Styling
+
+view controller swift files have to end with xxxxViewController.swift
+TableViewCell swift files have to end with  xxxTableViewCell.swift
+xxxxController.swift should only be in xxxControllers folder. (ViewControllers swift files should only appear in ViewController folder)
+References for UI’s should end up with :
+label -> xxxLabel
+Button -> xxxButton
+Button action -> xxxButtonAction
+Textfield -> xxxTf
+Textfiled action -> xxxTfAction
+….
+Layout style is attached on GitHub repo
+Images in Assets should always end up with xxx@1x, xxx@2x, xxx@3x …
+All functions should have comments on them

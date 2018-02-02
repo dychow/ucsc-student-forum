@@ -1,0 +1,6 @@
+framework module Pods_UCSCForumUITests {
+  umbrella header "Pods-UCSCForumUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -37,16 +37,53 @@ class loginTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     @IBAction func loginButton(_ sender: Any) {
-        if let username = usernameTf.text, let password = passwordTf.text{
-            Auth.auth().signIn(withEmail: username, password: password, completion: {(user, error) in
-                if let firebaseError = error{
-                    self.warningLabel.text = (firebaseError.localizedDescription)
-                    return
-                }
-                self.dismiss(animated: true, completion: nil)
+        
+        var ref: DatabaseReference!
+        
+        let username = usernameTf.text
+        let endIndex = username?.index((username?.endIndex)!, offsetBy: -9)
+        let truncated = username?.substring(to: endIndex!)
+        
+        ref = Database.database().reference().child("verified").child(truncated!)
+        
+        ref.observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            if !snapshot.exists() {
+                return
+            }
+            let value = snapshot.value as? NSNumber
+            let verified = value as! Int
+            
+            if(verified == 0){
                 
-            })
-        }
+                print("email was not verified")
+                return
+                
+            } else {
+                
+                if let username = self.usernameTf.text, let password = self.passwordTf.text{
+                    Auth.auth().signIn(withEmail: username, password: password, completion: {(user, error) in
+                        if let firebaseError = error{
+                            self.warningLabel.text = (firebaseError.localizedDescription)
+                            return
+                        }
+                        self.dismiss(animated: true, completion: nil)
+                        
+                    })
+                }
+            }
+        })
+        
+//        if let username = usernameTf.text, let password = passwordTf.text{
+//            Auth.auth().signIn(withEmail: username, password: password, completion: {(user, error) in
+//                if let firebaseError = error{
+//                    self.warningLabel.text = (firebaseError.localizedDescription)
+//                    return
+//                }
+//                self.dismiss(animated: true, completion: nil)
+//
+//            })
+//        }
     }
     override func viewWillAppear(_ animated: Bool) {
         

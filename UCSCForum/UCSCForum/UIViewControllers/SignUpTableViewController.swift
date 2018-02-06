@@ -35,16 +35,16 @@ class SignUpTableViewController: UITableViewController {
     
     @IBAction func proceedButton(_ sender: Any) {
         if let username = usernameTf.text{
-            let index = username.index(username.endIndex, offsetBy: -3)
+            let index = username.index(username.endIndex, offsetBy: -9)
             
             let range = index...
             
-            if username[range] == "edu"{
-                warningLabel.text = "Please enter your student email"
+            if username[range] != "@ucsc.edu"{
+                warningLabel.text = "Please enter your UCSC student email"
                 return
             }
         }else{
-            warningLabel.text = "Please enter your student email"
+            warningLabel.text = "Please enter your UCSC student email"
             return
         }
         
@@ -68,11 +68,7 @@ class SignUpTableViewController: UITableViewController {
             warningLabel.text = "Please confirm your password"
             return
         }
-        //verification email should be sent here
         
-        self.performSegue(withIdentifier: "verifySegue", sender: self)
-        
-        /*
         if let username = usernameTf.text, let password = passwordTf.text{
             Auth.auth().createUser(withEmail: username, password: password, completion: {(user, error) in
                 if let firebaseError = error{
@@ -81,7 +77,29 @@ class SignUpTableViewController: UITableViewController {
                 }
                 
             })
-        }*/
+        }
+        let username = usernameTf.text
+        let endIndex = username?.index((username?.endIndex)!, offsetBy: -9)
+        let truncated = username?.substring(to: endIndex!)
+        
+        var ref: DatabaseReference!
+        //let uid = Auth.auth().currentUser?.uid
+        ref = Database.database().reference().child("verified")
+        ref.child(truncated!).setValue(0)
+        
+        ref = Database.database().reference().child("verified").child(truncated!)
+        
+        ref.observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            if !snapshot.exists() {
+                return
+            }
+            let value = snapshot.value as? NSNumber
+            let verified = value as! Int
+        })
+        //verification email should be sent here
+        
+        self.performSegue(withIdentifier: "verifySegue", sender: self)
     }
     @objc func dissmissKeyboard(){
         

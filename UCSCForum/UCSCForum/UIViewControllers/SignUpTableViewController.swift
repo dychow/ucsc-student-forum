@@ -38,7 +38,7 @@ class SignUpTableViewController: UITableViewController {
             let index = username.index(username.endIndex, offsetBy: -9)
             
             let range = index...
-            
+                        
             if username[range] != "@ucsc.edu"{
                 warningLabel.text = "Please enter your UCSC student email"
                 return
@@ -50,7 +50,7 @@ class SignUpTableViewController: UITableViewController {
         
         if let password = passwordTf.text{
             if password.count <= 8{
-                "Password requires a minimum of 8 characters' length"
+                warningLabel.text = "Password requires a minimum of 8 characters' length"
                 return
             }
         }else{
@@ -60,7 +60,7 @@ class SignUpTableViewController: UITableViewController {
         
         if let confirm = confirmTf.text{
             if passwordTf.text != confirm{
-                "Please re-confirm your password"
+                warningLabel.text = "Please re-confirm your password"
                 return
             }
             
@@ -77,6 +77,11 @@ class SignUpTableViewController: UITableViewController {
                 }
                 
             })
+            // testing stuff from here on out
+            
+            //let endIndex = username.index((username.endIndex), offsetBy: -9)
+            //let truncated = username.substring(to: endIndex)
+            
         }
         let username = usernameTf.text
         let endIndex = username?.index((username?.endIndex)!, offsetBy: -9)
@@ -97,6 +102,8 @@ class SignUpTableViewController: UITableViewController {
             let value = snapshot.value as? NSNumber
             let verified = value as! Int
         })
+        
+        
         //verification email should be sent here
         
         self.performSegue(withIdentifier: "verifySegue", sender: self)

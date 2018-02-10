@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import Firebase
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -49,9 +50,31 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func sendToDatabase(_ sender: Any) {
         var ref: DatabaseReference!
-        ref = Database.database().reference().child("test").child("testvalue")
+        ref = Database.database().reference().child("market")
         
-        ref.setValue(453)
+        ref.observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            
+            for child in snapshot.children {
+                for grandchild in (child as AnyObject).children {
+                    let snap = grandchild as! DataSnapshot
+                    let key = snap.key
+                    let value = snap.value
+                    switch key {
+                    case "itemName":
+                        print("post name = \(value!)")
+                    case "itemAddress":
+                        print("address = \(value!)")
+                    case "itemCategory":
+                        print("category = \(value!)")
+                    case "itemDelivery":
+                        print("delivery = \(value!)")
+                    default:
+                        print("detail = \(value!)")
+                    }
+                }
+            }
+        })
 
          // ref.observeSingleEvent(of: .value, with: {
          //   (snapshot) in

@@ -10,6 +10,10 @@ import UIKit
 
 class ItemTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var itemNameTextField: UILabel!
+    
+    @IBOutlet weak var itemDetailTextField: UILabel!
+    
     @IBOutlet weak var profileImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -11,6 +11,8 @@ import FirebaseDatabase
 import Firebase
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var table: UITableView!
     
     public class Node {
         private var itemAddress: String
@@ -141,40 +143,81 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        let itemNameObject = UserDefaults.standard.object(forKey: "itemName")
+        
+        if let itemName = itemNameObject as? [String] {
+            
+            return itemName.count
+            
+        }
         return 1
+
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 5;
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 4;
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 216
-    }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let itemCell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
-       
-       // var cellContenView = UIView(frame: CGRect(x: 10, y: 0, width: self.view.bounds.width-20, height: 236))
         
-            //itemCell.backgroundColor = UIColor.clear
+        let itemCell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemTableViewCell
         
-        //cellContenView.layer.m//asksToBounds=false
+        let itemNameObject = UserDefaults.standard.object(forKey: "itemName")
         
-            //cellContenView.backgroundColor = UIColor.white
-        //cellContenView.layer.cornerRadius = 5.0
+        let itemDetailObject = UserDefaults.standard.object(forKey: "itemDetail")
         
-        //itemCell.contentView.addSubview(cellContenView)
+        if let itemName = itemNameObject as? [String] {
+            
+            itemCell.itemNameTextField.text = itemName[indexPath.row]
+            
+        }
+        
+        if let itemDetail = itemDetailObject as? [String] {
+            
+            itemCell.itemDetailTextField.text = itemDetail[indexPath.row]
+            
+        }
+        
         itemCell.layer.borderWidth = 9
         itemCell.layer.borderColor = UIColor.clear.cgColor
         itemCell.layer.cornerRadius = 7
 
         return itemCell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let itemNameObject = UserDefaults.standard.object(forKey: "itemName")
+        
+        let itemDetailObject = UserDefaults.standard.object(forKey: "itemDetail")
+        
+        let itemCell = tableView.cellForRow(at: indexPath) as! ItemTableViewCell
+        
+        print (itemCell.itemDetailTextField.text!)
+        
+        print (itemCell.itemNameTextField.text!)
+        
+        if var itemName = itemNameObject as? [String] {
+            
+            itemName.remove(at: indexPath.row)
+            UserDefaults.standard.set(itemName, forKey: "itemName")
+            
+        }
+        
+        if var itemDetail = itemDetailObject as? [String] {
+            
+            itemDetail.remove(at: indexPath.row)
+            UserDefaults.standard.set(itemDetail, forKey: "itemDetail")
+            
+        }
+        
+        var ref: DatabaseReference!
+        
+        ref = Database.database().reference().child("market").child(itemCell.itemNameTextField.text!)
+        
+        ref.removeValue()
+        
+        table.reloadData()
+        
+    }
+
     
     @IBAction func sendToDatabase(_ sender: Any) {
         var ref: DatabaseReference!
@@ -206,24 +249,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
             list.printList()
         })
-        
-
-         // ref.observeSingleEvent(of: .value, with: {
-         //   (snapshot) in
-            
-         //   if !snapshot.exists() {return}
-            
-          //  let value = snapshot.value as? NSString
-            
-           // let string = value as! String
-            
-         //   ref.setValue(Int(string)!+1)
-
-       // })
 
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        table.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -231,7 +262,15 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.backgroundColor = UIColor.init(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
         
     }
-
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 4;
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 216
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

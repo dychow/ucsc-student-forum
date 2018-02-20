@@ -36,7 +36,7 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate {
             
         } else {
         
-            if  !(addressObject as! String == "enter address" && !deliveryStatus.isOn) {
+            if  !(addressObject as! String == "" && !deliveryStatus.isOn) {
                 
                 let itemNameObject = UserDefaults.standard.object(forKey: "itemName")
                 
@@ -97,8 +97,8 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate {
                 //Update local value
                 UserDefaults.standard.set(itemName, forKey:"itemName")
                 UserDefaults.standard.set(itemDetail, forKey:"itemDetail")
-                UserDefaults.standard.set("select category", forKey:"categorySelected")
-                UserDefaults.standard.set("enter address", forKey:"itemAddress")
+                UserDefaults.standard.set("", forKey:"categorySelected")
+                UserDefaults.standard.set("", forKey:"itemAddress")
                 navigationController?.popToRootViewController(animated: true)
                 
             } else {
@@ -109,8 +109,8 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         
-        newPostTable.reloadData()
         super.viewDidLoad()
+        newPostTable.reloadData()
         
     }
     
@@ -129,12 +129,16 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate {
         
         let categoryObject = UserDefaults.standard.object(forKey: "categorySelected")
         if let category = categoryObject as? String {
-            Category.detailTextLabel?.text = category
+            if category != "" {
+                Category.detailTextLabel?.text = category
+            }
         }
         
         let addressObject = UserDefaults.standard.object(forKey: "itemAddress")
         if let address = addressObject as? String {
-            Address.detailTextLabel?.text = address
+            if address != "" {
+                Address.detailTextLabel?.text = address
+            }
         }
         
         

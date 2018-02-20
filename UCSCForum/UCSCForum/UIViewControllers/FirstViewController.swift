@@ -9,10 +9,14 @@
 import UIKit
 import FirebaseDatabase
 import Firebase
+import Foundation
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var table: UITableView!
+    
+    var itemCount: Int = 0;
+    var list = LinkedList()
     
     public class Node {
         private var itemAddress: String
@@ -127,6 +131,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             node.next = nil
         }
         
+        
         public func printList() {
             var iterator = first
             while iterator != nil {
@@ -140,55 +145,60 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        let itemNameObject = UserDefaults.standard.object(forKey: "itemName")
-        
-        if let itemName = itemNameObject as? [String] {
-            
-            return itemName.count
-            
+        public func clearList() {
+            head = nil
+            tail = nil
+            count = 0
         }
-        return 1
-
+        
+        public func getCount() -> Int? {
+            var iterator = first
+            var itemCount: Int = 0
+            while iterator != nil {
+                itemCount += 1
+                iterator = iterator?.next
+            }
+            return itemCount
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        //Cell structure
+
         let itemCell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemTableViewCell
         
-        let itemNameObject = UserDefaults.standard.object(forKey: "itemName")
+        var currentItem = list.first
         
-        let itemDetailObject = UserDefaults.standard.object(forKey: "itemDetail")
+        var i = 1
         
-        if let itemName = itemNameObject as? [String] {
-            
-            itemCell.itemNameTextField.text = itemName[indexPath.row]
-            
+        while i <= indexPath.row {
+            currentItem = currentItem?.next
+            i += 1
         }
         
-        if let itemDetail = itemDetailObject as? [String] {
-            
-            itemCell.itemDetailTextField.text = itemDetail[indexPath.row]
-            
-        }
+        itemCell.itemNameTextField.text = currentItem?.getName
+        
+        itemCell.itemDetailTextField.text = currentItem?.getDetail
         
         itemCell.layer.borderWidth = 9
         itemCell.layer.borderColor = UIColor.clear.cgColor
         itemCell.layer.cornerRadius = 7
-
+        
         return itemCell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //Number of cells
+        return itemCount
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
+        let itemCell = tableView.cellForRow(at: indexPath) as! ItemTableViewCell
+        
         let itemNameObject = UserDefaults.standard.object(forKey: "itemName")
         
         let itemDetailObject = UserDefaults.standard.object(forKey: "itemDetail")
-        
-        let itemCell = tableView.cellForRow(at: indexPath) as! ItemTableViewCell
         
         print (itemCell.itemDetailTextField.text!)
         
@@ -214,18 +224,26 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         ref.removeValue()
         
-        table.reloadData()
+        var timer = Timer()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector((reloadTable)), userInfo: nil, repeats: false)
         
     }
 
     
     @IBAction func sendToDatabase(_ sender: Any) {
+        reloadTable()
+        table.reloadData()
+    }
+    
+    @objc public func reloadTable() {
         var ref: DatabaseReference!
         ref = Database.database().reference().child("market")
         
+        
+        
         ref.observeSingleEvent(of: .value, with: {
             (snapshot) in
-            let list = LinkedList()
+            self.list.clearList()
             for child in snapshot.children {
                 let node = Node()
                 for grandchild in (child as AnyObject).children {
@@ -245,22 +263,28 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         node.setDetail(detail: value! as! String)
                     }
                 }
-                list.append(node: node)
+                self.list.append(node: node)
             }
-            list.printList()
+            
+            self.itemCount = self.list.getCount()!
+            
+            self.list.printList()
         })
-
+        table.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        table.reloadData()
+        reloadTable()
+        var timer = Timer()
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector((reloadTable)), userInfo: nil, repeats: false)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var timer = Timer()
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector((reloadTable)), userInfo: nil, repeats: false)
         // Do any additional setup after loading the view, typically from a nib.
         tableView.backgroundColor = UIColor.init(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
-        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

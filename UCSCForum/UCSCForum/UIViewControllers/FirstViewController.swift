@@ -25,6 +25,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         private var itemDelivery: Bool
         private var itemDetail: String
         private var itemName: String
+        private var comments: [String]
+        private var commenters: [String]
         weak var prev: Node? = nil
         var next: Node? = nil
         
@@ -35,6 +37,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.itemDelivery = false
             self.itemDetail = ""
             self.itemName = ""
+            self.comments = []
+            self.commenters = []
         }
         
         public var getPoster: String {
@@ -61,6 +65,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return self.itemName
         }
         
+        public var getComment: [String] {
+            return self.comments
+        }
+        
+        public var getCommenters: [String] {
+            return self.commenters
+        }
+        
         public func setPoster(person: String){
             self.posterName = person
         }
@@ -83,6 +95,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         public func setName(name: String){
             self.itemName = name
+        }
+        
+        public func addComment(comment: String){
+            self.comments.append(comment)
+        }
+        
+        public func addCommenter(commenter: String){
+            self.commenters.append(commenter)
         }
         
     }

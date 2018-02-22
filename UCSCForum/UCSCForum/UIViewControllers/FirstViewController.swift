@@ -12,13 +12,14 @@ import Firebase
 import Foundation
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+        
     @IBOutlet weak var table: UITableView!
     
     var itemCount: Int = 0;
     var list = LinkedList()
     
     public class Node {
+        private var posterName: String
         private var itemAddress: String
         private var itemCategory: String
         private var itemDelivery: Bool
@@ -28,11 +29,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         var next: Node? = nil
         
         public init() {
+            self.posterName = ""
             self.itemAddress = ""
             self.itemCategory = ""
             self.itemDelivery = false
             self.itemDetail = ""
             self.itemName = ""
+        }
+        
+        public var getPoster: String {
+            return self.posterName
         }
         
         public var getAddress: String {
@@ -53,6 +59,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         public var getName: String {
             return self.itemName
+        }
+        
+        public func setPoster(person: String){
+            self.posterName = person
         }
         
         public func setAddress(address: String){
@@ -135,6 +145,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         public func printList() {
             var iterator = first
             while iterator != nil {
+                print(iterator!.getPoster)
                 print(iterator!.getName)
                 print(iterator!.getAddress)
                 print(iterator!.getCategory)
@@ -175,6 +186,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             currentItem = currentItem?.next
             i += 1
         }
+        
+        itemCell.personName.text = currentItem?.getPoster
         
         itemCell.itemNameTextField.text = currentItem?.getName
         
@@ -251,6 +264,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     let key = snap.key
                     let value = snap.value
                     switch key {
+                    case "posterName":
+                        node.setPoster(person: value! as! String)
                     case "itemName":
                         node.setName(name: value! as! String)
                     case "itemAddress":

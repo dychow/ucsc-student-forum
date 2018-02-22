@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 class NewPostTableViewController: UITableViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var itemNameTextField: UITextField!
     
     @IBOutlet weak var itemDetailTextField: UITextField!
@@ -90,6 +90,9 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate {
                 if let category = categoryObject as? String {
                     ref.child(itemNameTextField.text!).child("itemCategory").setValue(category)
                 }
+                
+                //Set Poster's Name to Firebase
+                ref.child(itemNameTextField.text!).child("posterName").setValue("Roy Huang")
                 
                 //Set Delivery to Firebase
                 ref.child(itemNameTextField.text!).child("itemDelivery").setValue(deliveryStatus.isOn)

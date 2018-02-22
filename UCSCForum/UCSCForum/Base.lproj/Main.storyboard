@@ -103,7 +103,9 @@
                                         <connections>
                                             <outlet property="itemDetailTextField" destination="lJe-sk-cCT" id="rnu-98-MlJ"/>
                                             <outlet property="itemNameTextField" destination="E8b-We-PZs" id="syo-Pb-eL7"/>
+                                            <outlet property="personName" destination="1X6-IS-Bk5" id="BYg-sV-CjQ"/>
                                             <outlet property="profileImage" destination="7DH-ft-s4J" id="mR2-KW-s9E"/>
+                                            <segue destination="hGd-vk-vRy" kind="show" id="XCQ-yM-gNc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1279,6 +1281,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3B-LC-hyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="1499"/>
+        </scene>
+        <!--Comment-->
+        <scene sceneID="ABt-gD-XrQ">
+            <objects>
+                <viewController title="Comment" id="hGd-vk-vRy" customClass="CommentViewController" customModule="UCSCForum" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MAh-e6-AJO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uGL-vc-JCW">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="14W-dm-1zu"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Comment" id="PVd-vn-5UX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cEh-K6-ASO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1827.5362318840582" y="-1432.3369565217392"/>
         </scene>
     </scenes>
     <resources>

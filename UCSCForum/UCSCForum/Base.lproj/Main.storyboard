@@ -105,7 +105,7 @@
                                             <outlet property="itemNameTextField" destination="E8b-We-PZs" id="syo-Pb-eL7"/>
                                             <outlet property="personName" destination="1X6-IS-Bk5" id="BYg-sV-CjQ"/>
                                             <outlet property="profileImage" destination="7DH-ft-s4J" id="mR2-KW-s9E"/>
-                                            <segue destination="hGd-vk-vRy" kind="show" id="XCQ-yM-gNc"/>
+                                            <segue destination="hGd-vk-vRy" kind="show" identifier="comment" id="XCQ-yM-gNc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1294,12 +1294,30 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gM8-Jy-VyO">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gM8-Jy-VyO" id="Ad4-VY-Tp8">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="14W-dm-1zu"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Comment" id="PVd-vn-5UX"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Comment" id="PVd-vn-5UX">
+                        <barButtonItem key="rightBarButtonItem" title="Key" id="i72-dh-aOl">
+                            <connections>
+                                <action selector="displayComments:" destination="hGd-vk-vRy" id="0fC-F6-cVl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEh-K6-ASO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

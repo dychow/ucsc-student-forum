@@ -15,7 +15,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     @IBOutlet weak var table: UITableView!
     
-    var itemCount: Int = 0;
+    var selected: Int = 0
+    
+    var itemCount: Int = 0
     var list = LinkedList()
     
     public class Node {
@@ -25,8 +27,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         private var itemDelivery: Bool
         private var itemDetail: String
         private var itemName: String
-        private var comments: [String]
-        private var commenters: [String]
+        private var itemKey: String
         weak var prev: Node? = nil
         var next: Node? = nil
         
@@ -37,8 +38,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.itemDelivery = false
             self.itemDetail = ""
             self.itemName = ""
-            self.comments = []
-            self.commenters = []
+            self.itemKey = ""
         }
         
         public var getPoster: String {
@@ -65,12 +65,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return self.itemName
         }
         
-        public var getComment: [String] {
-            return self.comments
-        }
-        
-        public var getCommenters: [String] {
-            return self.commenters
+        public var getKey: String {
+            return self.itemKey
         }
         
         public func setPoster(person: String){
@@ -97,12 +93,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.itemName = name
         }
         
-        public func addComment(comment: String){
-            self.comments.append(comment)
-        }
-        
-        public func addCommenter(commenter: String){
-            self.commenters.append(commenter)
+        public func setKey(key: String){
+            self.itemKey = key
         }
         
     }
@@ -171,6 +163,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 print(iterator!.getCategory)
                 print(iterator!.getDelivery)
                 print(iterator!.getDetail)
+                print(iterator!.getKey)
                 
                 iterator = iterator?.next
             }
@@ -190,6 +183,24 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 iterator = iterator?.next
             }
             return itemCount
+        }
+    }
+    
+    // sends item key of item pressed to comments page
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let data: String?
+        
+        var itemIndex = 0
+        var itemNode: Node = list.first!
+        while(itemIndex < selected){
+            itemIndex += 1
+            itemNode = itemNode.next!
+        }
+        data = itemNode.getKey
+        
+        
+        if let commentViewController = segue.destination as? CommentViewController {
+            commentViewController.data = data
         }
     }
 
@@ -223,6 +234,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //Number of cells
         return itemCount
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        selected = indexPath.row
+        print("row: \(indexPath.row)")
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -279,6 +295,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.list.clearList()
             for child in snapshot.children {
                 let node = Node()
+                let keysnap = child as! DataSnapshot
+                node.setKey(key: keysnap.key)
                 for grandchild in (child as AnyObject).children {
                     let snap = grandchild as! DataSnapshot
                     let key = snap.key
@@ -294,6 +312,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         node.setCategory(category: value! as! String)
                     case "itemDelivery":
                         node.setDelivery(delivery: value! as! Bool)
+                    case "comments":
+                        print("do nothing")
                     default:
                         node.setDetail(detail: value! as! String)
                     }

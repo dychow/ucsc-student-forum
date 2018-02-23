@@ -94,6 +94,11 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate {
                 //Set Poster's Name to Firebase
                 ref.child(itemNameTextField.text!).child("posterName").setValue("Roy Huang")
                 
+                //Create comments section in Firebase
+                ref.child(itemNameTextField.text!).child("comments").child("0").child("comment").setValue("Example Comment")
+                
+                ref.child(itemNameTextField.text!).child("comments").child("0").child("name").setValue("Example Username")
+                
                 //Set Delivery to Firebase
                 ref.child(itemNameTextField.text!).child("itemDelivery").setValue(deliveryStatus.isOn)
                 

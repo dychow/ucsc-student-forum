@@ -203,7 +203,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             commentViewController.data = data
         }
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //Cell structure
 
@@ -211,9 +211,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         var currentItem = list.first
         
-        var i = 1
+        var i = 0
         
-        while i <= indexPath.row {
+        while i < indexPath.row {
             currentItem = currentItem?.next
             i += 1
         }
@@ -238,6 +238,18 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         selected = indexPath.row
+        var currentItem = list.first
+        
+        var i = 0
+        
+        while i < indexPath.row {
+            currentItem = currentItem?.next
+            i += 1
+        }
+        
+        UserDefaults.standard.set(currentItem?.getName, forKey: "selectedNodeName")
+        //UserDefaults.standard.set(currentItem, forKey: "selectedNode")
+        
         print("row: \(indexPath.row)")
     }
     

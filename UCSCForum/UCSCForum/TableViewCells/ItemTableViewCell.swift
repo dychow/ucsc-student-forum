@@ -20,10 +20,13 @@ class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var itemDetailTextField: UILabel!
     
     @IBOutlet weak var profileImage: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         profileImage.layer.masksToBounds = true
+        
         profileImage.layer.borderWidth = 0.5
         
         profileImage.layer.borderColor = UIColor.white.cgColor

@@ -8,11 +8,11 @@
 import UIKit
 import Firebase
 
-class NewPostTableViewController: UITableViewController, UITextFieldDelegate {
+class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate{
     
     @IBOutlet weak var itemNameTextField: UITextField!
-    
-    @IBOutlet weak var itemDetailTextField: UITextField!
+
+    @IBOutlet weak var itemDetailTextField: UITextView!
     
     @IBOutlet var newPostTable: UITableView!
     
@@ -23,13 +23,13 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var deliveryStatus: UISwitch!
     
     @IBAction func postButton(_ sender: Any) {
-        
+
         var ref: DatabaseReference!
         
         ref = Database.database().reference().child("market")
         
         let addressObject = UserDefaults.standard.object(forKey: "itemAddress")
-        
+    
         if  itemNameTextField.text!.isEmpty {
             
             itemNameTextField.placeholder = "Please Enter the Name of the Item"
@@ -114,11 +114,43 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate {
             }
         }
     }
+
+    func textViewDidBeginEditing(_ textView: UITextView)
+    {
+        print ("Began")
+        if (itemDetailTextField.text == "Say something about the item...")
+        {
+            itemDetailTextField.text = ""
+            itemDetailTextField.textColor = .black
+        }
+        textView.becomeFirstResponder() //Optional
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView)
+    {
+        print ("Ended")
+        if (itemDetailTextField.text.count == 0)
+        {
+            itemDetailTextField.text = "Say something about the item..."
+            itemDetailTextField.textColor = .lightGray
+        }
+        textView.resignFirstResponder()
+    }
     
     override func viewDidLoad() {
-        
+
         super.viewDidLoad()
         newPostTable.reloadData()
+        
+        if (itemDetailTextField.text.count == 0)
+        {
+            itemDetailTextField.text = "Say something about the item..."
+            itemDetailTextField.textColor = .lightGray
+        }
+        
+        itemDetailTextField.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
+        itemDetailTextField.layer.borderWidth = 1.0
+        itemDetailTextField.layer.cornerRadius = 5
         
     }
     

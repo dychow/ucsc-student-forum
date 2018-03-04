@@ -16,7 +16,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var table: UITableView!
     
     var selected: Int = 0
-    
+    var selectedItem: Node?
     var itemCount: Int = 0
     var list = LinkedList()
     
@@ -28,6 +28,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         private var itemDetail: String
         private var itemName: String
         private var itemKey: String
+        private var commentCount: Int
         weak var prev: Node? = nil
         var next: Node? = nil
         
@@ -39,6 +40,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.itemDetail = ""
             self.itemName = ""
             self.itemKey = ""
+            self.commentCount = 0
         }
         
         public var getPoster: String {
@@ -69,6 +71,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return self.itemKey
         }
         
+        public var getCommentCount : Int {
+            return self.commentCount
+        }
+        
         public func setPoster(person: String){
             self.posterName = person
         }
@@ -95,6 +101,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         public func setKey(key: String){
             self.itemKey = key
+        }
+        
+        public func addCommentCount() {
+            self.commentCount = self.commentCount + 1
         }
         
     }
@@ -198,9 +208,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         data = itemNode.getKey
         
+        print("the name in prepare print is \(selectedItem?.getName)")
         
         if let commentViewController = segue.destination as? CommentViewController {
             commentViewController.data = data
+        }
+        
+        if let detailTableViewController = segue.destination as? DetailTableViewController {
+            detailTableViewController.dataNode = selectedItem
         }
     }
     
@@ -247,10 +262,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             i += 1
         }
         
+        print("name in didSelectRowAt is \(String(describing: currentItem?.getName))")
+        selectedItem = currentItem
         UserDefaults.standard.set(currentItem?.getName, forKey: "selectedNodeName")
         //UserDefaults.standard.set(currentItem, forKey: "selectedNode")
         
         print("row: \(indexPath.row)")
+        
+        performSegue(withIdentifier: "DetailSegue", sender: FirstViewController())
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -325,11 +344,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     case "itemDelivery":
                         node.setDelivery(delivery: value! as! Bool)
                     case "comments":
+                        for _ in (grandchild as
+                            AnyObject).children{
+                                node.addCommentCount()
+                        }
                         print("do nothing")
                     default:
                         node.setDetail(detail: value! as! String)
                     }
                 }
+                print("\(node.getName) has \(node.getCommentCount) comments.")
                 self.list.append(node: node)
             }
             
@@ -349,13 +373,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         var timer = Timer()
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector((reloadTable)), userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector((reloadTable)), userInfo: nil, repeats: false)
         // Do any additional setup after loading the view, typically from a nib.
         tableView.backgroundColor = UIColor.init(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 4;
+        return 4
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -11,7 +11,19 @@ import FirebaseDatabase
 import Firebase
 import Foundation
 
-class CommentViewController: UIViewController {
+class CommentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var table: UITableView!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let itemCell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemTableViewCell
+        return itemCell
+    }
+    
     
     var data: String? = ""
     var list = LinkedList()
@@ -134,9 +146,6 @@ class CommentViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var table: UITableView!
-
-    
 // Prints Comments, does not display yet
     @IBAction func displayComments(_ sender: Any) {
         var ref: DatabaseReference!
@@ -173,6 +182,7 @@ class CommentViewController: UIViewController {
     //comments don't load on view load, press button to load
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         print("comments page: \(String(describing: data))")
 
         // Do any additional setup after loading the view.

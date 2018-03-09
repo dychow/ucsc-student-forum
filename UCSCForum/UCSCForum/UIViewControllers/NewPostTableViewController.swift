@@ -63,6 +63,7 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
                 //Set itemDetail to Firebase
                 if let tempItemDetail = itemDetailObject as? [String] {
                     
+                    
                     itemDetail = tempItemDetail
                     
                     itemDetail.append(itemDetailTextField.text!)
@@ -114,7 +115,8 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
             }
         }
     }
-
+    
+    //----------------------------------Placeholder for UITextView----------------------------------
     func textViewDidBeginEditing(_ textView: UITextView)
     {
         print ("Began")
@@ -136,24 +138,28 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
         }
         textView.resignFirstResponder()
     }
+    //----------------------------------End of Placeholder for UITextView----------------------------------
     
     override func viewDidLoad() {
 
         super.viewDidLoad()
         newPostTable.reloadData()
         
+        //Placeholder for UITextView
         if (itemDetailTextField.text.count == 0)
         {
             itemDetailTextField.text = "Say something about the item..."
             itemDetailTextField.textColor = .lightGray
         }
         
+        //Set the style of UITextView
         itemDetailTextField.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
         itemDetailTextField.layer.borderWidth = 1.0
         itemDetailTextField.layer.cornerRadius = 5
         
     }
     
+    //----------------------------------Keyboard Setting----------------------------------
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -165,6 +171,7 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
         return true
     }
     
+    //----------------------------------Load Category and Address----------------------------------
     override func viewDidAppear(_ animated: Bool) {
         
         let categoryObject = UserDefaults.standard.object(forKey: "categorySelected")
@@ -180,8 +187,6 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
                 Address.detailTextLabel?.text = address
             }
         }
-        
-        
         
         newPostTable.reloadData()
     }

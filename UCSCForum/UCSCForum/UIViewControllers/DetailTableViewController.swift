@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Firebase
+
 
 class DetailTableViewController: UITableViewController {
     
     
     var dataNode: FirstViewController.Node?
+    
+    var commentList = CommentViewController.LinkedList()
     
     @IBOutlet weak var poster: UILabel!
     
@@ -19,7 +23,11 @@ class DetailTableViewController: UITableViewController {
     
     @IBOutlet weak var itemDetail: UILabel!
     
-    @IBOutlet weak var numberOfComment: UILabel!
+    @IBOutlet weak var DetailUIView: UIView!
+    
+    @IBOutlet var table: UITableView!
+    
+    var itemCommentHeight :CGFloat = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,18 +39,25 @@ class DetailTableViewController: UITableViewController {
         itemDetail.text = dataNode?.getDetail
         
         //numberOfComment.text = "\(String(describing: dataNode?.getCommentCount))"
-        numberOfComment.text = dataNode?.getCommentCount.description
     
         
         var itemDetailHeight = itemDetail.optimalHeight
         itemDetail.frame = CGRect(x:itemDetail.frame.origin.x, y:itemDetail.frame.origin.y, width: itemDetail.frame.width, height: itemDetailHeight)
         itemDetail.numberOfLines = 0
         
+        DetailUIView.frame = CGRect(x:DetailUIView.frame.origin.x, y:DetailUIView.frame.origin.y, width: DetailUIView.frame.width, height: DetailUIView.frame.height + itemDetailHeight)
+        
+        var timer = Timer()
+        timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector((reloadComments)), userInfo: nil, repeats: false)
+ 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        reloadComments()
+        print("didItLoad called!")
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,26 +66,74 @@ class DetailTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 100+itemCommentHeight
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        print (commentList.getCount())
+        return commentList.getCount()!
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let detailCell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as! CommentTableViewCell
+        
+        var iterator = commentList.first
+        var i = 0
+        while i < indexPath.row{
+            print ("iterator is \(iterator?.getComment)")
+            iterator = iterator?.next
+            i = i + 1
+        }
+        
+        detailCell.commenterNameTextField?.text = iterator?.getPoster
+        detailCell.commentDetailTextField?.text = iterator?.getComment
+        
+        itemCommentHeight = detailCell.commentDetailTextField.optimalHeight
+        detailCell.commentDetailTextField.frame = CGRect(x:detailCell.commentDetailTextField.frame.origin.x, y:detailCell.commentDetailTextField.frame.origin.y, width: detailCell.commentDetailTextField.frame.width, height: itemCommentHeight)
+        detailCell.commentDetailTextField.numberOfLines = 0
+        
+        detailCell.layer.borderWidth = 9
+        detailCell.layer.borderColor = UIColor.clear.cgColor
+        detailCell.layer.cornerRadius = 7
 
-        // Configure the cell...
-
-        return cell
+        return detailCell
     }
-    */
+    
+    
+    @objc func reloadComments(){
+        var ref: DatabaseReference!
+        ref = Database.database().reference().child("market").child((dataNode?.getKey)!).child("comments")
+        
+        ref.observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            self.commentList.clearList()
+            for child in snapshot.children {
+                let node = CommentViewController.Node()
+                let snap = child as! DataSnapshot
+                //self.itemIndex = Int(snap.key) as Int!  //for making sure comments are in order
+                for grandchild in (child as AnyObject).children {
+                    let grandsnap = grandchild as! DataSnapshot
+                    let key = grandsnap.key
+                    let value = grandsnap.value
+                    switch key {
+                    case "name":
+                        node.setPoster(person: value! as! String)
+                    default:
+                        node.setComment(text: value! as! String)
+                    }
+                }
+                print("Poster is: \(node.getPoster)")
+                print("Comment is : \(node.getComment)")
+                self.commentList.append(node: node)
+            }
+        })
+        
+        table.reloadData()
+    }
 
     /*
     // Override to support conditional editing of the table view.

@@ -208,13 +208,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         data = itemNode.getKey
         
-        print("the name in prepare print is \(selectedItem?.getName)")
+        //print("the name in prepare print is \(selectedItem?.getName)")
         
         if let commentViewController = segue.destination as? CommentViewController {
             commentViewController.data = data
         }
         
         if let detailTableViewController = segue.destination as? DetailTableViewController {
+            print ("something something something")
             detailTableViewController.dataNode = selectedItem
         }
     }

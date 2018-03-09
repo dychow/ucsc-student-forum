@@ -1,21 +1,18 @@
 //
-//  VerifyTableViewController.swift
+//  FavouritesTableViewController.swift
 //  UCSCForum
 //
-//  Created by MacDouble on 2/2/18.
-//  Copyright © 2018 MacDouble. All rights reserved.
+//  Created by Bond on 2018/3/8.
+//  Copyright © 2018年 MacDouble. All rights reserved.
 //
 
 import UIKit
 
-class VerifyTableViewController: UITableViewController {
+class FavouritesTableViewController: UITableViewController {
 
-    @IBOutlet weak var verifyTf: UITextField!
-    @IBOutlet weak var completeButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBorder(view: verifyTf)
-        setupBorder(view: completeButton)
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,10 +20,6 @@ class VerifyTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    @IBAction func verifyButton(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "donesignupSegue", sender: self)
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -34,21 +27,17 @@ class VerifyTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    /*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 0
     }
-    func setupBorder(view: UIView){
-        view.layer.cornerRadius = 9
-        view.layer.borderColor = UIColor.init(red: 200/255, green: 200/255, blue: 200/255, alpha: 0.4).cgColor
-        view.layer.borderWidth = 1
-        
-    }
+    */
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

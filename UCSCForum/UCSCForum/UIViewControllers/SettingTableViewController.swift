@@ -1,15 +1,27 @@
 //
-//  MainMenuTableViewController.swift
+//  SettingTableViewController.swift
 //  UCSCForum
 //
-//  Created by Bond on 2018/3/7.
+//  Created by Bond on 2018/3/8.
 //  Copyright © 2018年 MacDouble. All rights reserved.
 //
 
 import UIKit
 
-class MainMenuTableViewController: UITableViewController {
+class SettingTableViewController: UITableViewController {
 
+    @IBAction func notification_Switch(_ sender: Any) {
+        print("notification switch works")
+    }
+    
+    @IBAction func sound_Switch(_ sender: Any) {
+        print("sound switch works")
+    }
+    
+    @IBAction func update_Switch(_ sender: Any) {
+        print("update switch works")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -38,6 +38,13 @@
 		96B08B5E203B79D900D0AA24 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B08B5D203B79D900D0AA24 /* AddressViewController.swift */; };
 		96DA6F74204B81B200F92089 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA6F73204B81B200F92089 /* DetailTableViewController.swift */; };
 		B3C6148CF9D5B688335CD99E /* Pods_UCSCForumUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DB02726A0125E7A728C752 /* Pods_UCSCForumUITests.framework */; };
+		CE17CBC920520D6300B895EF /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17CBC820520D6300B895EF /* EditProfileTableViewController.swift */; };
+		CE17CBCB20520E1900B895EF /* MyPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17CBCA20520E1900B895EF /* MyPostsTableViewController.swift */; };
+		CE17CBCD20520E4000B895EF /* FavouritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17CBCC20520E4000B895EF /* FavouritesTableViewController.swift */; };
+		CE17CBCF20520E7300B895EF /* WishlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17CBCE20520E7300B895EF /* WishlistTableViewController.swift */; };
+		CE17CBD120520F4700B895EF /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17CBD020520F4700B895EF /* SettingTableViewController.swift */; };
+		CE17CBD320520F6D00B895EF /* PrivacyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17CBD220520F6D00B895EF /* PrivacyTableViewController.swift */; };
+		CE17CBD520520FAE00B895EF /* ContactUsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17CBD420520FAE00B895EF /* ContactUsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +106,13 @@
 		BC068DB16A8B4D9BD6034170 /* Pods_UCSCForumTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCSCForumTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C732A4B17D1092C886FB39FB /* Pods_UCSCForum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCSCForum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC203C09CFD873FC938F3243 /* Pods-UCSCForumUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSCForumUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UCSCForumUITests/Pods-UCSCForumUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CE17CBC820520D6300B895EF /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileTableViewController.swift; path = UIViewControllers/EditProfileTableViewController.swift; sourceTree = "<group>"; };
+		CE17CBCA20520E1900B895EF /* MyPostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPostsTableViewController.swift; path = UIViewControllers/MyPostsTableViewController.swift; sourceTree = "<group>"; };
+		CE17CBCC20520E4000B895EF /* FavouritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavouritesTableViewController.swift; path = UIViewControllers/FavouritesTableViewController.swift; sourceTree = "<group>"; };
+		CE17CBCE20520E7300B895EF /* WishlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WishlistTableViewController.swift; path = UIViewControllers/WishlistTableViewController.swift; sourceTree = "<group>"; };
+		CE17CBD020520F4700B895EF /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingTableViewController.swift; path = UIViewControllers/SettingTableViewController.swift; sourceTree = "<group>"; };
+		CE17CBD220520F6D00B895EF /* PrivacyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrivacyTableViewController.swift; path = UIViewControllers/PrivacyTableViewController.swift; sourceTree = "<group>"; };
+		CE17CBD420520FAE00B895EF /* ContactUsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContactUsTableViewController.swift; path = UIViewControllers/ContactUsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +173,13 @@
 				659DB624201BD6BF009BAD96 /* GoogleService-Info.plist */,
 				514FBE1A2013AFCD007F865E /* AppDelegate.swift */,
 				514FBE202013AFCD007F865E /* Main.storyboard */,
+				CE17CBD420520FAE00B895EF /* ContactUsTableViewController.swift */,
+				CE17CBD220520F6D00B895EF /* PrivacyTableViewController.swift */,
+				CE17CBD020520F4700B895EF /* SettingTableViewController.swift */,
+				CE17CBCE20520E7300B895EF /* WishlistTableViewController.swift */,
+				CE17CBC820520D6300B895EF /* EditProfileTableViewController.swift */,
+				CE17CBCA20520E1900B895EF /* MyPostsTableViewController.swift */,
+				CE17CBCC20520E4000B895EF /* FavouritesTableViewController.swift */,
 				514FBE232013AFCD007F865E /* Assets.xcassets */,
 				514FBE252013AFCD007F865E /* LaunchScreen.storyboard */,
 				514FBE282013AFCD007F865E /* Info.plist */,
@@ -557,20 +578,27 @@
 				965409592053240000756D8D /* NewCommentViewController.swift in Sources */,
 				96540935204B94E100756D8D /* CommentTableViewCell.swift in Sources */,
 				65C14222203F7B7B00FC42DC /* CommentViewController.swift in Sources */,
+				CE17CBCD20520E4000B895EF /* FavouritesTableViewController.swift in Sources */,
 				514FBE1B2013AFCD007F865E /* AppDelegate.swift in Sources */,
 				51117511202447A3009E0EEF /* loginTableViewController.swift in Sources */,
 				51DDC0942017EE44005FD754 /* Signup.swift in Sources */,
 				514FBE1D2013AFCD007F865E /* FirstViewController.swift in Sources */,
+				CE17CBC920520D6300B895EF /* EditProfileTableViewController.swift in Sources */,
+				CE17CBCB20520E1900B895EF /* MyPostsTableViewController.swift in Sources */,
+				CE17CBD520520FAE00B895EF /* ContactUsTableViewController.swift in Sources */,
 				96B08B5C203B6E5C00D0AA24 /* CategoryViewController.swift in Sources */,
 				511175132024E5F2009E0EEF /* VerifyTableViewController.swift in Sources */,
 				65BA6D79203BA06C0023C624 /* NewPostTableViewController.swift in Sources */,
 				5191368D2017E9CD00756B00 /* ThirdViewController.swift in Sources */,
 				5111750F202431A9009E0EEF /* styleTextFied.swift in Sources */,
+				CE17CBCF20520E7300B895EF /* WishlistTableViewController.swift in Sources */,
 				9686551E2043A7A7009E50E5 /* UILabel.swift in Sources */,
 				96DA6F74204B81B200F92089 /* DetailTableViewController.swift in Sources */,
 				5111750D2024280D009E0EEF /* SignUpTableViewController.swift in Sources */,
+				CE17CBD120520F4700B895EF /* SettingTableViewController.swift in Sources */,
 				51DDC096201959A2005FD754 /* ItemTableViewCell.swift in Sources */,
 				519136892017CBD300756B00 /* TableViewController.swift in Sources */,
+				CE17CBD320520F6D00B895EF /* PrivacyTableViewController.swift in Sources */,
 				96B08B5E203B79D900D0AA24 /* AddressViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -739,7 +767,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9TD58ZTBUU;
+				DEVELOPMENT_TEAM = B75BP7Q4P4;
 				INFOPLIST_FILE = UCSCForum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -756,7 +784,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9TD58ZTBUU;
+				DEVELOPMENT_TEAM = B75BP7Q4P4;
 				INFOPLIST_FILE = UCSCForum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

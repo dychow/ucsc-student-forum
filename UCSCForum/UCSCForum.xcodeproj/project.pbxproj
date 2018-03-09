@@ -37,6 +37,7 @@
 		96DA6F72204B771100F92089 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA6F71204B771100F92089 /* DetailViewController.swift */; };
 		96DA6F74204B81B200F92089 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA6F73204B81B200F92089 /* DetailTableViewController.swift */; };
 		B3C6148CF9D5B688335CD99E /* Pods_UCSCForumUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DB02726A0125E7A728C752 /* Pods_UCSCForumUITests.framework */; };
+		CE17CBC7205107DA00B895EF /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17CBC6205107DA00B895EF /* MainMenuTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		BC068DB16A8B4D9BD6034170 /* Pods_UCSCForumTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCSCForumTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C732A4B17D1092C886FB39FB /* Pods_UCSCForum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCSCForum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC203C09CFD873FC938F3243 /* Pods-UCSCForumUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSCForumUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UCSCForumUITests/Pods-UCSCForumUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CE17CBC6205107DA00B895EF /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainMenuTableViewController.swift; path = UIViewControllers/MainMenuTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				659DB624201BD6BF009BAD96 /* GoogleService-Info.plist */,
 				514FBE1A2013AFCD007F865E /* AppDelegate.swift */,
 				514FBE202013AFCD007F865E /* Main.storyboard */,
+				CE17CBC6205107DA00B895EF /* MainMenuTableViewController.swift */,
 				514FBE232013AFCD007F865E /* Assets.xcassets */,
 				514FBE252013AFCD007F865E /* LaunchScreen.storyboard */,
 				514FBE282013AFCD007F865E /* Info.plist */,
@@ -552,6 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65C14222203F7B7B00FC42DC /* CommentViewController.swift in Sources */,
+				CE17CBC7205107DA00B895EF /* MainMenuTableViewController.swift in Sources */,
 				514FBE1B2013AFCD007F865E /* AppDelegate.swift in Sources */,
 				51117511202447A3009E0EEF /* loginTableViewController.swift in Sources */,
 				51DDC0942017EE44005FD754 /* Signup.swift in Sources */,
@@ -735,7 +739,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9TD58ZTBUU;
+				DEVELOPMENT_TEAM = B75BP7Q4P4;
 				INFOPLIST_FILE = UCSCForum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -752,7 +756,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9TD58ZTBUU;
+				DEVELOPMENT_TEAM = B75BP7Q4P4;
 				INFOPLIST_FILE = UCSCForum/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

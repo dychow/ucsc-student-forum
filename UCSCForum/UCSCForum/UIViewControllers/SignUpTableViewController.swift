@@ -76,6 +76,13 @@ class SignUpTableViewController: UITableViewController {
                     return
                 }
                 
+            Auth.auth().currentUser?.sendEmailVerification { (error) in
+                var ref: DatabaseReference!
+                ref = Database.database().reference().child("verified")
+                ref.child((Auth.auth().currentUser?.uid.description)!).setValue(1)
+                
+                }
+                
             })
             // testing stuff from here on out
             

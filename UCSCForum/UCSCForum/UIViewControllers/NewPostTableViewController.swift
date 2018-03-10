@@ -39,8 +39,10 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
             if  !(addressObject as! String == "" && !deliveryStatus.isOn) {
                 
                 var userEmail = "Anonymous"
+                var userUID = ""
                 if Auth.auth().currentUser != nil {
                     userEmail = (Auth.auth().currentUser?.email)!
+                    userUID = (Auth.auth().currentUser?.uid)!
                 }
                 
                 let postID = randomString(length: 8)
@@ -70,7 +72,7 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
                 }
                 
                 //Set Poster's Name to Firebase
-                ref.child(postID).child("posterName").setValue(userEmail)
+                ref.child(postID).child("posterName").setValue(userUID)
                 
                 //Create comments section in Firebase
                 ref.child(postID).child("comments").child("0").child("comment").setValue("Example Comment")

@@ -19,7 +19,12 @@ class NewCommentViewController: UIViewController, UITextFieldDelegate, UITextVie
     
     @IBAction func postPushed(_ sender: Any) {
         
-        postComment()
+        if commentTextField.text == "" || commentTextField.text == "Write a comment..." || commentTextField.text == "Please write a comment" {
+            commentTextField.text = "Please write a comment"
+            commentTextField.textColor = .lightGray
+        } else {
+            postComment()
+        }
         
     }
     
@@ -52,7 +57,7 @@ class NewCommentViewController: UIViewController, UITextFieldDelegate, UITextVie
     func textViewDidBeginEditing(_ textView: UITextView)
     {
         print ("Began")
-        if (commentTextField.text == "Write a comment...")
+        if (commentTextField.text == "Write a comment..." || commentTextField.text == "Please write a comment")
         {
             commentTextField.text = ""
             commentTextField.textColor = .black

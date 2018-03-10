@@ -21,7 +21,7 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
     @IBOutlet weak var Address: UITableViewCell!
     
     @IBOutlet weak var deliveryStatus: UISwitch!
-    
+
     @IBAction func postButton(_ sender: Any) {
 
         var ref: DatabaseReference!
@@ -38,63 +38,31 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
         
             if  !(addressObject as! String == "" && !deliveryStatus.isOn) {
                 
-                let itemNameObject = UserDefaults.standard.object(forKey: "itemName")
-                
-                let itemDetailObject = UserDefaults.standard.object(forKey: "itemDetail")
-                
-                var itemName: [String]
-                
-                var itemDetail: [String]
-                
                 let postID = randomString(length: 8)
                 
-                //Set itemName to FireBase
-                if let tempItemName = itemNameObject as? [String] {
-                    
-                    itemName = tempItemName
-                    
-                    itemName.append(itemNameTextField.text!)
-                    ref.child(postID).child("itemName").setValue(itemNameTextField.text!)
-                    
-                } else {
-                    
-                    itemName = [itemNameTextField.text!]
-                    
-                }
+                //Set item name to Firebase
+                ref.child(postID).child("itemName").setValue(itemNameTextField.text!)
                 
-                //Set itemDetail to Firebase
-                if let tempItemDetail = itemDetailObject as? [String] {
-                    
-                    
-                    itemDetail = tempItemDetail
-                    
-                    itemDetail.append(itemDetailTextField.text!)
+                //Set item detail to Firebase
+                if itemDetailTextField.text != "Say something about the item..." {
                     ref.child(postID).child("itemDetail").setValue(itemDetailTextField.text!)
-                    
                 } else {
-                    
-                    itemDetail = [itemDetailTextField.text!]
-                    
+                    ref.child(postID).child("itemDetail").setValue("")
                 }
-                
-                //Set Delivery to Firebase
-                ref.child(postID).child("itemDelivery").setValue(false)
-                
-                
-                //Set Address to Firebase
-                let addressObject = UserDefaults.standard.object(forKey: "itemAddress")
-                if let address = addressObject as? String {
-                    ref.child(postID).child("itemAddress").setValue(address)
-                }
-                
-                //Set Category to Firebase
-                ref.child(postID).child("itemCategory").setValue("this is Category")
-                let categoryObject = UserDefaults.standard.object(forKey: "categorySelected")
-                if let category = categoryObject as? String {
-                    ref.child(postID).child("itemCategory").setValue(category)
-                }
-                
 
+                //Set category to Firebase
+                if Category.detailTextLabel?.text != "select category" {
+                    ref.child(postID).child("itemCategory").setValue(Category.detailTextLabel?.text)
+                } else {
+                    ref.child(postID).child("itemCategory").setValue("")
+                }
+
+                //Set address to Firebase
+                if Address.detailTextLabel?.text != "required for undeliverable item" {
+                    ref.child(postID).child("itemAddress").setValue(Address.detailTextLabel?.text)
+                } else {
+                    ref.child(postID).child("itemAddress").setValue("")
+                }
                 
                 //Set Poster's Name to Firebase
                 ref.child(postID).child("posterName").setValue("Roy Huang")
@@ -108,15 +76,14 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
                 ref.child(postID).child("itemDelivery").setValue(deliveryStatus.isOn)
                 
                 //Update local value
-                UserDefaults.standard.set(itemName, forKey:"itemName")
-                UserDefaults.standard.set(itemDetail, forKey:"itemDetail")
                 UserDefaults.standard.set("", forKey:"categorySelected")
                 UserDefaults.standard.set("", forKey:"itemAddress")
                 
+                //Go back to root view controller
                 navigationController?.popToRootViewController(animated: true)
                 
             } else {
-               Address.detailTextLabel?.text = "address is required for undeliverable items"
+               Address.detailTextLabel?.text = "required for undeliverable item"
             }
         }
     }

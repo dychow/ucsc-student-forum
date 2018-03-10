@@ -663,7 +663,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EjY-pA-RlS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2800" y="1498"/>
+            <point key="canvasLocation" x="2799" y="1498"/>
         </scene>
         <!--Sign in-->
         <scene sceneID="AoR-lb-Lov">
@@ -19230,6 +19230,6 @@ WQAAAAAAAAAAAAAAAAAQHLk
         <image name="veg5" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="X6S-iX-N1p"/>
+        <segue reference="1gt-lg-CiS"/>
     </inferredMetricsTieBreakers>
 </document>

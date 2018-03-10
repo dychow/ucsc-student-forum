@@ -211,19 +211,19 @@
 			children = (
 				519136882017CBD300756B00 /* TableViewController.swift */,
 				514FBE1C2013AFCD007F865E /* FirstViewController.swift */,
-				9686551D2043A7A7009E50E5 /* UILabel.swift */,
 				5191368C2017E9CD00756B00 /* ThirdViewController.swift */,
-				51DDC0932017EE44005FD754 /* Signup.swift */,
-				5111750C2024280D009E0EEF /* SignUpTableViewController.swift */,
+				96DA6F73204B81B200F92089 /* DetailTableViewController.swift */,
 				65BA6D78203BA06C0023C624 /* NewPostTableViewController.swift */,
 				965409582053240000756D8D /* NewCommentViewController.swift */,
+				51DDC0932017EE44005FD754 /* Signup.swift */,
+				5111750C2024280D009E0EEF /* SignUpTableViewController.swift */,
 				96B08B5D203B79D900D0AA24 /* AddressViewController.swift */,
-				5111750E202431A9009E0EEF /* styleTextFied.swift */,
 				51117510202447A3009E0EEF /* loginTableViewController.swift */,
 				511175122024E5F2009E0EEF /* VerifyTableViewController.swift */,
-				96DA6F73204B81B200F92089 /* DetailTableViewController.swift */,
 				96B08B5B203B6E5C00D0AA24 /* CategoryViewController.swift */,
 				65C14221203F7B7B00FC42DC /* CommentViewController.swift */,
+				5111750E202431A9009E0EEF /* styleTextFied.swift */,
+				9686551D2043A7A7009E50E5 /* UILabel.swift */,
 			);
 			path = UIViewControllers;
 			sourceTree = "<group>";

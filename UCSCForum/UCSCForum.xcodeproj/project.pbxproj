@@ -13,6 +13,8 @@
 		5111750F202431A9009E0EEF /* styleTextFied.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111750E202431A9009E0EEF /* styleTextFied.swift */; };
 		51117511202447A3009E0EEF /* loginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51117510202447A3009E0EEF /* loginTableViewController.swift */; };
 		511175132024E5F2009E0EEF /* VerifyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511175122024E5F2009E0EEF /* VerifyTableViewController.swift */; };
+		5138F9702054726F007973B0 /* UserInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5138F96F2054726F007973B0 /* UserInfoTableViewController.swift */; };
+		5138F97320547449007973B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5138F97220547449007973B0 /* User.swift */; };
 		514FBE1B2013AFCD007F865E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE1A2013AFCD007F865E /* AppDelegate.swift */; };
 		514FBE1D2013AFCD007F865E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE1C2013AFCD007F865E /* FirstViewController.swift */; };
 		514FBE222013AFCD007F865E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514FBE202013AFCD007F865E /* Main.storyboard */; };
@@ -71,6 +73,8 @@
 		5111750E202431A9009E0EEF /* styleTextFied.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = styleTextFied.swift; sourceTree = "<group>"; };
 		51117510202447A3009E0EEF /* loginTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginTableViewController.swift; sourceTree = "<group>"; };
 		511175122024E5F2009E0EEF /* VerifyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyTableViewController.swift; sourceTree = "<group>"; };
+		5138F96F2054726F007973B0 /* UserInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewController.swift; sourceTree = "<group>"; };
+		5138F97220547449007973B0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		514FBE172013AFCD007F865E /* UCSCForum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCSCForum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		514FBE1A2013AFCD007F865E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		514FBE1C2013AFCD007F865E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +147,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5138F97120547449007973B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5138F97220547449007973B0 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		514FBE0E2013AFCD007F865E = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +181,7 @@
 		514FBE192013AFCD007F865E /* UCSCForum */ = {
 			isa = PBXGroup;
 			children = (
+				5138F97120547449007973B0 /* Models */,
 				51B2D871201FD33600A90917 /* UIViewControllers */,
 				659DB624201BD6BF009BAD96 /* GoogleService-Info.plist */,
 				514FBE1A2013AFCD007F865E /* AppDelegate.swift */,
@@ -180,6 +193,7 @@
 				CE17CBC820520D6300B895EF /* EditProfileTableViewController.swift */,
 				CE17CBCA20520E1900B895EF /* MyPostsTableViewController.swift */,
 				CE17CBCC20520E4000B895EF /* FavouritesTableViewController.swift */,
+				5138F96F2054726F007973B0 /* UserInfoTableViewController.swift */,
 				514FBE232013AFCD007F865E /* Assets.xcassets */,
 				514FBE252013AFCD007F865E /* LaunchScreen.storyboard */,
 				514FBE282013AFCD007F865E /* Info.plist */,
@@ -580,6 +594,7 @@
 				65C14222203F7B7B00FC42DC /* CommentViewController.swift in Sources */,
 				CE17CBCD20520E4000B895EF /* FavouritesTableViewController.swift in Sources */,
 				514FBE1B2013AFCD007F865E /* AppDelegate.swift in Sources */,
+				5138F97320547449007973B0 /* User.swift in Sources */,
 				51117511202447A3009E0EEF /* loginTableViewController.swift in Sources */,
 				51DDC0942017EE44005FD754 /* Signup.swift in Sources */,
 				514FBE1D2013AFCD007F865E /* FirstViewController.swift in Sources */,
@@ -593,6 +608,7 @@
 				5111750F202431A9009E0EEF /* styleTextFied.swift in Sources */,
 				CE17CBCF20520E7300B895EF /* WishlistTableViewController.swift in Sources */,
 				9686551E2043A7A7009E50E5 /* UILabel.swift in Sources */,
+				5138F9702054726F007973B0 /* UserInfoTableViewController.swift in Sources */,
 				96DA6F74204B81B200F92089 /* DetailTableViewController.swift in Sources */,
 				5111750D2024280D009E0EEF /* SignUpTableViewController.swift in Sources */,
 				CE17CBD120520F4700B895EF /* SettingTableViewController.swift in Sources */,

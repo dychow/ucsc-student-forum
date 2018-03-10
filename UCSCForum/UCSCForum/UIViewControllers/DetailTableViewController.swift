@@ -83,14 +83,15 @@ class DetailTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return commentList.getCount()! + 1
+        return commentList.getCount()!
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let detailCell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as! CommentTableViewCell
         
         var iterator = commentList.first
-        var i = 0
+        iterator = iterator?.next
+        var i = 1
         while i < indexPath.row {
             iterator = iterator?.next
             i = i + 1

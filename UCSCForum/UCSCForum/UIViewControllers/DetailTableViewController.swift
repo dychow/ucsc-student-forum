@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 
-
 class DetailTableViewController: UITableViewController {
     
     
@@ -29,6 +28,17 @@ class DetailTableViewController: UITableViewController {
     
     var itemCommentHeight :CGFloat = 0.0
     
+    @IBAction func makeCommentButtonPushed(_ sender: Any) {
+        performSegue(withIdentifier: "makeCommentSegue", sender: DetailTableViewController())
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let data: String?
+        
+        if let newCommentViewController = segue.destination as? NewCommentViewController {
+            newCommentViewController.dataNode = dataNode
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,8 +49,7 @@ class DetailTableViewController: UITableViewController {
         itemDetail.text = dataNode?.getDetail
         
         //numberOfComment.text = "\(String(describing: dataNode?.getCommentCount))"
-    
-        
+
         var itemDetailHeight = itemDetail.optimalHeight
         itemDetail.frame = CGRect(x:itemDetail.frame.origin.x, y:itemDetail.frame.origin.y, width: itemDetail.frame.width, height: itemDetailHeight)
         itemDetail.numberOfLines = 0
@@ -57,7 +66,6 @@ class DetailTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         reloadComments()
-        print("didItLoad called!")
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,13 +77,13 @@ class DetailTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 100+itemCommentHeight
+        return 60+itemCommentHeight
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print (commentList.getCount())
-        return commentList.getCount()!
+        return commentList.getCount()! + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,8 +91,7 @@ class DetailTableViewController: UITableViewController {
         
         var iterator = commentList.first
         var i = 0
-        while i < indexPath.row{
-            print ("iterator is \(iterator?.getComment)")
+        while i < indexPath.row {
             iterator = iterator?.next
             i = i + 1
         }
@@ -94,8 +101,8 @@ class DetailTableViewController: UITableViewController {
         
         itemCommentHeight = detailCell.commentDetailTextField.optimalHeight
         detailCell.commentDetailTextField.frame = CGRect(x:detailCell.commentDetailTextField.frame.origin.x, y:detailCell.commentDetailTextField.frame.origin.y, width: detailCell.commentDetailTextField.frame.width, height: itemCommentHeight)
-        detailCell.commentDetailTextField.numberOfLines = 0
         
+        detailCell.commentDetailTextField.numberOfLines = 0
         detailCell.layer.borderWidth = 9
         detailCell.layer.borderColor = UIColor.clear.cgColor
         detailCell.layer.cornerRadius = 7
@@ -126,13 +133,18 @@ class DetailTableViewController: UITableViewController {
                         node.setComment(text: value! as! String)
                     }
                 }
-                print("Poster is: \(node.getPoster)")
-                print("Comment is : \(node.getComment)")
                 self.commentList.append(node: node)
             }
         })
         
         table.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        var timer = Timer()
+        timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector((reloadComments)), userInfo: nil, repeats: false)
+        
+        reloadComments()
     }
 
     /*

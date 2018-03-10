@@ -12,7 +12,7 @@ import Firebase
 import Foundation
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-        
+    
     @IBOutlet weak var table: UITableView!
     
     var selected: Int = 0
@@ -72,7 +72,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         public var getCommentCount : Int {
-            return self.commentCount
+            return self.commentCount - 1
         }
         
         public func setPoster(person: String){
@@ -215,7 +215,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         if let detailTableViewController = segue.destination as? DetailTableViewController {
-            print ("something something something")
             detailTableViewController.dataNode = selectedItem
         }
     }
@@ -240,6 +239,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         itemCell.itemDetailTextField.text = currentItem?.getDetail
         
+        itemCell.commentCount.text = currentItem?.getCommentCount.description
+            
         itemCell.layer.borderWidth = 9
         itemCell.layer.borderColor = UIColor.clear.cgColor
         itemCell.layer.cornerRadius = 7
@@ -263,12 +264,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             i += 1
         }
         
-        print("name in didSelectRowAt is \(String(describing: currentItem?.getName))")
         selectedItem = currentItem
         UserDefaults.standard.set(currentItem?.getName, forKey: "selectedNodeName")
         //UserDefaults.standard.set(currentItem, forKey: "selectedNode")
-        
-        print("row: \(indexPath.row)")
         
         performSegue(withIdentifier: "DetailSegue", sender: FirstViewController())
     }
@@ -281,9 +279,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let itemDetailObject = UserDefaults.standard.object(forKey: "itemDetail")
         
-        print (itemCell.itemDetailTextField.text!)
-        
-        print (itemCell.itemNameTextField.text!)
         
         if var itemName = itemNameObject as? [String] {
             
@@ -359,8 +354,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
             
             self.itemCount = self.list.getCount()!
-            
-            self.list.printList()
         })
         table.reloadData()
     }

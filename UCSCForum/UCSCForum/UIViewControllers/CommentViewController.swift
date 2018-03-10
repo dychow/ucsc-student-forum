@@ -142,7 +142,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
                 itemCount += 1
                 iterator = iterator?.next
             }
-            return itemCount
+            return itemCount - 1
         }
     }
     

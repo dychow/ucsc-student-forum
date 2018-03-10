@@ -9,9 +9,44 @@
 import UIKit
 import Firebase
 
-class NewCommentViewController: UIViewController {
-
+class NewCommentViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+    
+    var dataNode: FirstViewController.Node?
+    
+    var commentNumber = 0
+    
     @IBOutlet weak var commentTextField: UITextView!
+    
+    @IBAction func postPushed(_ sender: Any) {
+        
+        postComment()
+        
+    }
+    
+    func postComment(){
+        var ref: DatabaseReference!
+        var userEmail = "Anonymous"
+        
+        if Auth.auth().currentUser != nil {
+            userEmail = (Auth.auth().currentUser?.email)!
+        }
+        ref = Database.database().reference().child("market").child((dataNode?.getKey)!).child("comments")
+        ref.observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            for child in snapshot.children {
+                self.commentNumber = self.commentNumber + 1  //for making sure comments are in order
+                print("comment number incremented")
+            }
+            print("comment number is \(self.commentNumber)")
+            ref.child("\(self.commentNumber)").child("comment").setValue(self.commentTextField.text)
+            
+            
+            ref.child("\(self.commentNumber)").child("name").setValue(userEmail)
+        })
+
+        navigationController?.popViewController(animated: true)
+        
+    }
     
     //----------------------------------Placeholder for UITextView----------------------------------
     func textViewDidBeginEditing(_ textView: UITextView)

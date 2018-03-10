@@ -54,7 +54,7 @@ class loginTableViewController: UITableViewController {
             let value = snapshot.value as? NSNumber
             let verified = value as! Int
             
-            if(verified == 0){
+            if(verified == 2){
                 
                 print("email was not verified")
                 return

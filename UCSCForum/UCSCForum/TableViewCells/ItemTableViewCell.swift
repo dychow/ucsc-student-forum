@@ -10,10 +10,6 @@ import UIKit
 
 class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var personName: UILabel!
-    
-    @IBOutlet weak var itemAge: UILabel!
-    
-    @IBOutlet weak var commentNumber: UILabel!
 
     @IBOutlet weak var itemNameTextField: UILabel!
     
@@ -21,6 +17,7 @@ class ItemTableViewCell: UITableViewCell {
     
     @IBOutlet weak var profileImage: UIImageView!
     
+    @IBOutlet weak var commentCount: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

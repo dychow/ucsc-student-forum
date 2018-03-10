@@ -46,13 +46,15 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
                 
                 var itemDetail: [String]
                 
+                let postID = randomString(length: 8)
+                
                 //Set itemName to FireBase
                 if let tempItemName = itemNameObject as? [String] {
                     
                     itemName = tempItemName
                     
                     itemName.append(itemNameTextField.text!)
-                    ref.child(itemNameTextField.text!).child("itemName").setValue(itemNameTextField.text!)
+                    ref.child(postID).child("itemName").setValue(itemNameTextField.text!)
                     
                 } else {
                     
@@ -67,7 +69,7 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
                     itemDetail = tempItemDetail
                     
                     itemDetail.append(itemDetailTextField.text!)
-                    ref.child(itemNameTextField.text!).child("itemDetail").setValue(itemDetailTextField.text!)
+                    ref.child(postID).child("itemDetail").setValue(itemDetailTextField.text!)
                     
                 } else {
                     
@@ -76,45 +78,65 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
                 }
                 
                 //Set Delivery to Firebase
-                ref.child(itemNameTextField.text!).child("itemDelivery").setValue(false)
+                ref.child(postID).child("itemDelivery").setValue(false)
                 
                 
                 //Set Address to Firebase
                 let addressObject = UserDefaults.standard.object(forKey: "itemAddress")
                 if let address = addressObject as? String {
-                    ref.child(itemNameTextField.text!).child("itemAddress").setValue(address)
+                    ref.child(postID).child("itemAddress").setValue(address)
                 }
                 
                 //Set Category to Firebase
-                ref.child(itemNameTextField.text!).child("itemCategory").setValue("this is Category")
+                ref.child(postID).child("itemCategory").setValue("this is Category")
                 let categoryObject = UserDefaults.standard.object(forKey: "categorySelected")
                 if let category = categoryObject as? String {
-                    ref.child(itemNameTextField.text!).child("itemCategory").setValue(category)
+                    ref.child(postID).child("itemCategory").setValue(category)
                 }
                 
+
+                
                 //Set Poster's Name to Firebase
-                ref.child(itemNameTextField.text!).child("posterName").setValue("Roy Huang")
+                ref.child(postID).child("posterName").setValue("Roy Huang")
                 
                 //Create comments section in Firebase
-                ref.child(itemNameTextField.text!).child("comments").child("0").child("comment").setValue("Example Comment")
+                ref.child(postID).child("comments").child("0").child("comment").setValue("Example Comment")
                 
-                ref.child(itemNameTextField.text!).child("comments").child("0").child("name").setValue("Example Username")
+                ref.child(postID).child("comments").child("0").child("name").setValue("Example Username")
                 
                 //Set Delivery to Firebase
-                ref.child(itemNameTextField.text!).child("itemDelivery").setValue(deliveryStatus.isOn)
+                ref.child(postID).child("itemDelivery").setValue(deliveryStatus.isOn)
                 
                 //Update local value
                 UserDefaults.standard.set(itemName, forKey:"itemName")
                 UserDefaults.standard.set(itemDetail, forKey:"itemDetail")
                 UserDefaults.standard.set("", forKey:"categorySelected")
                 UserDefaults.standard.set("", forKey:"itemAddress")
+                
                 navigationController?.popToRootViewController(animated: true)
                 
             } else {
-               Address.detailTextLabel?.text = "please enter address or turn on delivery"
+               Address.detailTextLabel?.text = "address is required for undeliverable items"
             }
         }
     }
+    
+    func randomString(length: Int) -> String {
+        
+        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let len = UInt32(letters.length)
+        
+        var randomString = ""
+        
+        for _ in 0 ..< length {
+            let rand = arc4random_uniform(len)
+            var nextChar = letters.character(at: Int(rand))
+            randomString += NSString(characters: &nextChar, length: 1) as String
+        }
+        
+        return randomString
+    }
+
     
     //----------------------------------Placeholder for UITextView----------------------------------
     func textViewDidBeginEditing(_ textView: UITextView)

@@ -10,6 +10,11 @@ import UIKit
 
 class FavouritesTableViewController: UITableViewController {
 
+    @IBOutlet weak var itemPic1_Image: UIImageView!
+    @IBOutlet weak var itemPic2_Image: UIImageView!
+    @IBOutlet weak var itemPic3_Image: UIImageView!
+    @IBOutlet weak var itemDescription_Label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

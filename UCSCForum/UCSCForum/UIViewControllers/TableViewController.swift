@@ -22,16 +22,19 @@ class TableViewController: UITableViewController {
     @IBOutlet var bioLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     
+    /*
     override func viewDidAppear(_ animated: Bool) {
         if Auth.auth().currentUser == nil {self.performSegue(withIdentifier: "loginSegue", sender: self)}
 
         
         getUserData()
     }
+    */
     
     override func viewWillAppear(_ animated: Bool) {
         print("before")
-        self.performSegue(withIdentifier: "loginSegue", sender: self)
+        checkLogin()
+        //self.performSegue(withIdentifier: "loginSegue", sender: self)
         print("afer")
         
         tableview.reloadData()
@@ -74,6 +77,7 @@ class TableViewController: UITableViewController {
         viewWillAppear(false)
         tableview.reloadData()
     }
+    
     func getUserData(){
         
         if Auth.auth().currentUser != nil{
@@ -110,6 +114,11 @@ class TableViewController: UITableViewController {
         }
     }
 
+    func checkLogin(){
+        if Auth.auth().currentUser == nil{
+            self.performSegue(withIdentifier: "loginSegue", sender: self)
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

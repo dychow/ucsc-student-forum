@@ -42,7 +42,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.itemDetail = ""
             self.itemName = ""
             self.itemKey = ""
-            self.commentCount = 0
+            self.commentCount = -1
         }
         
         public var getPoster: String {
@@ -188,14 +188,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         public func getCount() -> Int? {
-//                        var iterator = first
-//                        var itemCount: Int = 0
-//                        while iterator != nil {
-//                            itemCount += 1
-//                            iterator = iterator?.next
-//                        }
-//                        return itemCount
-            return count
+                        var iterator = first
+                        var itemCount: Int = 0
+                        while iterator != nil {
+                            itemCount += 1
+                            iterator = iterator?.next
+                        }
+                        return itemCount
+//            return count
         }
     }
     

@@ -685,7 +685,6 @@
                                                     <connections>
                                                         <action selector="completeButton:" destination="GCX-Dn-bEn" eventType="touchUpInside" id="SVs-js-nsl"/>
                                                         <action selector="proceedButton:" destination="6z5-2v-Yu4" eventType="touchUpInside" id="PcO-Yb-y9p"/>
-                                                        <action selector="verifyButton:" destination="GCX-Dn-bEn" eventType="touchUpInside" id="0Gd-nT-8T6"/>
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User login" translatesAutoresizingMaskIntoConstraints="NO" id="Kra-u1-L30">
@@ -727,10 +726,8 @@
                     </tableView>
                     <connections>
                         <outlet property="bioTf" destination="tIA-d1-Ope" id="c9U-IV-RPj"/>
-                        <outlet property="completeButton" destination="Lre-sC-6XP" id="98n-Ta-J7W"/>
                         <outlet property="nameTf" destination="7yl-k6-0zl" id="seH-et-5ET"/>
                         <outlet property="profileImage" destination="Kra-u1-L30" id="aOd-YV-VGW"/>
-                        <outlet property="verifyTf" destination="CNV-Mg-Un7" id="EGw-Jw-Jva"/>
                         <segue destination="49e-Tb-3d3" kind="presentation" identifier="gohomeSegue" id="1gt-lg-CiS"/>
                     </connections>
                 </tableViewController>

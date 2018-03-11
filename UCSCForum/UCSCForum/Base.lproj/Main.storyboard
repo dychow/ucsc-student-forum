@@ -167,7 +167,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="YkY-qf-lUP">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="YkY-qf-lUP">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="278"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -856,7 +856,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vNf-da-c1k">
+                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vNf-da-c1k">
                             <rect key="frame" x="0.0" y="265" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -1441,7 +1441,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="1fl-P4-k9P">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="1fl-P4-k9P">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="275"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -2543,13 +2543,7 @@
         <image name="backButton" width="12" height="21"/>
         <image name="cars" width="23" height="23"/>
         <image name="comment" width="100" height="100"/>
-<<<<<<< HEAD
-=======
-        <image name="editProfile" width="21" height="21"/>
-        <image name="file-text" width="18" height="22"/>
         <image name="first" width="30" height="30"/>
-        <image name="heart" width="69" height="69"/>
->>>>>>> c450efc017ead302d730e78418fbcefe163dcfd2
         <image name="imageDemo" width="800" height="533"/>
         <image name="imageDemo2" width="480" height="320"/>
         <image name="imageView:CXG-yJ-lHe:image" width="512" height="512">

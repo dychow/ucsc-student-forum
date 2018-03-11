@@ -34,9 +34,17 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="15c-m0-FGr">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="9pv-A4-QxB" id="PeO-Lv-3NF"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="216" id="DMD-ll-n7m" customClass="ItemTableViewCell" customModule="UCSCForum" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="216"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="216"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DMD-ll-n7m" id="PsS-zA-7fx">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="215.66666666666666"/>
@@ -113,6 +121,11 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <navigationItem key="navigationItem" title="Free &amp; For sale" id="PKG-iX-BL0">
+                        <barButtonItem key="leftBarButtonItem" title="Filter" id="jo8-s9-Oce">
+                            <connections>
+                                <segue destination="kjJ-d2-uMb" kind="show" id="dcV-bI-QIz"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="new post" image="addPost" id="yEZ-Uy-nSN">
                                 <color key="tintColor" red="0.058823529409999999" green="0.094117647060000004" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
@@ -128,6 +141,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="15c-m0-FGr" id="zCD-bG-kHV"/>
                         <outlet property="table" destination="10l-MT-EEC" id="s6Y-Eb-uNh"/>
                         <outlet property="tableView" destination="10l-MT-EEC" id="6Cu-fL-7Qj"/>
                         <segue destination="DlQ-UD-Sz0" kind="show" identifier="DetailSegue" id="LVx-tn-6mx"/>
@@ -397,6 +411,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKG-cb-NZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="974" y="0.0"/>
+        </scene>
+        <!--Filter Table View Controller-->
+        <scene sceneID="AS1-UL-yw3">
+            <objects>
+                <tableViewController id="kjJ-d2-uMb" customClass="FilterTableViewController" customModule="UCSCForum" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eFo-nI-LIF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="A5v-Nt-cgw">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A5v-Nt-cgw" id="uCd-ML-Csz">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kjJ-d2-uMb" id="iho-cB-0gG"/>
+                            <outlet property="delegate" destination="kjJ-d2-uMb" id="mTM-OY-Wnj"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jVk-tc-C8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="0.0"/>
         </scene>
         <!--Login-->
         <scene sceneID="vE2-AS-ToF">

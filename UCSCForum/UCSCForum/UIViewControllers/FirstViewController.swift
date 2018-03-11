@@ -11,7 +11,9 @@ import FirebaseDatabase
 import Firebase
 import Foundation
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,  UISearchBarDelegate {
+
+    @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var table: UITableView!
     
@@ -40,7 +42,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.itemDetail = ""
             self.itemName = ""
             self.itemKey = ""
-            self.commentCount = 0
+            self.commentCount = -1
         }
         
         public var getPoster: String {
@@ -72,7 +74,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         public var getCommentCount : Int {
-            return self.commentCount - 1
+            return self.commentCount
         }
         
         public func setPoster(person: String){
@@ -186,14 +188,50 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         public func getCount() -> Int? {
-            var iterator = first
-            var itemCount: Int = 0
-            while iterator != nil {
-                itemCount += 1
-                iterator = iterator?.next
-            }
-            return itemCount
+                        var iterator = first
+                        var itemCount: Int = 0
+                        while iterator != nil {
+                            itemCount += 1
+                            iterator = iterator?.next
+                        }
+                        return itemCount
+//            return count
         }
+    }
+    
+    //----------------------------------Search----------------------------------
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if searchBar.text != nil && searchBar.text != "" {
+            print (searchBar.text)
+            reloadTable()
+            if list.getCount()! > 0{
+                var iterator = list.first
+                while iterator != nil {
+                    if iterator?.getName.lowercased().range(of: searchBar.text!.lowercased()) == nil{
+                        let temp = iterator
+                        iterator = iterator?.next
+                        list.delete(node: temp!)
+                    }
+                    else{
+                        iterator = iterator?.next
+                    }
+                }
+            }
+            table.reloadData()
+        } else {
+            table.reloadData()
+        }
+    }
+    
+    //----------------------------------Keyboard Setting----------------------------------
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchBar.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print ("search bar search button clicked")
+        searchBar.endEditing(true)
+        print (searchBar.text)
     }
     
     // sends item key of item pressed to comments page
@@ -201,12 +239,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let data: String?
         
         var itemIndex = 0
-        var itemNode: Node = list.first!
+        
+        var itemNode: Node? = list.first!
+        
         while(itemIndex < selected){
             itemIndex += 1
-            itemNode = itemNode.next!
+            itemNode = itemNode?.next!
         }
-        data = itemNode.getKey
+        data = itemNode?.getKey
         
         //print("the name in prepare print is \(selectedItem?.getName)")
         
@@ -221,7 +261,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //Cell structure
-
+        
         let itemCell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemTableViewCell
         
         var currentItem = list.first
@@ -240,7 +280,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         itemCell.itemDetailTextField.text = currentItem?.getDetail
         
         itemCell.commentCount.text = currentItem?.getCommentCount.description
-            
+        
         itemCell.layer.borderWidth = 9
         itemCell.layer.borderColor = UIColor.clear.cgColor
         itemCell.layer.cornerRadius = 7
@@ -250,6 +290,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //Number of cells
+        itemCount = list.getCount()!
         return itemCount
     }
     
@@ -271,40 +312,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         performSegue(withIdentifier: "DetailSegue", sender: FirstViewController())
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
-        let itemCell = tableView.cellForRow(at: indexPath) as! ItemTableViewCell
-        
-        let itemNameObject = UserDefaults.standard.object(forKey: "itemName")
-        
-        let itemDetailObject = UserDefaults.standard.object(forKey: "itemDetail")
-        
-        
-        if var itemName = itemNameObject as? [String] {
-            
-            itemName.remove(at: indexPath.row)
-            UserDefaults.standard.set(itemName, forKey: "itemName")
-            
-        }
-        
-        if var itemDetail = itemDetailObject as? [String] {
-            
-            itemDetail.remove(at: indexPath.row)
-            UserDefaults.standard.set(itemDetail, forKey: "itemDetail")
-            
-        }
-        
-        var ref: DatabaseReference!
-        
-        ref = Database.database().reference().child("market").child(itemCell.itemNameTextField.text!)
-        
-        ref.removeValue()
-        
-        var timer = Timer()
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector((reloadTable)), userInfo: nil, repeats: false)
-        
-    }
-
     
     @IBAction func sendToDatabase(_ sender: Any) {
         reloadTable()
@@ -315,42 +322,42 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         var ref: DatabaseReference!
         ref = Database.database().reference().child("market")
         
-        
-        
         ref.observeSingleEvent(of: .value, with: {
             (snapshot) in
             self.list.clearList()
             for child in snapshot.children {
                 let node = Node()
-                let keysnap = child as! DataSnapshot
-                node.setKey(key: keysnap.key)
-                for grandchild in (child as AnyObject).children {
-                    let snap = grandchild as! DataSnapshot
-                    let key = snap.key
-                    let value = snap.value
-                    switch key {
-                    case "posterName":
-                        node.setPoster(person: value! as! String)
-                    case "itemName":
-                        node.setName(name: value! as! String)
-                    case "itemAddress":
-                        node.setAddress(address: value! as! String)
-                    case "itemCategory":
-                        node.setCategory(category: value! as! String)
-                    case "itemDelivery":
-                        node.setDelivery(delivery: value! as! Bool)
-                    case "comments":
-                        for _ in (grandchild as
-                            AnyObject).children{
-                                node.addCommentCount()
+                if node != nil{
+                    let keysnap = child as! DataSnapshot
+                    node.setKey(key: keysnap.key)
+                    for grandchild in (child as AnyObject).children {
+                        let snap = grandchild as! DataSnapshot
+                        let key = snap.key
+                        let value = snap.value
+                        switch key {
+                        case "posterName":
+                            node.setPoster(person: value! as! String)
+                        case "itemName":
+                            node.setName(name: value! as! String)
+                        case "itemAddress":
+                            node.setAddress(address: value! as! String)
+                        case "itemCategory":
+                            node.setCategory(category: value! as! String)
+                        case "itemDelivery":
+                            node.setDelivery(delivery: value! as! Bool)
+                        case "comments":
+                            for _ in (grandchild as
+                                AnyObject).children{
+                                    node.addCommentCount()
+                            }
+                            print("do nothing")
+                        default:
+                            node.setDetail(detail: value! as! String)
                         }
-                        print("do nothing")
-                    default:
-                        node.setDetail(detail: value! as! String)
                     }
+                    print("\(node.getName) has \(node.getCommentCount) comments.")
+                    self.list.append(node: node)
                 }
-                print("\(node.getName) has \(node.getCommentCount) comments.")
-                self.list.append(node: node)
             }
             
             self.itemCount = self.list.getCount()!
@@ -359,15 +366,104 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        reloadTable()
-        var timer = Timer()
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector((reloadTable)), userInfo: nil, repeats: false)
+        
+        //filter
+        let filterObject = UserDefaults.standard.object(forKey: "filterSelected")
+        if let filter = filterObject as? String {
+            if filter != "" && filter != "None" {
+                filtList()
+                UserDefaults.standard.set("",forKey: "filterSelected")
+                table.reloadData()
+            } else if filter == "None" {
+                reloadTable()
+                var timer = Timer()
+                timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector((reloadTable)), userInfo: nil, repeats: false)
+            } else {
+                reloadTable()
+                var timer = Timer()
+                timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector((reloadTable)), userInfo: nil, repeats: false)
+            }
+        }
+        
+    }
+    
+    @objc func filtList() {
+        var filterSelected :String = ""
+        
+        var ref: DatabaseReference!
+        ref = Database.database().reference().child("market")
+        
+        ref.observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            self.list.clearList()
+            for child in snapshot.children {
+                let node = Node()
+                if node != nil{
+                    let keysnap = child as! DataSnapshot
+                    node.setKey(key: keysnap.key)
+                    for grandchild in (child as AnyObject).children {
+                        let snap = grandchild as! DataSnapshot
+                        let key = snap.key
+                        let value = snap.value
+                        switch key {
+                        case "posterName":
+                            node.setPoster(person: value! as! String)
+                        case "itemName":
+                            node.setName(name: value! as! String)
+                        case "itemAddress":
+                            node.setAddress(address: value! as! String)
+                        case "itemCategory":
+                            node.setCategory(category: value! as! String)
+                        case "itemDelivery":
+                            node.setDelivery(delivery: value! as! Bool)
+                        case "comments":
+                            for _ in (grandchild as
+                                AnyObject).children{
+                                    node.addCommentCount()
+                            }
+                            print("do nothing")
+                        default:
+                            node.setDetail(detail: value! as! String)
+                        }
+                    }
+                    print("\(node.getName) has \(node.getCommentCount) comments.")
+                    self.list.append(node: node)
+                }
+            }
+            
+            self.itemCount = self.list.getCount()!
+        })
+        
+        let filterObject = UserDefaults.standard.object(forKey: "filterSelected")
+        if let filter = filterObject as? String {
+            filterSelected = filter
+        }
+        
+        var currentItem = list.first
+        
+        
+        while currentItem != nil {
+            if currentItem?.getCategory != filterSelected {
+                let temp = currentItem
+                currentItem = currentItem?.next
+                list.delete(node: temp!)
+                
+            } else {
+                //print("currentitem being kept name \(currentItem?.getName) and category is \(currentItem?.getCategory)")
+                currentItem = currentItem?.next
+            }
+        }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
+        
         var timer = Timer()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector((reloadTable)), userInfo: nil, repeats: false)
+        
         // Do any additional setup after loading the view, typically from a nib.
         tableView.backgroundColor = UIColor.init(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
     }
@@ -385,7 +481,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

@@ -160,6 +160,12 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
         self.view.endEditing(true)
     }
     
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        itemDetailTextField.endEditing(true)
+        itemNameTextField.endEditing(true)
+    }
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()

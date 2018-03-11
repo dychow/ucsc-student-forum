@@ -257,6 +257,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let detailTableViewController = segue.destination as? DetailTableViewController {
             detailTableViewController.dataNode = selectedItem
         }
+        
+        if let myPostTableViewController = segue.destination as? MyPostTableViewController {
+            myPostTableViewController.list = list
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -454,6 +458,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         
+    }
+    
+    @IBAction func myPostPushed(_ sender: Any) {
+        performSegue(withIdentifier: "MyPostSegue", sender: FirstViewController())
     }
     
     override func viewDidLoad() {

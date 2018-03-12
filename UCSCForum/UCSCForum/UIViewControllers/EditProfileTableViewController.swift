@@ -7,24 +7,65 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 class EditProfileTableViewController: UITableViewController {
 
-    @IBOutlet weak var cruzID_Tf: UITextField!
-    @IBOutlet weak var firstName_Tf: UITextField!
-    @IBOutlet weak var lastName_Tf: UITextField!
+    var ref:DatabaseReference?
+    
+    @IBOutlet weak var name_Tf: UITextField!
+    
+    @IBOutlet weak var email_Tf: UITextField!
+    
+    @IBOutlet weak var about_Tf: UITextField!
+    
+    @IBOutlet weak var yearAndMajor_Tf: UITextField!
+    
     @IBOutlet weak var street_Tf: UITextField!
+    
     @IBOutlet weak var city_Tf: UITextField!
-    @IBOutlet weak var zipCode_Tf: UITextField!
+    
+    @IBOutlet weak var zip_Tf: UITextField!
+    
     @IBOutlet weak var state_Tf: UITextField!
+    
     @IBOutlet weak var country_Tf: UITextField!
+    
     @IBOutlet weak var phone_Tf: UITextField!
+    
     @IBAction func saveChanges_Button(_ sender: Any) {
-        print("save works")
+        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Name").setValue(name_Tf.text)
+        
+        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("email").setValue(email_Tf.text)
+        
+        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("about").setValue(about_Tf.text)
+        
+        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("year and major").setValue(yearAndMajor_Tf.text)
+        
+        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Street_Add").setValue(street_Tf.text)
+        
+        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("City").setValue(city_Tf.text)
+        
+        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("ZipCode").setValue(zip_Tf.text)
+        
+        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("State").setValue(state_Tf.text)
+        
+        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Country").setValue(country_Tf.text)
+        
+        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Phone_Num").setValue(phone_Tf.text)
+        
+            // Dimiss the popover
+            presentingViewController?.dismiss(animated: true, completion: nil)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // set the firebase reference
+        ref = Database.database().reference()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

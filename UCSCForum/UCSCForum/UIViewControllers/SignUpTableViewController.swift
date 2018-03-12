@@ -35,11 +35,12 @@ class SignUpTableViewController: UITableViewController {
     
     @IBAction func proceedButton(_ sender: Any) {
         if let username = usernameTf.text{
-            let index = username.index(username.endIndex, offsetBy: -9)
+            if username.suffix(9) != "@ucsc.edu" {
+//            let index = username.index(username.endIndex, offsetBy: -9)
+//
+//            let range = index...
             
-            let range = index...
-                        
-            if username[range] != "@ucsc.edu"{
+//            if username[range] != "@ucsc.edu"{
                 warningLabel.text = "Please enter your UCSC student email"
                 return
             }
@@ -93,8 +94,9 @@ class SignUpTableViewController: UITableViewController {
             //let truncated = username.substring(to: endIndex)
             
         }
-        let username = usernameTf.text
-        let endIndex = username?.index((username?.endIndex)!, offsetBy: -9)
+//        let username = usernameTf.text
+//        let endIndex = username?.index((username?.endIndex)!, offsetBy: -9)
+//
 //        let truncated = username?.substring(to: endIndex!)
 //
 //        var ref: DatabaseReference!
@@ -112,11 +114,13 @@ class SignUpTableViewController: UITableViewController {
 //            let value = snapshot.value as? NSNumber
 //            let verified = value as! Int
 //        })
+
         
         
         //verification email should be sent here
         
         self.performSegue(withIdentifier: "verifySegue", sender: self)
+        //self.dismiss(animated: true, completion: nil)
     }
     @objc func dissmissKeyboard(){
         

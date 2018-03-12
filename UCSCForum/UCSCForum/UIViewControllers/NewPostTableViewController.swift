@@ -8,7 +8,12 @@
 import UIKit
 import Firebase
 
-class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate{
+class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
+    @IBOutlet var imageViewOl: UIButton!
+    var url: String = ""
+    var postID: String = ""
     
     @IBOutlet weak var itemNameTextField: UITextField!
 
@@ -23,7 +28,33 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
     @IBOutlet weak var deliveryStatus: UISwitch!
 
     @IBAction func postButton(_ sender: Any) {
-
+        let imageName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child("\(imageName).jpeg")
+        
+        if let uploadData = UIImageJPEGRepresentation((imageViewOl.imageView?.image)!, 0.6){
+            storageRef.putData(uploadData, metadata: nil, completion:
+                {(metadata, error) in
+                    
+                    if error != nil{
+                        print(error!)
+                        return
+                    }
+                   
+                    if let profileImageUrl = metadata?.downloadURL()?.absoluteString{
+                        self.url = profileImageUrl
+                        
+                        
+                    }
+                    print(self.url)
+                    var ref: DatabaseReference!
+                    
+                    ref = Database.database().reference().child("market")
+                    ref.child(self.postID).child("imageUrl").setValue(self.url)
+                    
+            })
+            
+        }
+        
         var ref: DatabaseReference!
         
         ref = Database.database().reference().child("market")
@@ -38,14 +69,12 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
         
             if  !(addressObject as! String == "" && !deliveryStatus.isOn) {
                 
-                var userEmail = "Anonymous"
-                var userUID = ""
+                var userUID = "Anonymous"
                 if Auth.auth().currentUser != nil {
-                    userEmail = (Auth.auth().currentUser?.email)!
                     userUID = (Auth.auth().currentUser?.uid)!
                 }
                 
-                let postID = randomString(length: 8)
+                postID = randomString(length: 8)
                 
                 //Set item name to Firebase
                 ref.child(postID).child("itemName").setValue(itemNameTextField.text!)
@@ -58,6 +87,12 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
                 }
 
                 //Set category to Firebase
+                if Category.detailTextLabel?.text != "select category" {
+                    ref.child(postID).child("itemCategory").setValue(Category.detailTextLabel?.text)
+                } else {
+                    ref.child(postID).child("itemCategory").setValue("")
+                }
+                
                 if Category.detailTextLabel?.text != "select category" {
                     ref.child(postID).child("itemCategory").setValue(Category.detailTextLabel?.text)
                 } else {
@@ -81,6 +116,11 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
                 
                 //Set Delivery to Firebase
                 ref.child(postID).child("itemDelivery").setValue(deliveryStatus.isOn)
+                
+                //Sets image url to Firebase
+                if url != "" {
+                    ref.child(postID).child("imageUrl").setValue(url)
+                }
                 
                 //Update local value
                 UserDefaults.standard.set("", forKey:"categorySelected")
@@ -153,6 +193,30 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
         itemDetailTextField.layer.borderWidth = 1.0
         itemDetailTextField.layer.cornerRadius = 5
         
+    }
+    
+    @IBAction func imageView(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        self.present(picker, animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        var selectedImage : UIImage?
+        
+        if let editedImage = info["UIImagePickerControllerEditedImage"]{
+            
+            selectedImage = editedImage as! UIImage
+            
+        }else if let originalImage = info["UIImagePickerControllerOriginalImage"]{
+            selectedImage = originalImage as! UIImage
+        }
+        
+        if let tempImage = selectedImage{
+            imageViewOl.setImage(tempImage, for: .normal)
+        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     //----------------------------------Keyboard Setting----------------------------------

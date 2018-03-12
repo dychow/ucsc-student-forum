@@ -57,7 +57,7 @@ class UserInfoTableViewController: UITableViewController, UIImagePickerControlle
             {(metadata, error) in
                 
                 if error != nil{
-                    print(error)
+                    print(error!)
                     return
                 }
                 

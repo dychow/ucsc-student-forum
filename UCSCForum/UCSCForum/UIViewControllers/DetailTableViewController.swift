@@ -16,6 +16,8 @@ class DetailTableViewController: UITableViewController {
     
     var commentList = CommentViewController.LinkedList()
     
+    @IBOutlet var itemImage: UIImageView!
+    
     @IBOutlet weak var poster: UILabel!
     
     @IBOutlet weak var itemName: UILabel!
@@ -32,9 +34,7 @@ class DetailTableViewController: UITableViewController {
         performSegue(withIdentifier: "makeCommentSegue", sender: DetailTableViewController())
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let data: String?
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {        
         if let newCommentViewController = segue.destination as? NewCommentViewController {
             newCommentViewController.dataNode = dataNode
         }
@@ -47,6 +47,7 @@ class DetailTableViewController: UITableViewController {
         itemName.text = dataNode?.getName
         
         itemDetail.text = dataNode?.getDetail
+        
         
         //numberOfComment.text = "\(String(describing: dataNode?.getCommentCount))"
 
@@ -67,6 +68,29 @@ class DetailTableViewController: UITableViewController {
         
         reloadComments()
     }
+    
+    func setimage(){
+    
+        var ref = Database.database().reference().child("market").child((dataNode?.getKey)!)
+        print(dataNode?.getKey)
+        var url: String = ""
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.value as? [String: AnyObject] {
+                print(value)
+                url = (value["imageUrl"] as? String)!
+                if let tempurl = NSURL(string: url) {
+                    if let data = NSData(contentsOf: tempurl as URL) {
+                        self.itemImage.image = UIImage(data: data as Data)
+                    }
+                }
+            }
+        })
+        
+        
+        
+    }
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -121,7 +145,7 @@ class DetailTableViewController: UITableViewController {
             self.commentList.clearList()
             for child in snapshot.children {
                 let node = CommentViewController.Node()
-                let snap = child as! DataSnapshot
+//                let snap = child as! DataSnapshot
                 //self.itemIndex = Int(snap.key) as Int!  //for making sure comments are in order
                 for grandchild in (child as AnyObject).children {
                     let grandsnap = grandchild as! DataSnapshot
@@ -144,7 +168,7 @@ class DetailTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         var timer = Timer()
         timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector((reloadComments)), userInfo: nil, repeats: false)
-        
+        setimage()
         reloadComments()
     }
 

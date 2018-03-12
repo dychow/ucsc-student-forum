@@ -41,8 +41,9 @@ class loginTableViewController: UITableViewController {
         var ref: DatabaseReference!
         
         let username = usernameTf.text
-        let endIndex = username?.index((username?.endIndex)!, offsetBy: -9)
-        let truncated = username?.substring(to: endIndex!)
+//        let endIndex = username?.index((username?.endIndex)!, offsetBy: -9)
+//        let truncated = username?.substring(to: endIndex!)
+        let truncated = username?.dropLast(9).description
         
         ref = Database.database().reference().child("verified").child(truncated!)
         

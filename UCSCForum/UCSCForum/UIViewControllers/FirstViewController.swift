@@ -23,6 +23,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var list = LinkedList()
     
     public class Node {
+        private var profileImage: String
+        private var contentImage: String
         private var posterName: String
         private var itemAddress: String
         private var itemCategory: String
@@ -35,6 +37,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         var next: Node? = nil
         
         public init() {
+            self.profileImage = ""
+            self.contentImage = ""
             self.posterName = ""
             self.itemAddress = ""
             self.itemCategory = ""
@@ -45,6 +49,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.commentCount = -1
         }
         
+        public var getProfileImage: String {
+            return self.profileImage
+        }
+        public var getContentImage: String {
+            return self.contentImage
+        }
         public var getPoster: String {
             return self.posterName
         }
@@ -202,7 +212,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //----------------------------------Search----------------------------------
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         if searchBar.text != nil && searchBar.text != "" {
-            print (searchBar.text)
+            print(searchBar.text!)
             reloadTable()
             if list.getCount()! > 0{
                 var iterator = list.first
@@ -231,7 +241,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print ("search bar search button clicked")
         searchBar.endEditing(true)
-        print (searchBar.text)
+        print(searchBar.text!)
     }
     
     // sends item key of item pressed to comments page
@@ -246,6 +256,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             itemIndex += 1
             itemNode = itemNode?.next!
         }
+        
         data = itemNode?.getKey
         
         //print("the name in prepare print is \(selectedItem?.getName)")
@@ -331,37 +342,34 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.list.clearList()
             for child in snapshot.children {
                 let node = Node()
-                if node != nil{
-                    let keysnap = child as! DataSnapshot
-                    node.setKey(key: keysnap.key)
-                    for grandchild in (child as AnyObject).children {
-                        let snap = grandchild as! DataSnapshot
-                        let key = snap.key
-                        let value = snap.value
-                        switch key {
-                        case "posterName":
-                            node.setPoster(person: value! as! String)
-                        case "itemName":
-                            node.setName(name: value! as! String)
-                        case "itemAddress":
-                            node.setAddress(address: value! as! String)
-                        case "itemCategory":
-                            node.setCategory(category: value! as! String)
-                        case "itemDelivery":
-                            node.setDelivery(delivery: value! as! Bool)
-                        case "comments":
-                            for _ in (grandchild as
-                                AnyObject).children{
-                                    node.addCommentCount()
-                            }
-                            print("do nothing")
-                        default:
-                            node.setDetail(detail: value! as! String)
+                let keysnap = child as! DataSnapshot
+                node.setKey(key: keysnap.key)
+                for grandchild in (child as AnyObject).children {
+                    let snap = grandchild as! DataSnapshot
+                    let key = snap.key
+                    let value = snap.value
+                    switch key {
+                    case "posterName":
+                        node.setPoster(person: value! as! String)
+                    case "itemName":
+                        node.setName(name: value! as! String)
+                    case "itemAddress":
+                        node.setAddress(address: value! as! String)
+                    case "itemCategory":
+                        node.setCategory(category: value! as! String)
+                    case "itemDelivery":
+                        node.setDelivery(delivery: value! as! Bool)
+                    case "comments":
+                        for _ in (grandchild as
+                            AnyObject).children{
+                                node.addCommentCount()
                         }
+                    default:
+                        node.setDetail(detail: value! as! String)
                     }
-                    print("\(node.getName) has \(node.getCommentCount) comments.")
-                    self.list.append(node: node)
                 }
+                print("\(node.getName) has \(node.getCommentCount) comments.")
+                self.list.append(node: node)
             }
             
             self.itemCount = self.list.getCount()!

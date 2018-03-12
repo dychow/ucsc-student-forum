@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HousingNewPostTableViewController: UITableViewController {
 
@@ -25,17 +26,43 @@ class HousingNewPostTableViewController: UITableViewController {
     @IBOutlet weak var ZipCode: UITableViewCell!
     
     @IBAction func postPushed(_ sender: Any) {
+        var ref: DatabaseReference!
         if Address.detailTextLabel?.text != "Enter Address" {
             finalAddress = "\(Address.detailTextLabel!.text!.description), \( City.detailTextLabel!.text!.description), \(State.detailTextLabel!.text!.description) \(ZipCode.detailTextLabel!.text!.description)"
+            let houseID = randomString(length: 8)
+            ref = Database.database().reference().child("housing").child(houseID.description)
+            ref.child("address").setValue(finalAddress)
+            ref.child("posterName").setValue(Auth.auth().currentUser?.uid)
+            ref.child("description").setValue(HousingDetail.text!.description)
+            ref.child("houseName").setValue(HousingInfo.text!.description)
             
+            //Create comments section in Firebase
+            ref.child("comments").child("0").child("comment").setValue("Example Comment")
+            ref.child("comments").child("0").child("name").setValue("Example Username")
             print ("the address is \(finalAddress)")
         }
         UserDefaults.standard.set("Enter Address", forKey: "HousingAddress")
         UserDefaults.standard.set("Santa Cruz", forKey: "HousingCity")
         UserDefaults.standard.set("CA", forKey: "HousingState")
-        UserDefaults.standard.set("Enter Zip Code", forKey: "HousingZipCode")
+        UserDefaults.standard.set("95060", forKey: "HousingZipCode")
         
         navigationController?.popViewController(animated: true)
+    }
+    
+    func randomString(length: Int) -> String {
+        
+        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let len = UInt32(letters.length)
+        
+        var randomString = ""
+        
+        for _ in 0 ..< length {
+            let rand = arc4random_uniform(len)
+            var nextChar = letters.character(at: Int(rand))
+            randomString += NSString(characters: &nextChar, length: 1) as String
+        }
+        
+        return randomString
     }
     
     override func viewDidAppear(_ animated: Bool) {

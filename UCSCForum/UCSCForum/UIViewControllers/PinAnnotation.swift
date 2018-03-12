@@ -10,7 +10,7 @@ class PinAnnotation : NSObject , MKAnnotation {
         self.subtitle = subtitle
         self.coordinate = coordinate
         
-     
+        
     }
 }
 

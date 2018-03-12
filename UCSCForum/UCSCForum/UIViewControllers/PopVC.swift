@@ -1,7 +1,7 @@
 import UIKit
 
 class PopVC: UIViewController, UIGestureRecognizerDelegate {
-
+    
     @IBOutlet weak var popImageView: UIImageView!
     
     var passedImage: UIImage!
@@ -26,5 +26,6 @@ class PopVC: UIViewController, UIGestureRecognizerDelegate {
     @objc func screenWasDoubleTapped() {
         dismiss(animated: true, completion: nil)
     }
-
+    
 }
+

@@ -1,5 +1,4 @@
 
-
 import UIKit
 import MapKit
 
@@ -13,3 +12,4 @@ class DroppablePin: NSObject, MKAnnotation {
         super.init()
     }
 }
+

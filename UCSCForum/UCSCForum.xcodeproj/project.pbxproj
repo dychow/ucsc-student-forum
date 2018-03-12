@@ -54,8 +54,8 @@
 		9F6A98742056558700D33E8A /* DroppablePin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6A98732056558700D33E8A /* DroppablePin.swift */; };
 		9F6A98762056558D00D33E8A /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6A98752056558D00D33E8A /* PhotoCell.swift */; };
 		9F6A9878205655B900D33E8A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6A9877205655B900D33E8A /* Constants.swift */; };
-		9F90C66620566BB2003A87FD /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90C66520566BB2003A87FD /* MapVC.swift */; };
 		9F90C66820566BCF003A87FD /* PopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90C66720566BCF003A87FD /* PopVC.swift */; };
+		9F90C66E20566EF5003A87FD /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90C66D20566EF5003A87FD /* MapVC.swift */; };
 		B3C6148CF9D5B688335CD99E /* Pods_UCSCForumUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DB02726A0125E7A728C752 /* Pods_UCSCForumUITests.framework */; };
 		CE17CBC920520D6300B895EF /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17CBC820520D6300B895EF /* EditProfileTableViewController.swift */; };
 		CE17CBCB20520E1900B895EF /* MyPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17CBCA20520E1900B895EF /* MyPostsTableViewController.swift */; };
@@ -138,8 +138,8 @@
 		9F6A98732056558700D33E8A /* DroppablePin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DroppablePin.swift; sourceTree = "<group>"; };
 		9F6A98752056558D00D33E8A /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		9F6A9877205655B900D33E8A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		9F90C66520566BB2003A87FD /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapVC.swift; path = "../../../../app-pixelcity/pixel-city/Controller/MapVC.swift"; sourceTree = "<group>"; };
 		9F90C66720566BCF003A87FD /* PopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopVC.swift; sourceTree = "<group>"; };
+		9F90C66D20566EF5003A87FD /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		A80B52D22C07BDB3FADD8C92 /* Pods-UCSCForum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSCForum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UCSCForum/Pods-UCSCForum.debug.xcconfig"; sourceTree = "<group>"; };
 		BC068DB16A8B4D9BD6034170 /* Pods_UCSCForumTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCSCForumTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C732A4B17D1092C886FB39FB /* Pods_UCSCForum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCSCForum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,7 +267,6 @@
 				9651673620561F9C0078CD00 /* HousingNewCommentViewController.swift */,
 				965167342056186A0078CD00 /* HousingDetailTableViewController.swift */,
 				96DA6F73204B81B200F92089 /* DetailTableViewController.swift */,
-				9F90C66520566BB2003A87FD /* MapVC.swift */,
 				9F90C66720566BCF003A87FD /* PopVC.swift */,
 				9F6A98702056517E00D33E8A /* PinAnnotation.swift */,
 				65BA6D78203BA06C0023C624 /* NewPostTableViewController.swift */,
@@ -288,6 +287,7 @@
 				9651672E2055FB7F0078CD00 /* HousingZipCodeViewController.swift */,
 				5111750E202431A9009E0EEF /* styleTextFied.swift */,
 				9686551D2043A7A7009E50E5 /* UILabel.swift */,
+				9F90C66D20566EF5003A87FD /* MapVC.swift */,
 			);
 			path = UIViewControllers;
 			sourceTree = "<group>";
@@ -657,6 +657,7 @@
 				65C14222203F7B7B00FC42DC /* CommentViewController.swift in Sources */,
 				965167232055B5800078CD00 /* MyPostTableViewController.swift in Sources */,
 				965167352056186A0078CD00 /* HousingDetailTableViewController.swift in Sources */,
+				9F90C66E20566EF5003A87FD /* MapVC.swift in Sources */,
 				CE17CBCD20520E4000B895EF /* FavouritesTableViewController.swift in Sources */,
 				9F90C66820566BCF003A87FD /* PopVC.swift in Sources */,
 				9651672D2055EC030078CD00 /* HousingNewPostTableViewController.swift in Sources */,
@@ -677,7 +678,6 @@
 				96B08B5C203B6E5C00D0AA24 /* CategoryViewController.swift in Sources */,
 				9F6A9878205655B900D33E8A /* Constants.swift in Sources */,
 				9651672F2055FB7F0078CD00 /* HousingZipCodeViewController.swift in Sources */,
-				9F90C66620566BB2003A87FD /* MapVC.swift in Sources */,
 				511175132024E5F2009E0EEF /* VerifyTableViewController.swift in Sources */,
 				65BA6D79203BA06C0023C624 /* NewPostTableViewController.swift in Sources */,
 				5191368D2017E9CD00756B00 /* ThirdViewController.swift in Sources */,

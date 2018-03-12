@@ -15,6 +15,7 @@
 		511175132024E5F2009E0EEF /* VerifyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511175122024E5F2009E0EEF /* VerifyTableViewController.swift */; };
 		5138F9702054726F007973B0 /* UserInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5138F96F2054726F007973B0 /* UserInfoTableViewController.swift */; };
 		5138F97320547449007973B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5138F97220547449007973B0 /* User.swift */; };
+		5138F9752055F87A007973B0 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5138F9742055F87A007973B0 /* WelcomeVC.swift */; };
 		514FBE1B2013AFCD007F865E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE1A2013AFCD007F865E /* AppDelegate.swift */; };
 		514FBE1D2013AFCD007F865E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE1C2013AFCD007F865E /* FirstViewController.swift */; };
 		514FBE222013AFCD007F865E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514FBE202013AFCD007F865E /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 		511175122024E5F2009E0EEF /* VerifyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyTableViewController.swift; sourceTree = "<group>"; };
 		5138F96F2054726F007973B0 /* UserInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewController.swift; sourceTree = "<group>"; };
 		5138F97220547449007973B0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5138F9742055F87A007973B0 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		514FBE172013AFCD007F865E /* UCSCForum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCSCForum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		514FBE1A2013AFCD007F865E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		514FBE1C2013AFCD007F865E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				659DB624201BD6BF009BAD96 /* GoogleService-Info.plist */,
 				514FBE1A2013AFCD007F865E /* AppDelegate.swift */,
 				514FBE202013AFCD007F865E /* Main.storyboard */,
+				5138F9742055F87A007973B0 /* WelcomeVC.swift */,
 				CE17CBD420520FAE00B895EF /* ContactUsTableViewController.swift */,
 				CE17CBD220520F6D00B895EF /* PrivacyTableViewController.swift */,
 				CE17CBD020520F4700B895EF /* SettingTableViewController.swift */,
@@ -617,6 +620,7 @@
 				CE17CBCF20520E7300B895EF /* WishlistTableViewController.swift in Sources */,
 				9686551E2043A7A7009E50E5 /* UILabel.swift in Sources */,
 				5138F9702054726F007973B0 /* UserInfoTableViewController.swift in Sources */,
+				5138F9752055F87A007973B0 /* WelcomeVC.swift in Sources */,
 				96DA6F74204B81B200F92089 /* DetailTableViewController.swift in Sources */,
 				5111750D2024280D009E0EEF /* SignUpTableViewController.swift in Sources */,
 				CE17CBD120520F4700B895EF /* SettingTableViewController.swift in Sources */,

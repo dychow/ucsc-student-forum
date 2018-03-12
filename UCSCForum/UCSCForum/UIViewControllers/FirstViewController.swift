@@ -23,6 +23,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var list = LinkedList()
     
     public class Node {
+        private var profileImage: String
+        private var contentImage: String
         private var posterName: String
         private var itemAddress: String
         private var itemCategory: String
@@ -35,6 +37,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         var next: Node? = nil
         
         public init() {
+            self.profileImage = ""
+            self.contentImage = ""
             self.posterName = ""
             self.itemAddress = ""
             self.itemCategory = ""
@@ -45,6 +49,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.commentCount = -1
         }
         
+        public var getProfileImage: String {
+            return self.profileImage
+        }
+        public var getContentImage: String {
+            return self.contentImage
+        }
         public var getPoster: String {
             return self.posterName
         }

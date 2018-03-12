@@ -16,6 +16,8 @@ class DetailTableViewController: UITableViewController {
     
     var commentList = CommentViewController.LinkedList()
     
+    @IBOutlet var itemImage: UIImageView!
+    
     @IBOutlet weak var poster: UILabel!
     
     @IBOutlet weak var itemName: UILabel!
@@ -48,6 +50,7 @@ class DetailTableViewController: UITableViewController {
         
         itemDetail.text = dataNode?.getDetail
         
+        
         //numberOfComment.text = "\(String(describing: dataNode?.getCommentCount))"
 
         var itemDetailHeight = itemDetail.optimalHeight
@@ -67,6 +70,28 @@ class DetailTableViewController: UITableViewController {
         
         reloadComments()
     }
+    func setimage(){
+    
+        var ref = Database.database().reference().child("market").child((dataNode?.getKey)!)
+        print(dataNode?.getKey)
+        var url: String = ""
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.value as? [String: AnyObject] {
+                print(value)
+                url = (value["imageUrl"] as? String)!
+                if let tempurl = NSURL(string: url) {
+                    if let data = NSData(contentsOf: tempurl as URL) {
+                        self.itemImage.image = UIImage(data: data as Data)
+                    }
+                }
+            }
+        })
+        
+        
+        
+    }
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -144,7 +169,7 @@ class DetailTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         var timer = Timer()
         timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector((reloadComments)), userInfo: nil, repeats: false)
-        
+        setimage()
         reloadComments()
     }
 

@@ -24,20 +24,15 @@ class TableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if Auth.auth().currentUser == nil {self.performSegue(withIdentifier: "loginSegue", sender: self)}
-
-        
         getUserData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         print("before")
-        self.performSegue(withIdentifier: "loginSegue", sender: self)
+       // self.performSegue(withIdentifier: "loginSegue", sender: self)
         print("afer")
         
         tableview.reloadData()
-        
-        
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +73,7 @@ class TableViewController: UITableViewController {
         
         if Auth.auth().currentUser != nil{
             let uid = Auth.auth().currentUser?.uid
+            
             var ref = Database.database().reference().child("users").child(uid!)
             
             ref.observeSingleEvent(of: .value, with: { (snapshot) in

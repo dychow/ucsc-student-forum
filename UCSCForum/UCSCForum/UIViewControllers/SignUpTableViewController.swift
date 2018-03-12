@@ -92,7 +92,7 @@ class SignUpTableViewController: UITableViewController {
         }
         let username = usernameTf.text
         let endIndex = username?.index((username?.endIndex)!, offsetBy: -9)
-        let truncated = username?.substring(to: endIndex!)
+     /*   let truncated = username?.substring(to: endIndex!)
         
         var ref: DatabaseReference!
         //let uid = Auth.auth().currentUser?.uid
@@ -110,10 +110,11 @@ class SignUpTableViewController: UITableViewController {
             let verified = value as! Int
         })
         
-        
+        */
         //verification email should be sent here
         
         self.performSegue(withIdentifier: "verifySegue", sender: self)
+        //self.dismiss(animated: true, completion: nil)
     }
     @objc func dissmissKeyboard(){
         

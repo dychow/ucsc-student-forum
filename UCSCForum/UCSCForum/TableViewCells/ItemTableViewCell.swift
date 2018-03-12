@@ -16,6 +16,7 @@ class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var itemDetailTextField: UILabel!
     
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet var contentImage: UIImageView!
     
     @IBOutlet weak var commentCount: UILabel!
     

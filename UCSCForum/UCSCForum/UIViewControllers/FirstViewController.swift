@@ -46,7 +46,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.itemDetail = ""
             self.itemName = ""
             self.itemKey = ""
-            self.commentCount = 0
+            self.commentCount = -1
         }
         
         public var getProfileImage: String {
@@ -198,14 +198,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         public func getCount() -> Int? {
-//                        var iterator = first
-//                        var itemCount: Int = 0
-//                        while iterator != nil {
-//                            itemCount += 1
-//                            iterator = iterator?.next
-//                        }
-//                        return itemCount
-            return count
+                        var iterator = first
+                        var itemCount: Int = 0
+                        while iterator != nil {
+                            itemCount += 1
+                            iterator = iterator?.next
+                        }
+                        return itemCount
+//            return count
         }
     }
     
@@ -266,6 +266,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         if let detailTableViewController = segue.destination as? DetailTableViewController {
             detailTableViewController.dataNode = selectedItem
+        }
+        
+        if let myPostTableViewController = segue.destination as? MyPostTableViewController {
+            myPostTableViewController.list = list
         }
     }
     
@@ -464,6 +468,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         
+    }
+    
+    @IBAction func myPostPushed(_ sender: Any) {
+        performSegue(withIdentifier: "MyPostSegue", sender: FirstViewController())
     }
     
     override func viewDidLoad() {

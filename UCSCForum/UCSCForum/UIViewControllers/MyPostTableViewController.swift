@@ -1,77 +1,34 @@
 //
-//  EditProfileTableViewController.swift
+//  MyPostTableViewController.swift
 //  UCSCForum
 //
-//  Created by Bond on 2018/3/8.
-//  Copyright © 2018年 MacDouble. All rights reserved.
+//  Created by Jason Di Chen on 3/11/18.
+//  Copyright © 2018 MacDouble. All rights reserved.
 //
 
 import UIKit
 import Firebase
-import FirebaseDatabase
-import FirebaseAuth
 
-class EditProfileTableViewController: UITableViewController {
+class MyPostTableViewController: UITableViewController {
 
-    var ref:DatabaseReference?
+    var list = FirstViewController.LinkedList()
     
-    @IBOutlet weak var name_Tf: UITextField!
-    
-    @IBOutlet weak var email_Tf: UITextField!
-    
-    @IBOutlet weak var about_Tf: UITextField!
-    
-    @IBOutlet weak var yearAndMajor_Tf: UITextField!
-    
-    @IBOutlet weak var street_Tf: UITextField!
-    
-    @IBOutlet weak var city_Tf: UITextField!
-    
-    @IBOutlet weak var zip_Tf: UITextField!
-    
-    @IBOutlet weak var state_Tf: UITextField!
-    
-    @IBOutlet weak var country_Tf: UITextField!
-    
-    @IBOutlet weak var phone_Tf: UITextField!
-    
-    @IBAction func saveChanges_Button(_ sender: Any) {
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Name").setValue(name_Tf.text)
-        
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("email").setValue(email_Tf.text)
-        
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("about").setValue(about_Tf.text)
-        
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("year and major").setValue(yearAndMajor_Tf.text)
-        
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Street_Add").setValue(street_Tf.text)
-        
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("City").setValue(city_Tf.text)
-        
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("ZipCode").setValue(zip_Tf.text)
-        
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("State").setValue(state_Tf.text)
-        
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Country").setValue(country_Tf.text)
-        
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Phone_Num").setValue(phone_Tf.text)
-        
-            // Dimiss the popover
-            presentingViewController?.dismiss(animated: true, completion: nil)
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // set the firebase reference
-        ref = Database.database().reference()
         
+        if Auth.auth().currentUser != nil {
+            let posterName = (Auth.auth().currentUser?.uid)!
+            
+        }
+        print("aha")
+        list.printList()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -80,18 +37,41 @@ class EditProfileTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    /*
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return list.getCount()!
     }
-    */
-
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //Cell structure
+        
+        let itemCell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemTableViewCell
+        
+        var currentItem = list.first
+        
+        var i = 0
+        
+        while i < indexPath.row {
+            currentItem = currentItem?.next
+            i += 1
+        }
+        
+        itemCell.personName.text = currentItem?.getPoster
+        
+        itemCell.itemNameTextField.text = currentItem?.getName
+        
+        itemCell.itemDetailTextField.text = currentItem?.getDetail
+        
+        itemCell.commentCount.text = currentItem?.getCommentCount.description
+        
+        itemCell.layer.borderWidth = 9
+        itemCell.layer.borderColor = UIColor.clear.cgColor
+        itemCell.layer.cornerRadius = 7
+        
+        return itemCell
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

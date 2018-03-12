@@ -35,6 +35,7 @@
 		65BA6D79203BA06C0023C624 /* NewPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BA6D78203BA06C0023C624 /* NewPostTableViewController.swift */; };
 		65C14222203F7B7B00FC42DC /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C14221203F7B7B00FC42DC /* CommentViewController.swift */; };
 		965167212054A7F50078CD00 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965167202054A7F50078CD00 /* FilterTableViewController.swift */; };
+		965167232055B5800078CD00 /* MyPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965167222055B5800078CD00 /* MyPostTableViewController.swift */; };
 		96540935204B94E100756D8D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96540934204B94E100756D8D /* CommentTableViewCell.swift */; };
 		965409592053240000756D8D /* NewCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965409582053240000756D8D /* NewCommentViewController.swift */; };
 		9686551E2043A7A7009E50E5 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686551D2043A7A7009E50E5 /* UILabel.swift */; };
@@ -104,6 +105,7 @@
 		65C14221203F7B7B00FC42DC /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		84E90025E508FE194A845A17 /* Pods-UCSCForum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSCForum.release.xcconfig"; path = "Pods/Target Support Files/Pods-UCSCForum/Pods-UCSCForum.release.xcconfig"; sourceTree = "<group>"; };
 		965167202054A7F50078CD00 /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
+		965167222055B5800078CD00 /* MyPostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostTableViewController.swift; sourceTree = "<group>"; };
 		96540934204B94E100756D8D /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		965409582053240000756D8D /* NewCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommentViewController.swift; sourceTree = "<group>"; };
 		9686551D2043A7A7009E50E5 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				5191368C2017E9CD00756B00 /* ThirdViewController.swift */,
 				96DA6F73204B81B200F92089 /* DetailTableViewController.swift */,
 				65BA6D78203BA06C0023C624 /* NewPostTableViewController.swift */,
+				965167222055B5800078CD00 /* MyPostTableViewController.swift */,
 				965409582053240000756D8D /* NewCommentViewController.swift */,
 				51DDC0932017EE44005FD754 /* Signup.swift */,
 				5111750C2024280D009E0EEF /* SignUpTableViewController.swift */,
@@ -598,6 +601,7 @@
 				965409592053240000756D8D /* NewCommentViewController.swift in Sources */,
 				96540935204B94E100756D8D /* CommentTableViewCell.swift in Sources */,
 				65C14222203F7B7B00FC42DC /* CommentViewController.swift in Sources */,
+				965167232055B5800078CD00 /* MyPostTableViewController.swift in Sources */,
 				CE17CBCD20520E4000B895EF /* FavouritesTableViewController.swift in Sources */,
 				514FBE1B2013AFCD007F865E /* AppDelegate.swift in Sources */,
 				5138F97320547449007973B0 /* User.swift in Sources */,

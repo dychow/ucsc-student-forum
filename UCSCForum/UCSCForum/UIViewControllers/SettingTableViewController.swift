@@ -10,8 +10,15 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
 
+    @IBOutlet weak var notification_Switch: UISwitch!
+    
     @IBAction func notification_Switch(_ sender: Any) {
+        /*
+            if notification_Switch.isOn {
+            // add notification codes here
+        }
         print("notification switch works")
+        */
     }
     
     @IBAction func sound_Switch(_ sender: Any) {

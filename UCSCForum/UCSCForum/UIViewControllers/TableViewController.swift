@@ -15,6 +15,11 @@ class TableViewController: UITableViewController {
     
     var name : String?
     var bio : String?
+    var livingArea: String?
+    var yearInfo: String?
+    var email: String?
+    var phone: String?
+    
     var profileImageUrl: String?
     var flag = 0;
     @IBOutlet var tableview: UITableView!
@@ -23,6 +28,10 @@ class TableViewController: UITableViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet var bioLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var livingAreaLabel: UILabel!
+    @IBOutlet weak var yearInfoLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
     
     /*
     override func viewDidAppear(_ animated: Bool) {
@@ -92,11 +101,25 @@ class TableViewController: UITableViewController {
                 self.name = value!["name"] as? String
                 self.bio = value!["about"] as? String
                 self.profileImageUrl = value!["profileImageUrl"] as? String
+                self.livingArea = value!["Street_Add"] as? String
+                self.yearInfo = value!["year and major"] as? String
+                self.email = value!["email"] as? String
+                self.phone = value!["Phone_Num"] as? String
                 
                 print(self.name)
                 print(self.bio)
+                print(self.livingArea)
+                print(self.yearInfo)
+                print(self.email)
+                print(self.phone)
+                
                 self.nameLabel.text = self.name
                 self.bioLabel.text = self.bio
+                self.livingAreaLabel.text = self.livingArea
+                self.yearInfoLabel.text = self.yearInfo
+                self.emailLabel.text = self.email
+                self.phoneLabel.text = self.phone
+                
                 
                 if let url = NSURL(string: self.profileImageUrl!) {
                     if let data = NSData(contentsOf: url as URL) {
@@ -106,6 +129,10 @@ class TableViewController: UITableViewController {
                 UserDefaults.standard.setValuesForKeys(["name": self.name])
                 UserDefaults.standard.setValuesForKeys(["bio": self.bio])
                 UserDefaults.standard.setValuesForKeys(["profileImageUrl": self.profileImageUrl])
+                UserDefaults.standard.setValuesForKeys(["livingArea": self.livingArea])
+                UserDefaults.standard.setValuesForKeys(["yearInfo": self.yearInfo])
+                UserDefaults.standard.setValuesForKeys(["email": self.email])
+                UserDefaults.standard.setValuesForKeys(["phone": self.phone])
                 
             })
             

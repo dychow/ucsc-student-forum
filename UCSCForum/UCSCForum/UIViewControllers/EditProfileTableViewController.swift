@@ -57,7 +57,9 @@ class EditProfileTableViewController: UITableViewController {
         ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Phone_Num").setValue(phone_Tf.text)
         
             // Dimiss the popover
-            presentingViewController?.dismiss(animated: true, completion: nil)
+            //presentingViewController?.dismiss(animated: true, completion: nil)
+        
+            performSegue(withIdentifier: "doneSegue", sender: EditProfileTableViewController())
         
     }
     /*

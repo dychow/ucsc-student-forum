@@ -1,11 +1,3 @@
-//
-//  Constants.swift
-//  pixel-city
-//
-//  Created by Caleb Stultz on 7/18/17.
-//  Copyright © 2017 Caleb Stultz. All rights reserved.
-//
-
 import Foundation
 
 let apiKey = "903fb47b981b71bcaa600362da5fe8a2"

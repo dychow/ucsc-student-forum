@@ -96,6 +96,7 @@ class ThirdViewController:UIViewController, UITableViewDataSource, UITableViewDe
             }
             self.itemCount = self.houseList.getCount()!
         })
+        table.reloadData()
     }
     
 
@@ -134,9 +135,8 @@ class ThirdViewController:UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         var timer = Timer()
-        timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector((readHousingData)), userInfo: nil, repeats: false)
-        readHousingData()
-        table.reloadData()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector((readHousingData)), userInfo: nil, repeats: false)
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -145,10 +145,9 @@ class ThirdViewController:UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        readHousingData()
         var timer = Timer()
         timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector((readHousingData)), userInfo: nil, repeats: false)
-        readHousingData()
-        table.reloadData()
     }
     
 

@@ -25,7 +25,6 @@
 		514FBE3D2013AFCD007F865E /* UCSCForumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514FBE3C2013AFCD007F865E /* UCSCForumUITests.swift */; };
 		519136892017CBD300756B00 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519136882017CBD300756B00 /* TableViewController.swift */; };
 		5191368D2017E9CD00756B00 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5191368C2017E9CD00756B00 /* ThirdViewController.swift */; };
-		51DDC0942017EE44005FD754 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDC0932017EE44005FD754 /* Signup.swift */; };
 		51DDC096201959A2005FD754 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DDC095201959A2005FD754 /* ItemTableViewCell.swift */; };
 		51DDC09A201A9E7B005FD754 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51DDC098201A9E7B005FD754 /* Montserrat-Regular.ttf */; };
 		51DDC09B201A9E7B005FD754 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51DDC099201A9E7B005FD754 /* Montserrat-Bold.ttf */; };
@@ -34,6 +33,8 @@
 		659DB627201BD6BF009BAD96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 659DB624201BD6BF009BAD96 /* GoogleService-Info.plist */; };
 		65BA6D79203BA06C0023C624 /* NewPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BA6D78203BA06C0023C624 /* NewPostTableViewController.swift */; };
 		65C14222203F7B7B00FC42DC /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C14221203F7B7B00FC42DC /* CommentViewController.swift */; };
+		9642A37120564A0B00925FBE /* PopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642A37020564A0A00925FBE /* PopVC.swift */; };
+		9642A37320564C9000925FBE /* HousingMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642A37220564C9000925FBE /* HousingMapViewController.swift */; };
 		965167212054A7F50078CD00 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965167202054A7F50078CD00 /* FilterTableViewController.swift */; };
 		965167232055B5800078CD00 /* MyPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965167222055B5800078CD00 /* MyPostTableViewController.swift */; };
 		965167252055E9F40078CD00 /* HousingAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965167242055E9F40078CD00 /* HousingAddressViewController.swift */; };
@@ -44,7 +45,6 @@
 		96516733205602B50078CD00 /* HousingDataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96516732205602B50078CD00 /* HousingDataStructures.swift */; };
 		965167352056186A0078CD00 /* HousingDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965167342056186A0078CD00 /* HousingDetailTableViewController.swift */; };
 		9651673720561F9C0078CD00 /* HousingNewCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9651673620561F9C0078CD00 /* HousingNewCommentViewController.swift */; };
-		9651673920562B9E0078CD00 /* HousingMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9651673820562B9E0078CD00 /* HousingMapViewController.swift */; };
 		96540935204B94E100756D8D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96540934204B94E100756D8D /* CommentTableViewCell.swift */; };
 		965409592053240000756D8D /* NewCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965409582053240000756D8D /* NewCommentViewController.swift */; };
 		9686551E2043A7A7009E50E5 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686551D2043A7A7009E50E5 /* UILabel.swift */; };
@@ -103,7 +103,6 @@
 		514FBE3E2013AFCD007F865E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		519136882017CBD300756B00 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		5191368C2017E9CD00756B00 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		51DDC0932017EE44005FD754 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		51DDC095201959A2005FD754 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		51DDC098201A9E7B005FD754 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "UCSCForum/Montserrat-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 		51DDC099201A9E7B005FD754 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "UCSCForum/Montserrat-Bold.ttf"; sourceTree = SOURCE_ROOT; };
@@ -113,6 +112,8 @@
 		65BA6D78203BA06C0023C624 /* NewPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostTableViewController.swift; sourceTree = "<group>"; };
 		65C14221203F7B7B00FC42DC /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		84E90025E508FE194A845A17 /* Pods-UCSCForum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSCForum.release.xcconfig"; path = "Pods/Target Support Files/Pods-UCSCForum/Pods-UCSCForum.release.xcconfig"; sourceTree = "<group>"; };
+		9642A37020564A0A00925FBE /* PopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopVC.swift; path = "../../../../../../Downloads/app-pixelcity/pixel-city/Controller/PopVC.swift"; sourceTree = "<group>"; };
+		9642A37220564C9000925FBE /* HousingMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingMapViewController.swift; sourceTree = "<group>"; };
 		965167202054A7F50078CD00 /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
 		965167222055B5800078CD00 /* MyPostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostTableViewController.swift; sourceTree = "<group>"; };
 		965167242055E9F40078CD00 /* HousingAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingAddressViewController.swift; sourceTree = "<group>"; };
@@ -123,7 +124,6 @@
 		96516732205602B50078CD00 /* HousingDataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingDataStructures.swift; sourceTree = "<group>"; };
 		965167342056186A0078CD00 /* HousingDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingDetailTableViewController.swift; sourceTree = "<group>"; };
 		9651673620561F9C0078CD00 /* HousingNewCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingNewCommentViewController.swift; sourceTree = "<group>"; };
-		9651673820562B9E0078CD00 /* HousingMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingMapViewController.swift; sourceTree = "<group>"; };
 		96540934204B94E100756D8D /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		965409582053240000756D8D /* NewCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommentViewController.swift; sourceTree = "<group>"; };
 		9686551D2043A7A7009E50E5 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -255,15 +255,16 @@
 				9651673620561F9C0078CD00 /* HousingNewCommentViewController.swift */,
 				965167342056186A0078CD00 /* HousingDetailTableViewController.swift */,
 				96DA6F73204B81B200F92089 /* DetailTableViewController.swift */,
+				9642A37020564A0A00925FBE /* PopVC.swift */,
 				65BA6D78203BA06C0023C624 /* NewPostTableViewController.swift */,
 				965167222055B5800078CD00 /* MyPostTableViewController.swift */,
 				965409582053240000756D8D /* NewCommentViewController.swift */,
-				51DDC0932017EE44005FD754 /* Signup.swift */,
 				5111750C2024280D009E0EEF /* SignUpTableViewController.swift */,
 				96B08B5D203B79D900D0AA24 /* AddressViewController.swift */,
 				51117510202447A3009E0EEF /* loginTableViewController.swift */,
 				511175122024E5F2009E0EEF /* VerifyTableViewController.swift */,
 				96B08B5B203B6E5C00D0AA24 /* CategoryViewController.swift */,
+				9642A37220564C9000925FBE /* HousingMapViewController.swift */,
 				65C14221203F7B7B00FC42DC /* CommentViewController.swift */,
 				965167202054A7F50078CD00 /* FilterTableViewController.swift */,
 				9651672C2055EC030078CD00 /* HousingNewPostTableViewController.swift */,
@@ -272,7 +273,6 @@
 				9651672A2055EA2D0078CD00 /* HousingStateViewController.swift */,
 				9651672E2055FB7F0078CD00 /* HousingZipCodeViewController.swift */,
 				5111750E202431A9009E0EEF /* styleTextFied.swift */,
-				9651673820562B9E0078CD00 /* HousingMapViewController.swift */,
 				9686551D2043A7A7009E50E5 /* UILabel.swift */,
 			);
 			path = UIViewControllers;
@@ -488,6 +488,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-UCSCForum/Pods-UCSCForum-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -496,6 +498,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
@@ -635,7 +639,6 @@
 				514FBE1B2013AFCD007F865E /* AppDelegate.swift in Sources */,
 				5138F97320547449007973B0 /* User.swift in Sources */,
 				51117511202447A3009E0EEF /* loginTableViewController.swift in Sources */,
-				51DDC0942017EE44005FD754 /* Signup.swift in Sources */,
 				965167292055EA220078CD00 /* HousingCityViewController.swift in Sources */,
 				965167252055E9F40078CD00 /* HousingAddressViewController.swift in Sources */,
 				514FBE1D2013AFCD007F865E /* FirstViewController.swift in Sources */,
@@ -648,8 +651,8 @@
 				9651672F2055FB7F0078CD00 /* HousingZipCodeViewController.swift in Sources */,
 				511175132024E5F2009E0EEF /* VerifyTableViewController.swift in Sources */,
 				65BA6D79203BA06C0023C624 /* NewPostTableViewController.swift in Sources */,
-				9651673920562B9E0078CD00 /* HousingMapViewController.swift in Sources */,
 				5191368D2017E9CD00756B00 /* ThirdViewController.swift in Sources */,
+				9642A37320564C9000925FBE /* HousingMapViewController.swift in Sources */,
 				5111750F202431A9009E0EEF /* styleTextFied.swift in Sources */,
 				CE17CBCF20520E7300B895EF /* WishlistTableViewController.swift in Sources */,
 				9686551E2043A7A7009E50E5 /* UILabel.swift in Sources */,
@@ -657,6 +660,7 @@
 				5138F9752055F87A007973B0 /* WelcomeVC.swift in Sources */,
 				96DA6F74204B81B200F92089 /* DetailTableViewController.swift in Sources */,
 				96516733205602B50078CD00 /* HousingDataStructures.swift in Sources */,
+				9642A37120564A0B00925FBE /* PopVC.swift in Sources */,
 				5111750D2024280D009E0EEF /* SignUpTableViewController.swift in Sources */,
 				CE17CBD120520F4700B895EF /* SettingTableViewController.swift in Sources */,
 				51DDC096201959A2005FD754 /* ItemTableViewCell.swift in Sources */,

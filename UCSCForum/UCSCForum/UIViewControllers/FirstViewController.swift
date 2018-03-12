@@ -468,7 +468,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
-    @IBAction func myPostPushed(_ sender: Any) {
+    @IBAction func myPostHousingMapViewControllerPushed(_ sender: Any) {
         performSegue(withIdentifier: "MyPostSegue", sender: FirstViewController())
     }
     

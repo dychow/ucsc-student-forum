@@ -25,9 +25,9 @@ class HousingDetailTableViewController: UITableViewController {
     
     @IBOutlet weak var houseDetail: UILabel!
     
-    @IBAction func addressPressed(_ sender: Any) {
+    /*@IBAction func addressPressed(_ sender: Any) {
         performSegue(withIdentifier: "HousingMap", sender: HousingDetailTableViewController())
-    }
+    }*/
     
     @IBAction func makeCommentButtonPushed(_ sender: Any) {
         performSegue(withIdentifier: "HousingComment", sender: HousingDetailTableViewController())
@@ -38,9 +38,9 @@ class HousingDetailTableViewController: UITableViewController {
             housingNewCommentViewController.dataNode = data
         }
         
-        if let housingMapViewController = segue.destination as? HousingMapViewController {
+        /*if let housingMapViewController = segue.destination as? HousingMapViewController {
             housingMapViewController.address = houseAddress.text
-        }
+        }*/
         
     }
     

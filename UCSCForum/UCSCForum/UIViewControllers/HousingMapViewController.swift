@@ -10,11 +10,9 @@ import UIKit
 
 class HousingMapViewController: UIViewController {
 
-    var address: String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(address)
+
         // Do any additional setup after loading the view.
     }
 

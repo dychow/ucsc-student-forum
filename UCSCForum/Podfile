@@ -9,6 +9,9 @@ target 'UCSCForum' do
   use_frameworks!
 
   # Pods for UCSCForum
+
+  pod 'Alamofire', '~> 4.4'
+  pod 'AlamofireImage', '~> 3.1'
   
   target 'UCSCForumTests' do
     inherit! :search_paths

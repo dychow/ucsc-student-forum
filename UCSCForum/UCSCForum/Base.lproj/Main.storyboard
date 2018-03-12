@@ -156,10 +156,10 @@
             <objects>
                 <tableViewController id="EaB-uf-x1C" customClass="NewPostTableViewController" customModule="UCSCForum" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mdl-hy-c6i">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="YkY-qf-lUP">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="YkY-qf-lUP">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="278"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -309,11 +309,11 @@
             <objects>
                 <viewController id="0vp-lc-O2Y" customClass="AddressViewController" customModule="UCSCForum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ynm-rv-IXZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter street name (Must be in Santa Cruz)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rLu-x0-BhY">
-                                <rect key="frame" x="20" y="40" width="374" height="30"/>
+                                <rect key="frame" x="20" y="84" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="street-address"/>
@@ -347,21 +347,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LF0-yI-kTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2680" y="-1110"/>
-        </scene>
-        <!--Housing Map View Controller-->
-        <scene sceneID="yEs-yz-QXN">
-            <objects>
-                <viewController id="F1b-Md-2w5" customClass="HousingMapViewController" customModule="UCSCForum" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SeO-96-WVc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="eKy-32-Ish"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="900-b4-HU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3428" y="-1432"/>
         </scene>
         <!--Housing Detail Table View Controller-->
         <scene sceneID="Qba-IG-zfZ">
@@ -426,9 +411,6 @@
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Op-6H-dz5">
                                     <rect key="frame" x="25" y="95" width="364" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <connections>
-                                        <action selector="addressPressed:" destination="Jer-Wh-fWk" eventType="touchUpInside" id="qi9-Ko-QjY"/>
-                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QWER, I'm selling it because i never use it" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoK-wK-dln">
                                     <rect key="frame" x="25" y="127.99999999999999" width="364" height="19.333333333333329"/>
@@ -507,7 +489,6 @@
                         <outlet property="posterName" destination="kA6-zb-ckv" id="SME-zN-hbJ"/>
                         <outlet property="table" destination="hxR-j5-3ZV" id="1ho-hm-gRZ"/>
                         <segue destination="5sr-5s-TCH" kind="show" identifier="HousingComment" id="eP4-GJ-CEi"/>
-                        <segue destination="F1b-Md-2w5" kind="show" identifier="HousingMap" id="h33-sS-nke"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCp-c0-cpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -559,7 +540,7 @@
             <objects>
                 <viewController id="qzc-Qh-mcW" customClass="CategoryViewController" customModule="UCSCForum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JCA-J9-Z27">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zZW-5p-QTA">
@@ -592,6 +573,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3TF-fj-i0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2680" y="-1791"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EUB-vb-L7C">
+            <objects>
+                <viewController id="gl3-94-9oj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="43A-h1-oin">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hAg-09-CNg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rbZ-JW-TzO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3399" y="-1474"/>
         </scene>
         <!--Housing-->
         <scene sceneID="MwT-ug-TJN">
@@ -1182,7 +1178,7 @@
             <objects>
                 <tableViewController id="6z5-2v-Yu4" customClass="SignUpTableViewController" customModule="UCSCForum" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jge-de-8bt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1290,7 +1286,7 @@
             <objects>
                 <tableViewController id="GCX-Dn-bEn" customClass="UserInfoTableViewController" customModule="UCSCForum" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Iba-6c-tdW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -1374,7 +1370,7 @@
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="BR1-6W-OiG" customClass="loginTableViewController" customModule="UCSCForum" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" id="OcS-ii-CCs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -1490,7 +1486,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vNf-da-c1k">
+                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vNf-da-c1k">
                             <rect key="frame" x="0.0" y="265" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -2250,6 +2246,7 @@
                                                     <rect key="frame" x="20" y="14" width="374" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
@@ -2640,8 +2637,6 @@
             </objects>
             <point key="canvasLocation" x="2213.04347826087" y="764.67391304347836"/>
         </scene>
-<<<<<<< HEAD
-=======
         <!--Favourites-->
         <scene sceneID="f0d-lb-0X9">
             <objects>
@@ -2930,7 +2925,6 @@
             </objects>
             <point key="canvasLocation" x="4777" y="17"/>
         </scene>
->>>>>>> 3328b0d295f4babc3b9ff2ff3bdc04f4a5ded80c
         <!--Settings-->
         <scene sceneID="J9T-aE-kch">
             <objects>
@@ -3201,15 +3195,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vn5-iG-By9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1029" y="0.0"/>
+            <point key="canvasLocation" x="974" y="16"/>
         </scene>
     </scenes>
     <resources>
-<<<<<<< HEAD
         <image name="House" width="23" height="23"/>
-=======
         <image name="Location" width="71" height="100"/>
->>>>>>> 3328b0d295f4babc3b9ff2ff3bdc04f4a5ded80c
         <image name="My Collection" width="100" height="100"/>
         <image name="Profile button-1" width="143" height="118"/>
         <image name="Setup " width="95" height="100"/>
@@ -20837,13 +20828,8 @@ WQAAAAAAAAAAAAAAAAAQHLk
         <image name="slug" width="23" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
-        <segue reference="1gt-lg-CiS"/>
-        <segue reference="cP6-WB-SoH"/>
-=======
         <segue reference="X6S-iX-N1p"/>
         <segue reference="dol-oU-APL"/>
-        <segue reference="Lx8-B7-JPk"/>
->>>>>>> 3328b0d295f4babc3b9ff2ff3bdc04f4a5ded80c
+        <segue reference="cP6-WB-SoH"/>
     </inferredMetricsTieBreakers>
 </document>

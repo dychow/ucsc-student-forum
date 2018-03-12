@@ -42,9 +42,11 @@ class TableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         print("before")
+        checkLogin()
+
         getUserData()
 
-        checkLogin()
+        //checkLogin()
         //self.performSegue(withIdentifier: "loginSegue", sender: self)
         print("afer")
         
@@ -97,7 +99,9 @@ class TableViewController: UITableViewController {
             //var ref = Database.database().reference().child("users").child(uid!)
             
             ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                
                 let value = snapshot.value as? NSDictionary
+                if value != nil{
                 self.name = value!["name"] as? String
                 self.bio = value!["about"] as? String
                 self.profileImageUrl = value!["profileImageUrl"] as? String
@@ -105,6 +109,7 @@ class TableViewController: UITableViewController {
                 self.yearInfo = value!["year and major"] as? String
                 self.email = value!["email"] as? String
                 self.phone = value!["Phone_Num"] as? String
+                
                 
                 print(self.name)
                 print(self.bio)
@@ -126,6 +131,7 @@ class TableViewController: UITableViewController {
                         self.profileImage.image = UIImage(data: data as Data)
                     }
                 }
+                }
                 UserDefaults.standard.setValuesForKeys(["name": self.name])
                 UserDefaults.standard.setValuesForKeys(["bio": self.bio])
                 UserDefaults.standard.setValuesForKeys(["profileImageUrl": self.profileImageUrl])
@@ -133,6 +139,7 @@ class TableViewController: UITableViewController {
                 UserDefaults.standard.setValuesForKeys(["yearInfo": self.yearInfo])
                 UserDefaults.standard.setValuesForKeys(["email": self.email])
                 UserDefaults.standard.setValuesForKeys(["phone": self.phone])
+                    
                 
             })
             

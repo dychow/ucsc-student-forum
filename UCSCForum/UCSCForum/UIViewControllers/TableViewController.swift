@@ -15,6 +15,11 @@ class TableViewController: UITableViewController {
     
     var name : String?
     var bio : String?
+    var livingArea: String?
+    var yearInfo: String?
+    var email: String?
+    var phone: String?
+    
     var profileImageUrl: String?
     var flag = 0;
     @IBOutlet var tableview: UITableView!
@@ -23,6 +28,10 @@ class TableViewController: UITableViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet var bioLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var livingAreaLabel: UILabel!
+    @IBOutlet weak var yearInfoLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
     
     /*
     override func viewDidAppear(_ animated: Bool) {
@@ -33,12 +42,15 @@ class TableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         print("before")
+        getUserData()
 
         checkLogin()
         //self.performSegue(withIdentifier: "loginSegue", sender: self)
         print("afer")
         
         tableview.reloadData()
+        
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,37 +92,52 @@ class TableViewController: UITableViewController {
         
         if Auth.auth().currentUser != nil{
             let uid = Auth.auth().currentUser?.uid
+            let ref = Database.database().reference().child("users").child(uid!)
             
-            var ref = Database.database().reference().child("users").child(uid!)
+            //var ref = Database.database().reference().child("users").child(uid!)
             
             ref.observeSingleEvent(of: .value, with: { (snapshot) in
                 let value = snapshot.value as? NSDictionary
-                self.name = value!["name"] as! String
-                self.bio = value!["about"] as! String
-                self.profileImageUrl = value!["profileImageUrl"] as! String
+                self.name = value!["name"] as? String
+                self.bio = value!["about"] as? String
+                self.profileImageUrl = value!["profileImageUrl"] as? String
+                self.livingArea = value!["Street_Add"] as? String
+                self.yearInfo = value!["year and major"] as? String
+                self.email = value!["email"] as? String
+                self.phone = value!["Phone_Num"] as? String
+                
+                print(self.name)
+                print(self.bio)
+                print(self.livingArea)
+                print(self.yearInfo)
+                print(self.email)
+                print(self.phone)
+                
+                self.nameLabel.text = self.name
+                self.bioLabel.text = self.bio
+                self.livingAreaLabel.text = self.livingArea
+                self.yearInfoLabel.text = self.yearInfo
+                self.emailLabel.text = self.email
+                self.phoneLabel.text = self.phone
                 
                 
+                if let url = NSURL(string: self.profileImageUrl!) {
+                    if let data = NSData(contentsOf: url as URL) {
+                        self.profileImage.image = UIImage(data: data as Data)
+                    }
+                }
                 UserDefaults.standard.setValuesForKeys(["name": self.name])
                 UserDefaults.standard.setValuesForKeys(["bio": self.bio])
                 UserDefaults.standard.setValuesForKeys(["profileImageUrl": self.profileImageUrl])
+                UserDefaults.standard.setValuesForKeys(["livingArea": self.livingArea])
+                UserDefaults.standard.setValuesForKeys(["yearInfo": self.yearInfo])
+                UserDefaults.standard.setValuesForKeys(["email": self.email])
+                UserDefaults.standard.setValuesForKeys(["phone": self.phone])
                 
             })
             
-            
         }
 
-        name = UserDefaults.standard.value(forKey: "name") as! String
-        bio = UserDefaults.standard.value(forKey: "bio") as! String
-        profileImageUrl = UserDefaults.standard.value(forKey: "profileImageUrl") as! String
-        
-        nameLabel.text = name
-        bioLabel.text = bio
-        
-        if let url = NSURL(string: profileImageUrl!) {
-            if let data = NSData(contentsOf: url as URL) {
-                profileImage.image = UIImage(data: data as Data)
-            }
-        }
     }
 
     func checkLogin(){
@@ -132,68 +159,6 @@ class TableViewController: UITableViewController {
         
     }
     
-    // override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of rows
-    //return 0
-    // }
-    
-    //  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    //     return 1
-    //  }
-    /*
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-     
-     // Configure the cell...
-     
-     return cell
-     }
-     */
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 

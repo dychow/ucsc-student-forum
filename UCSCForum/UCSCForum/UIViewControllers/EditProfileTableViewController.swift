@@ -36,7 +36,7 @@ class EditProfileTableViewController: UITableViewController {
     @IBOutlet weak var phone_Tf: UITextField!
     
     @IBAction func saveChanges_Button(_ sender: Any) {
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Name").setValue(name_Tf.text)
+        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("name").setValue(name_Tf.text)
         
         ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("email").setValue(email_Tf.text)
         
@@ -57,9 +57,47 @@ class EditProfileTableViewController: UITableViewController {
         ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Phone_Num").setValue(phone_Tf.text)
         
             // Dimiss the popover
-            presentingViewController?.dismiss(animated: true, completion: nil)
+            //presentingViewController?.dismiss(animated: true, completion: nil)
+        
+            performSegue(withIdentifier: "doneSegue", sender: EditProfileTableViewController())
         
     }
+    /*
+    func getUserData(){
+        
+        if Auth.auth().currentUser != nil{
+            let uid = Auth.auth().currentUser?.uid
+            let ref = Database.database().reference().child("users").child(uid!)
+            
+            //var ref = Database.database().reference().child("users").child(uid!)
+            
+            ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                let value = snapshot.value as? NSDictionary
+                self.name = value!["name"] as? String
+                self.bio = value!["about"] as? String
+                self.profileImageUrl = value!["profileImageUrl"] as? String
+                
+                print(self.name)
+                print(self.bio)
+                self.nameLabel.text = self.name
+                self.bioLabel.text = self.bio
+                
+                if let url = NSURL(string: self.profileImageUrl!) {
+                    if let data = NSData(contentsOf: url as URL) {
+                        self.profileImage.image = UIImage(data: data as Data)
+                    }
+                }
+                UserDefaults.standard.setValuesForKeys(["name": self.name])
+                UserDefaults.standard.setValuesForKeys(["bio": self.bio])
+                UserDefaults.standard.setValuesForKeys(["profileImageUrl": self.profileImageUrl])
+                
+            })
+            
+        }
+        
+    }
+    */
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

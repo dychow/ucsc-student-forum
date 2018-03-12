@@ -1023,6 +1023,9 @@
                                                                 <rect key="frame" x="310" y="103" width="46" height="30"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <state key="normal" title="Edit"/>
+                                                                <connections>
+                                                                    <segue destination="ZPP-fZ-XO9" kind="show" id="7ey-fT-ajL"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </view>
@@ -1067,10 +1070,16 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bva-rF-u56">
                                                     <rect key="frame" x="207" y="-2" width="207" height="103"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <segue destination="uwd-QT-NfQ" kind="show" id="ZGQ-K7-Gog"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGW-pQ-TRn">
                                                     <rect key="frame" x="0.0" y="-2" width="207" height="102"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <segue destination="EaB-uf-x1C" kind="show" id="Lx8-B7-JPk"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="7" bottom="8" trailing="8"/>
@@ -1595,11 +1604,11 @@
             <objects>
                 <tableViewController id="ZPP-fZ-XO9" customClass="EditProfileTableViewController" customModule="UCSCForum" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ciq-1h-0m9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
-                            <tableViewSection headerTitle="Cruz ID" id="VVg-Fs-nDH">
+                            <tableViewSection headerTitle="Name" id="VVg-Fs-nDH">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="61" id="ntA-Oh-loY">
                                         <rect key="frame" x="0.0" y="28" width="414" height="61"/>
@@ -1620,10 +1629,31 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="First Name" id="du9-75-w8g">
+                            <tableViewSection headerTitle="About" id="aRx-wW-Uma">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="61" id="Xpy-06-g6J">
+                                        <rect key="frame" x="0.0" y="117" width="414" height="61"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xpy-06-g6J" id="gIe-5X-pIf">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aa6-5g-EB7">
+                                                    <rect key="frame" x="20" y="14" width="374" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="UCSC Email" id="du9-75-w8g">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="0rp-Qj-cSg">
-                                        <rect key="frame" x="0.0" y="117" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="206" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0rp-Qj-cSg" id="Jli-Cq-Oro">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
@@ -1641,10 +1671,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Last Name" id="Xoi-8L-gfd">
+                            <tableViewSection headerTitle="Year and Major" id="Xoi-8L-gfd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="cJm-Q9-dpO">
-                                        <rect key="frame" x="0.0" y="205" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="294" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cJm-Q9-dpO" id="pJB-By-RHA">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
@@ -1665,7 +1695,7 @@
                             <tableViewSection headerTitle="Address" id="f0B-nu-FhL">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="GDU-eE-zCa">
-                                        <rect key="frame" x="0.0" y="293" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="382" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GDU-eE-zCa" id="nHZ-wj-qHs">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
@@ -1689,7 +1719,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="fys-y6-Qas">
-                                        <rect key="frame" x="0.0" y="353" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="442" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fys-y6-Qas" id="HSQ-3G-qbF">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
@@ -1727,7 +1757,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="OB5-gb-zl1">
-                                        <rect key="frame" x="0.0" y="413" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="502" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OB5-gb-zl1" id="kjF-xk-lKo">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
@@ -1769,7 +1799,7 @@
                             <tableViewSection headerTitle="Contact Information" id="RHk-dK-bnb">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="Dur-JQ-8oC">
-                                        <rect key="frame" x="0.0" y="501" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="590" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dur-JQ-8oC" id="lhn-1S-T47">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
@@ -1793,7 +1823,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="w7b-4H-qZU">
-                                        <rect key="frame" x="0.0" y="561" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="650" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w7b-4H-qZU" id="gW7-b9-TsL">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
@@ -1805,7 +1835,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <state key="normal" title="Save the Changes"/>
                                                     <connections>
-                                                        <action selector="saveChanges_Button:" destination="ZPP-fZ-XO9" eventType="touchUpInside" id="p1P-GB-bnD"/>
+                                                        <action selector="saveChanges_Button:" destination="ZPP-fZ-XO9" eventType="touchUpInside" id="qP6-kS-C9p"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1821,27 +1851,28 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Edit profile" id="h5x-Q5-zav"/>
                     <connections>
-                        <outlet property="city_Tf" destination="qYn-iD-cdh" id="0N3-Vf-tD2"/>
-                        <outlet property="country_Tf" destination="99J-Wn-JDe" id="SZp-Dz-YAK"/>
-                        <outlet property="cruzID_Tf" destination="NFp-eT-pml" id="9Ef-B5-IXL"/>
-                        <outlet property="firstName_Tf" destination="DLR-iY-2fc" id="ua3-xn-Dum"/>
-                        <outlet property="lastName_Tf" destination="jik-Ba-CAp" id="nTK-xG-KYI"/>
-                        <outlet property="phone_Tf" destination="5Jb-Vb-3la" id="B8l-R6-UT3"/>
-                        <outlet property="state_Tf" destination="gdC-g4-Ggo" id="ZQj-C0-hYl"/>
-                        <outlet property="street_Tf" destination="uQj-dP-0KS" id="UpH-fg-Ka5"/>
-                        <outlet property="zipCode_Tf" destination="0tN-Kg-IHH" id="TyG-80-1OE"/>
+                        <outlet property="about_Tf" destination="aa6-5g-EB7" id="1Pv-Cr-byQ"/>
+                        <outlet property="city_Tf" destination="qYn-iD-cdh" id="TWx-XU-TWc"/>
+                        <outlet property="country_Tf" destination="99J-Wn-JDe" id="71m-vs-aGE"/>
+                        <outlet property="email_Tf" destination="DLR-iY-2fc" id="P8I-G9-PBG"/>
+                        <outlet property="name_Tf" destination="NFp-eT-pml" id="Mri-8y-8lB"/>
+                        <outlet property="phone_Tf" destination="5Jb-Vb-3la" id="JNH-Cc-8jr"/>
+                        <outlet property="state_Tf" destination="gdC-g4-Ggo" id="87N-gY-3Ia"/>
+                        <outlet property="street_Tf" destination="uQj-dP-0KS" id="gly-3t-Bg8"/>
+                        <outlet property="yearAndMajor_Tf" destination="jik-Ba-CAp" id="IWj-2k-qDW"/>
+                        <outlet property="zip_Tf" destination="0tN-Kg-IHH" id="Lo0-p9-L57"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40a-cx-EbQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1386.9565217391305" y="764.67391304347836"/>
         </scene>
-        <!--My Posts-->
+        <!--My Collection-->
         <scene sceneID="uz2-Gd-8Z7">
             <objects>
-                <tableViewController title="My Posts" id="uwd-QT-NfQ" customClass="MyPostsTableViewController" customModule="UCSCForum" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="My Collection" id="uwd-QT-NfQ" customClass="MyPostsTableViewController" customModule="UCSCForum" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="X5v-zD-v9U">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -20163,5 +20194,6 @@ WQAAAAAAAAAAAAAAAAAQHLk
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1gt-lg-CiS"/>
+        <segue reference="Lx8-B7-JPk"/>
     </inferredMetricsTieBreakers>
 </document>

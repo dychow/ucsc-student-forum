@@ -35,6 +35,11 @@
 		65C14222203F7B7B00FC42DC /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C14221203F7B7B00FC42DC /* CommentViewController.swift */; };
 		965167212054A7F50078CD00 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965167202054A7F50078CD00 /* FilterTableViewController.swift */; };
 		965167232055B5800078CD00 /* MyPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965167222055B5800078CD00 /* MyPostTableViewController.swift */; };
+		965167252055E9F40078CD00 /* HousingAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965167242055E9F40078CD00 /* HousingAddressViewController.swift */; };
+		965167292055EA220078CD00 /* HousingCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965167282055EA220078CD00 /* HousingCityViewController.swift */; };
+		9651672B2055EA2D0078CD00 /* HousingStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9651672A2055EA2D0078CD00 /* HousingStateViewController.swift */; };
+		9651672D2055EC030078CD00 /* HousingNewPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9651672C2055EC030078CD00 /* HousingNewPostTableViewController.swift */; };
+		9651672F2055FB7F0078CD00 /* HousingZipCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9651672E2055FB7F0078CD00 /* HousingZipCodeViewController.swift */; };
 		96540935204B94E100756D8D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96540934204B94E100756D8D /* CommentTableViewCell.swift */; };
 		965409592053240000756D8D /* NewCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965409582053240000756D8D /* NewCommentViewController.swift */; };
 		9686551E2043A7A7009E50E5 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686551D2043A7A7009E50E5 /* UILabel.swift */; };
@@ -104,6 +109,11 @@
 		84E90025E508FE194A845A17 /* Pods-UCSCForum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSCForum.release.xcconfig"; path = "Pods/Target Support Files/Pods-UCSCForum/Pods-UCSCForum.release.xcconfig"; sourceTree = "<group>"; };
 		965167202054A7F50078CD00 /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
 		965167222055B5800078CD00 /* MyPostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostTableViewController.swift; sourceTree = "<group>"; };
+		965167242055E9F40078CD00 /* HousingAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingAddressViewController.swift; sourceTree = "<group>"; };
+		965167282055EA220078CD00 /* HousingCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingCityViewController.swift; sourceTree = "<group>"; };
+		9651672A2055EA2D0078CD00 /* HousingStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingStateViewController.swift; sourceTree = "<group>"; };
+		9651672C2055EC030078CD00 /* HousingNewPostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingNewPostTableViewController.swift; sourceTree = "<group>"; };
+		9651672E2055FB7F0078CD00 /* HousingZipCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingZipCodeViewController.swift; sourceTree = "<group>"; };
 		96540934204B94E100756D8D /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		965409582053240000756D8D /* NewCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommentViewController.swift; sourceTree = "<group>"; };
 		9686551D2043A7A7009E50E5 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -242,6 +252,11 @@
 				96B08B5B203B6E5C00D0AA24 /* CategoryViewController.swift */,
 				65C14221203F7B7B00FC42DC /* CommentViewController.swift */,
 				965167202054A7F50078CD00 /* FilterTableViewController.swift */,
+				9651672C2055EC030078CD00 /* HousingNewPostTableViewController.swift */,
+				965167242055E9F40078CD00 /* HousingAddressViewController.swift */,
+				965167282055EA220078CD00 /* HousingCityViewController.swift */,
+				9651672A2055EA2D0078CD00 /* HousingStateViewController.swift */,
+				9651672E2055FB7F0078CD00 /* HousingZipCodeViewController.swift */,
 				5111750E202431A9009E0EEF /* styleTextFied.swift */,
 				9686551D2043A7A7009E50E5 /* UILabel.swift */,
 			);
@@ -600,16 +615,21 @@
 				65C14222203F7B7B00FC42DC /* CommentViewController.swift in Sources */,
 				965167232055B5800078CD00 /* MyPostTableViewController.swift in Sources */,
 				CE17CBCD20520E4000B895EF /* FavouritesTableViewController.swift in Sources */,
+				9651672D2055EC030078CD00 /* HousingNewPostTableViewController.swift in Sources */,
 				514FBE1B2013AFCD007F865E /* AppDelegate.swift in Sources */,
 				5138F97320547449007973B0 /* User.swift in Sources */,
 				51117511202447A3009E0EEF /* loginTableViewController.swift in Sources */,
 				51DDC0942017EE44005FD754 /* Signup.swift in Sources */,
+				965167292055EA220078CD00 /* HousingCityViewController.swift in Sources */,
+				965167252055E9F40078CD00 /* HousingAddressViewController.swift in Sources */,
 				514FBE1D2013AFCD007F865E /* FirstViewController.swift in Sources */,
 				CE17CBC920520D6300B895EF /* EditProfileTableViewController.swift in Sources */,
 				CE17CBCB20520E1900B895EF /* MyPostsTableViewController.swift in Sources */,
 				965167212054A7F50078CD00 /* FilterTableViewController.swift in Sources */,
 				CE17CBD520520FAE00B895EF /* ContactUsTableViewController.swift in Sources */,
+				9651672B2055EA2D0078CD00 /* HousingStateViewController.swift in Sources */,
 				96B08B5C203B6E5C00D0AA24 /* CategoryViewController.swift in Sources */,
+				9651672F2055FB7F0078CD00 /* HousingZipCodeViewController.swift in Sources */,
 				511175132024E5F2009E0EEF /* VerifyTableViewController.swift in Sources */,
 				65BA6D79203BA06C0023C624 /* NewPostTableViewController.swift in Sources */,
 				5191368D2017E9CD00756B00 /* ThirdViewController.swift in Sources */,

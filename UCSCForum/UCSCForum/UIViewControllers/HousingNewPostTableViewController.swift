@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class HousingNewPostTableViewController: UITableViewController {
+class HousingNewPostTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
 
     var finalAddress :String = ""
     
@@ -106,9 +106,44 @@ class HousingNewPostTableViewController: UITableViewController {
         
     }
     
+    //----------------------------------Placeholder for UITextView----------------------------------
+    func textViewDidBeginEditing(_ textView: UITextView)
+    {
+        print ("Began")
+        if (HousingDetail.text == "Say something about the item...")
+        {
+            HousingDetail.text = ""
+            HousingDetail.textColor = .black
+        }
+        textView.becomeFirstResponder() //Optional
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView)
+    {
+        print ("Ended")
+        if (HousingDetail.text.count == 0)
+        {
+            HousingDetail.text = "Say something about the item..."
+            HousingDetail.textColor = .lightGray
+        }
+        textView.resignFirstResponder()
+    }
+    //----------------------------------End of Placeholder for UITextView----------------------------------
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if (HousingDetail.text.count == 0)
+        {
+            HousingDetail.text = "Say something about the item..."
+            HousingDetail.textColor = .lightGray
+        }
+        
+        //Set the style of UITextView
+        HousingDetail.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).cgColor
+        HousingDetail.layer.borderWidth = 1.0
+        HousingDetail.layer.cornerRadius = 5
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

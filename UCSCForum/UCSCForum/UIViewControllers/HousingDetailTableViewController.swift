@@ -11,7 +11,11 @@ import Firebase
 
 class HousingDetailTableViewController: UITableViewController {
 
+    var itemCommentHeight :CGFloat = 0.0
+    
     var data: HousingDataStructures.Node?
+    
+    //var rowSelected = 0
     
     @IBOutlet var table: UITableView!
     
@@ -33,15 +37,24 @@ class HousingDetailTableViewController: UITableViewController {
         performSegue(withIdentifier: "HousingComment", sender: HousingDetailTableViewController())
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //rowSelected = indexPath.row
+        performSegue(withIdentifier: "housingPosterDetail", sender: HousingDetailTableViewController())
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let housingNewCommentViewController = segue.destination as? HousingNewCommentViewController {
             housingNewCommentViewController.dataNode = data
         }
         
-        /*if let housingMapViewController = segue.destination as? HousingMapViewController {
-            housingMapViewController.address = houseAddress.text
-        }*/
+        if let housingPosterTableViewController = segue.destination as? HousingPosterTableViewController {
+            housingPosterTableViewController.dataNode = data
+        }
         
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60+itemCommentHeight
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -138,7 +151,7 @@ class HousingDetailTableViewController: UITableViewController {
         detailCell.commenterNameTextField?.text = iterator?.getPoster
         detailCell.commentDetailTextField?.text = iterator?.getComment
         
-        var itemCommentHeight = detailCell.commentDetailTextField.optimalHeight
+        itemCommentHeight = detailCell.commentDetailTextField.optimalHeight
         
         detailCell.commentDetailTextField.frame = CGRect(x:detailCell.commentDetailTextField.frame.origin.x, y:detailCell.commentDetailTextField.frame.origin.y, width: detailCell.commentDetailTextField.frame.width, height: itemCommentHeight)
         

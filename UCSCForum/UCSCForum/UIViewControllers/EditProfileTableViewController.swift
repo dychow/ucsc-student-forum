@@ -59,7 +59,7 @@ class EditProfileTableViewController: UITableViewController {
             // Dimiss the popover
             //presentingViewController?.dismiss(animated: true, completion: nil)
         
-            performSegue(withIdentifier: "doneSegue", sender: EditProfileTableViewController())
+            navigationController?.popViewController(animated: true)
         
     }
     /*

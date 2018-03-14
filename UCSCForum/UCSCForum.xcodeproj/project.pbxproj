@@ -56,6 +56,7 @@
 		9F590D51205722B90027C51A /* DrappablePin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F590D50205722B90027C51A /* DrappablePin.swift */; };
 		9F590D53205722D00027C51A /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F590D52205722D00027C51A /* PhotoCell.swift */; };
 		9F590D552057230A0027C51A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F590D542057230A0027C51A /* Constants.swift */; };
+		9F590D59205879B40027C51A /* HousingPosterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F590D58205879B40027C51A /* HousingPosterTableViewController.swift */; };
 		B3C6148CF9D5B688335CD99E /* Pods_UCSCForumUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DB02726A0125E7A728C752 /* Pods_UCSCForumUITests.framework */; };
 		CE17CBC920520D6300B895EF /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17CBC820520D6300B895EF /* EditProfileTableViewController.swift */; };
 		CE17CBCB20520E1900B895EF /* MyPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17CBCA20520E1900B895EF /* MyPostsTableViewController.swift */; };
@@ -140,6 +141,7 @@
 		9F590D50205722B90027C51A /* DrappablePin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrappablePin.swift; sourceTree = "<group>"; };
 		9F590D52205722D00027C51A /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		9F590D542057230A0027C51A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9F590D58205879B40027C51A /* HousingPosterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingPosterTableViewController.swift; sourceTree = "<group>"; };
 		A80B52D22C07BDB3FADD8C92 /* Pods-UCSCForum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSCForum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UCSCForum/Pods-UCSCForum.debug.xcconfig"; sourceTree = "<group>"; };
 		BC068DB16A8B4D9BD6034170 /* Pods_UCSCForumTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCSCForumTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C732A4B17D1092C886FB39FB /* Pods_UCSCForum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCSCForum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +225,7 @@
 				514FBE1A2013AFCD007F865E /* AppDelegate.swift */,
 				514FBE202013AFCD007F865E /* Main.storyboard */,
 				5138F9742055F87A007973B0 /* WelcomeVC.swift */,
+				9F590D58205879B40027C51A /* HousingPosterTableViewController.swift */,
 				CE17CBD420520FAE00B895EF /* ContactUsTableViewController.swift */,
 				CE17CBD220520F6D00B895EF /* PrivacyTableViewController.swift */,
 				CE17CBD020520F4700B895EF /* SettingTableViewController.swift */,
@@ -267,7 +270,6 @@
 				9651673620561F9C0078CD00 /* HousingNewCommentViewController.swift */,
 				965167342056186A0078CD00 /* HousingDetailTableViewController.swift */,
 				96DA6F73204B81B200F92089 /* DetailTableViewController.swift */,
-				65BA6D78203BA06C0023C624 /* NewPostTableViewController.swift */,
 				965167222055B5800078CD00 /* MyPostTableViewController.swift */,
 				965409582053240000756D8D /* NewCommentViewController.swift */,
 				5111750C2024280D009E0EEF /* SignUpTableViewController.swift */,
@@ -278,6 +280,7 @@
 				9642A37220564C9000925FBE /* HousingMapViewController.swift */,
 				65C14221203F7B7B00FC42DC /* CommentViewController.swift */,
 				965167202054A7F50078CD00 /* FilterTableViewController.swift */,
+				65BA6D78203BA06C0023C624 /* NewPostTableViewController.swift */,
 				9651672C2055EC030078CD00 /* HousingNewPostTableViewController.swift */,
 				965167242055E9F40078CD00 /* HousingAddressViewController.swift */,
 				965167282055EA220078CD00 /* HousingCityViewController.swift */,
@@ -671,6 +674,7 @@
 				5138F97320547449007973B0 /* User.swift in Sources */,
 				51117511202447A3009E0EEF /* loginTableViewController.swift in Sources */,
 				965167292055EA220078CD00 /* HousingCityViewController.swift in Sources */,
+				9F590D59205879B40027C51A /* HousingPosterTableViewController.swift in Sources */,
 				965167252055E9F40078CD00 /* HousingAddressViewController.swift in Sources */,
 				514FBE1D2013AFCD007F865E /* FirstViewController.swift in Sources */,
 				CE17CBC920520D6300B895EF /* EditProfileTableViewController.swift in Sources */,

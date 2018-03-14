@@ -209,7 +209,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    //----------------------------------Search----------------------------------
+    //----------------------------------Searciewdidh----------------------------------
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         if searchBar.text != nil && searchBar.text != "" {
             print(searchBar.text!)
@@ -378,7 +378,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+       try! Auth.auth().signOut()
         //filter
         let filterObject = UserDefaults.standard.object(forKey: "filterSelected")
         if let filter = filterObject as? String {

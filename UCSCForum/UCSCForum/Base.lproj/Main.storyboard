@@ -163,7 +163,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="YkY-qf-lUP">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="YkY-qf-lUP">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="278"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -360,7 +360,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="elZ-Yo-RHm">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="elZ-Yo-RHm">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="295"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -551,7 +551,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <visualEffectView key="tableFooterView" opaque="NO" contentMode="scaleToFill" id="JJL-Ba-VOp">
+                        <visualEffectView key="tableFooterView" opaque="NO" contentMode="scaleToFill" misplaced="YES" id="JJL-Ba-VOp">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="168"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XNl-lI-101">
@@ -760,7 +760,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="KLE-dJ-mXo">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="KLE-dJ-mXo">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="278"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -1536,7 +1536,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vNf-da-c1k">
+                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vNf-da-c1k">
                             <rect key="frame" x="0.0" y="265" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -1775,6 +1775,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYQ-HY-fEt" userLabel="housing">
                                                     <rect key="frame" x="139" y="-1" width="137" height="104"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <segue destination="9jy-Wb-X03" kind="show" id="vBo-JX-8eU"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="7" bottom="8" trailing="8"/>
@@ -1902,7 +1905,7 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="47f-OA-otM"/>
+                    <navigationItem key="navigationItem" title="Profile" id="47f-OA-otM"/>
                     <connections>
                         <outlet property="bioLabel" destination="h9i-9a-7hK" id="pZx-SQ-Bxb"/>
                         <outlet property="emailLabel" destination="3fj-uv-ANx" id="JJS-fH-LL7"/>
@@ -2149,7 +2152,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="1fl-P4-k9P">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="1fl-P4-k9P">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="275"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -38261,6 +38264,7 @@ WQAAAAAAAAAAAAAAAAAQHLk
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="X6S-iX-N1p"/>
+        <segue reference="vBo-JX-8eU"/>
         <segue reference="Lx8-B7-JPk"/>
     </inferredMetricsTieBreakers>
 </document>

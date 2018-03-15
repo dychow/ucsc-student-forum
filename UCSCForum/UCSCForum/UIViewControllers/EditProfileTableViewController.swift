@@ -36,30 +36,51 @@ class EditProfileTableViewController: UITableViewController {
     @IBOutlet weak var phone_Tf: UITextField!
     
     @IBAction func saveChanges_Button(_ sender: Any) {
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("name").setValue(name_Tf.text)
         
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("email").setValue(email_Tf.text)
+        if (name_Tf.text != "") {
+            ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("name").setValue(name_Tf.text)
+        }
         
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("about").setValue(about_Tf.text)
+        if (email_Tf.text != "") {
+            ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("email").setValue(email_Tf.text)
+        }
         
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("year and major").setValue(yearAndMajor_Tf.text)
+        if (about_Tf.text != "") {
+            ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("about").setValue(about_Tf.text)
+        }
         
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Street_Add").setValue(street_Tf.text)
+        if (yearAndMajor_Tf.text != "") {
+            ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("year and major").setValue(yearAndMajor_Tf.text)
+        }
         
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("City").setValue(city_Tf.text)
+        if (street_Tf.text != "") {
+            ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Street_Add").setValue(street_Tf.text)
+        }
         
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("ZipCode").setValue(zip_Tf.text)
+        if (city_Tf.text != "") {
+            ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("City").setValue(city_Tf.text)
+        }
         
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("State").setValue(state_Tf.text)
+        if (zip_Tf.text != "") {
+            ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("ZipCode").setValue(zip_Tf.text)
+        }
         
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Country").setValue(country_Tf.text)
+        if (state_Tf.text != "") {
+            ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("State").setValue(state_Tf.text)
+        }
         
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Phone_Num").setValue(phone_Tf.text)
+        if (country_Tf.text != "") {
+            ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Country").setValue(country_Tf.text)
+        }
         
-            // Dimiss the popover
-            //presentingViewController?.dismiss(animated: true, completion: nil)
+        if (phone_Tf.text != "") {
+            ref?.child("users").child((Auth.auth().currentUser?.uid)!).child("Phone_Num").setValue(phone_Tf.text)
+        }
         
-            navigationController?.popViewController(animated: true)
+        // Dimiss the popover
+        //presentingViewController?.dismiss(animated: true, completion: nil)
+        
+        navigationController?.popViewController(animated: true)
         
     }
     /*

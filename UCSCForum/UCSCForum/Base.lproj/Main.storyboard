@@ -117,18 +117,11 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <navigationItem key="navigationItem" title="Free &amp; For sale" id="PKG-iX-BL0">
-                        <leftBarButtonItems>
-                            <barButtonItem title="Filter" id="jo8-s9-Oce">
-                                <connections>
-                                    <segue destination="kjJ-d2-uMb" kind="show" id="dcV-bI-QIz"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="My Posts" id="ZJX-2r-0b0">
-                                <connections>
-                                    <action selector="myPostPushed:" destination="9pv-A4-QxB" id="t4T-Ps-cow"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" title="Filter" id="jo8-s9-Oce">
+                            <connections>
+                                <segue destination="kjJ-d2-uMb" kind="show" id="dcV-bI-QIz"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="new post" image="addPost" id="yEZ-Uy-nSN">
                                 <color key="tintColor" red="0.058823529409999999" green="0.094117647060000004" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
@@ -38265,6 +38258,6 @@ WQAAAAAAAAAAAAAAAAAQHLk
     <inferredMetricsTieBreakers>
         <segue reference="X6S-iX-N1p"/>
         <segue reference="vBo-JX-8eU"/>
-        <segue reference="Lx8-B7-JPk"/>
+        <segue reference="cP6-WB-SoH"/>
     </inferredMetricsTieBreakers>
 </document>

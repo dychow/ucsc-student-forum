@@ -30,30 +30,7 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
     @IBAction func postButton(_ sender: Any) {
         let imageName = NSUUID().uuidString
         let storageRef = Storage.storage().reference().child("\(imageName).jpeg")
-        
-        if let uploadData = UIImageJPEGRepresentation((imageViewOl.imageView?.image)!, 0.6){
-            storageRef.putData(uploadData, metadata: nil, completion:
-                {(metadata, error) in
-                    
-                    if error != nil{
-                        print(error!)
-                        return
-                    }
-                   
-                    if let profileImageUrl = metadata?.downloadURL()?.absoluteString{
-                        self.url = profileImageUrl
-                        
-                        
-                    }
-                    print(self.url)
-                    var ref: DatabaseReference!
-                    
-                    ref = Database.database().reference().child("market")
-                    ref.child(self.postID).child("imageUrl").setValue(self.url)
-                    
-            })
-            
-        }
+    
         
         var ref: DatabaseReference!
         
@@ -72,6 +49,30 @@ class NewPostTableViewController: UITableViewController, UITextFieldDelegate, UI
                 var userUID = "Anonymous"
                 if Auth.auth().currentUser != nil {
                     userUID = (Auth.auth().currentUser?.uid)!
+                }
+                
+                if let uploadData = UIImageJPEGRepresentation((imageViewOl.imageView?.image)!, 0.6){
+                    storageRef.putData(uploadData, metadata: nil, completion:
+                        {(metadata, error) in
+                            
+                            if error != nil{
+                                print(error!)
+                                return
+                            }
+                            
+                            if let profileImageUrl = metadata?.downloadURL()?.absoluteString{
+                                self.url = profileImageUrl
+                                
+                                
+                            }
+                            print(self.url)
+                            var ref: DatabaseReference!
+                            
+                            ref = Database.database().reference().child("market")
+                            ref.child(self.postID).child("imageUrl").setValue(self.url)
+                            
+                    })
+                    
                 }
                 
                 postID = randomString(length: 8)
